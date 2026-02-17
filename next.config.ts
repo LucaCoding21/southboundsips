@@ -4,7 +4,7 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
-        source: "/:path((?!api|_next|southbound|southboundsips|favicon).*)",
+        source: "/:path((?!api|_next|southbound|southboundsips|favicon).+)",
         destination: "/",
         permanent: false,
       },
