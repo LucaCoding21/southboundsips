@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 
-const LAUNCH_DATE = new Date("2026-03-01T00:00:00");
+const LAUNCH_DATE = new Date("2026-03-03T00:00:00");
 
 function calculateTimeLeft() {
   const diff = LAUNCH_DATE.getTime() - Date.now();
