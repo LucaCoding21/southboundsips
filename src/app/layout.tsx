@@ -1,25 +1,24 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Outfit } from "next/font/google";
+import { Afacad, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
+const afacad = Afacad({
+  variable: "--font-afacad",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["400", "500", "600", "700"],
+});
+
+const instrumentSerif = Instrument_Serif({
+  variable: "--font-instrument",
+  subsets: ["latin"],
+  weight: ["400"],
   style: ["normal", "italic"],
 });
 
-const outfit = Outfit({
-  variable: "--font-outfit",
-  subsets: ["latin"],
-  weight: ["200", "300", "400", "500", "600", "700", "800"],
-});
-
 export const metadata: Metadata = {
-  title: "South Bound Sips | Coming Soon",
+  title: "South Bound Sips | Artisan Sodas & Traveling Bar",
   description:
-    "South Bound Sips - Artisan Sodas & Traveling Bar. New website launching March 1, 2026.",
-  robots: { index: false, follow: false },
+    "South Bound Sips - Artisan Sodas & Traveling Bar.",
 };
 
 export default function RootLayout({
@@ -30,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${playfair.variable} ${outfit.variable} antialiased`}
+        className={`${afacad.variable} ${instrumentSerif.variable} antialiased`}
       >
         {children}
       </body>
