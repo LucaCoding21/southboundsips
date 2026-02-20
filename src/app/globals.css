@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Badhorse";
+  src: url("/fonts/Badhorse-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme inline {
   --color-background: #ffffff;
   --color-foreground: #0a0a0a;
@@ -9,6 +17,7 @@
   --color-dark-navy: #2F4F79;
   --font-sans: var(--font-afacad);
   --font-serif: var(--font-instrument);
+  --font-display: var(--font-badhorse);
 }
 
 html {
@@ -21,4 +30,17 @@ body {
   color: var(--color-foreground);
   overflow-x: hidden;
   font-family: var(--font-afacad), sans-serif;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll-left {
+  animation: scroll-left 20s linear infinite;
 }

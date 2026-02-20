@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Afacad, Instrument_Serif } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
 const afacad = Afacad({
@@ -13,6 +14,12 @@ const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
   weight: ["400"],
   style: ["normal", "italic"],
+});
+
+const badhorse = localFont({
+  src: "../fonts/Badhorse-Regular.otf",
+  variable: "--font-badhorse",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -29,7 +36,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${afacad.variable} ${instrumentSerif.variable} antialiased`}
+        className={`${afacad.variable} ${instrumentSerif.variable} ${badhorse.variable} antialiased`}
       >
         {children}
       </body>
