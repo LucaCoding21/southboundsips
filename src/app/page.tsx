@@ -9,26 +9,69 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 function HeroSection() {
-  const [scrollY, setScrollY] = useState(0);
+  const bgRef = useRef<HTMLDivElement>(null);
+  const textTopRef = useRef<HTMLDivElement>(null);
+  const titleRef = useRef<HTMLDivElement>(null);
+  const photoRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      // Background parallax
+      gsap.to(bgRef.current, {
+        yPercent: 30,
+        ease: "none",
+        scrollTrigger: {
+          trigger: bgRef.current,
+          start: "top top",
+          end: "bottom top",
+          scrub: true,
+        },
+      });
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+      // "Meet Jaymi" text — faster parallax
+      gsap.to(textTopRef.current, {
+        y: 200,
+        ease: "none",
+        scrollTrigger: {
+          trigger: textTopRef.current,
+          start: "top 20%",
+          end: "bottom top",
+          scrub: true,
+        },
+      });
+
+      // "Southbound" title — medium parallax
+      gsap.to(titleRef.current, {
+        y: 140,
+        ease: "none",
+        scrollTrigger: {
+          trigger: titleRef.current,
+          start: "top 20%",
+          end: "bottom top",
+          scrub: true,
+        },
+      });
+
+      // Photo composite — slowest parallax
+      gsap.to(photoRef.current, {
+        y: 70,
+        ease: "none",
+        scrollTrigger: {
+          trigger: photoRef.current,
+          start: "top 30%",
+          end: "bottom top",
+          scrub: true,
+        },
+      });
+    });
+
+    return () => ctx.revert();
   }, []);
 
   return (
     <section className="sticky top-0 w-full overflow-hidden z-0">
       {/* Background layer with parallax */}
-      <div
-        className="absolute inset-0"
-        style={{
-          transform: `translateY(${scrollY * 0.5}px)`,
-        }}
-      >
+      <div ref={bgRef} className="absolute inset-0 will-change-transform">
         <Image
           src="/images/texture-bg-1a3da5.png"
           alt=""
@@ -41,12 +84,7 @@ function HeroSection() {
       {/* Content */}
       <div className="relative z-10 max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12 pt-16 md:pt-24 lg:pt-32 pb-8 md:pb-12 flex flex-col items-center">
         {/* MEET JAYMI + the owner of - moves slower */}
-        <div
-          className="flex flex-col items-center"
-          style={{
-            transform: `translateY(${scrollY * 0.45}px)`,
-          }}
-        >
+        <div ref={textTopRef} className="flex flex-col items-center will-change-transform">
           <Image
             src="/images/meet-jaymi-heading.svg"
             alt="Meet Jaymi"
@@ -64,12 +102,7 @@ function HeroSection() {
         </div>
 
         {/* SOUTHBOUND title - moves at medium speed */}
-        <div
-          className="w-full flex justify-center px-0"
-          style={{
-            transform: `translateY(${scrollY * 0.3}px)`,
-          }}
-        >
+        <div ref={titleRef} className="w-full flex justify-center px-0 will-change-transform">
           <h1
             className="text-navy text-[5rem] md:text-[9rem] lg:text-[12rem] xl:text-[15rem] leading-none tracking-tight"
             style={{ fontFamily: "'Badhorse', cursive" }}
@@ -79,12 +112,7 @@ function HeroSection() {
         </div>
 
         {/* Jaymi photo composite with SIPS overlay - moves slowest */}
-        <div
-          className="relative -mt-12 md:-mt-20 lg:-mt-28 z-[100]"
-          style={{
-            transform: `translateY(${scrollY * 0.15}px)`,
-          }}
-        >
+        <div ref={photoRef} className="relative -mt-12 md:-mt-20 lg:-mt-28 z-[100] will-change-transform">
           <Image
             src="/images/jaymi-composite.png"
             alt="Jaymi - Owner of South Bound Sips"
@@ -769,6 +797,7 @@ function KindWordsSection() {
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const resumeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     if (!isAutoPlaying) return;
@@ -778,22 +807,32 @@ function KindWordsSection() {
     return () => clearInterval(interval);
   }, [isAutoPlaying, reviews.length]);
 
+  // Cleanup pending resume timer on unmount
+  useEffect(() => {
+    return () => {
+      if (resumeTimerRef.current) clearTimeout(resumeTimerRef.current);
+    };
+  }, []);
+
+  const pauseAutoPlay = () => {
+    setIsAutoPlaying(false);
+    if (resumeTimerRef.current) clearTimeout(resumeTimerRef.current);
+    resumeTimerRef.current = setTimeout(() => setIsAutoPlaying(true), 10000);
+  };
+
   const goToReview = (index: number) => {
     setCurrentIndex(index);
-    setIsAutoPlaying(false);
-    setTimeout(() => setIsAutoPlaying(true), 10000);
+    pauseAutoPlay();
   };
 
   const goToPrev = () => {
     setCurrentIndex((prev) => (prev - 1 + reviews.length) % reviews.length);
-    setIsAutoPlaying(false);
-    setTimeout(() => setIsAutoPlaying(true), 10000);
+    pauseAutoPlay();
   };
 
   const goToNext = () => {
     setCurrentIndex((prev) => (prev + 1) % reviews.length);
-    setIsAutoPlaying(false);
-    setTimeout(() => setIsAutoPlaying(true), 10000);
+    pauseAutoPlay();
   };
 
   return (
@@ -894,15 +933,44 @@ function KindWordsSection() {
 }
 
 function BookingBanner() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const bgRef = useRef<HTMLDivElement>(null);
+
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        bgRef.current,
+        { yPercent: -20 },
+        {
+          yPercent: 20,
+          ease: "none",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true,
+          },
+        }
+      );
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="relative w-full overflow-hidden">
-      {/* Background image with CSS parallax */}
+    <section ref={sectionRef} className="relative w-full overflow-hidden">
+      {/* Background image with GSAP parallax */}
       <div
-        className="absolute inset-0 bg-fixed bg-cover bg-center opacity-70"
-        style={{
-          backgroundImage: "url('/images/backgroundfiller.png')",
-        }}
-      />
+        ref={bgRef}
+        className="absolute -top-[40%] -bottom-[40%] left-0 right-0 will-change-transform"
+      >
+        <Image
+          src="/images/backgroundfiller.png"
+          alt=""
+          fill
+          className="object-cover opacity-70"
+        />
+      </div>
       {/* Blue overlay */}
       <div className="absolute inset-0 bg-[rgba(49,78,121,0.6)]" />
 
