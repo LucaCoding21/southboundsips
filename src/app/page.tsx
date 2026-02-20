@@ -3,6 +3,7 @@
 import Image from "next/image";
 import React, { useEffect, useState, useRef, useLayoutEffect } from "react";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -246,10 +247,10 @@ function BehindTheBarSection() {
 
             {/* Center content */}
             <div className="flex flex-col items-center gap-2 md:gap-4">
-              <p className="font-sans font-normal text-orange text-lg md:text-[20px] lg:text-[22px] leading-[1.5] tracking-[-0.011em]">
+              <p className="font-sans font-semibold text-orange text-lg md:text-[20px] lg:text-[22px] leading-[1.5] tracking-[0.01em]">
                 Your Event&apos;s Favourite Bartender
               </p>
-              <p className="font-sans font-normal text-navy text-[18px] lg:text-[22px] leading-[1.6] tracking-[-0.011em] text-center">
+              <p className="font-sans font-normal text-navy text-base md:text-[18px] lg:text-[22px] leading-[1.6] tracking-[-0.011em] text-center">
                 As the new owner of South Bound Sips, Jaymi brings her love for great drinks and even better company to every event. Whether it's a wedding, corporate event, or backyard celebration, she's here to make your event unforgettable, one cocktail at a time.
               </p>
               <a
@@ -298,10 +299,10 @@ function BehindTheBarSection() {
 
           {/* Center content */}
           <div className="flex flex-col items-center gap-2 md:gap-4">
-            <p className="font-sans font-normal text-orange text-lg md:text-[20px] lg:text-[22px] leading-[1.5] tracking-[-0.011em]">
+            <p className="font-sans font-semibold text-orange text-lg md:text-[20px] lg:text-[22px] leading-[1.5] tracking-[0.01em]">
               Your Event&apos;s Favourite Bartender
             </p>
-            <p className="font-sans font-normal text-navy text-base md:text-[18px] leading-[1.6] tracking-[-0.011em] text-center">
+            <p className="font-sans font-normal text-navy text-base md:text-[18px] lg:text-[22px] leading-[1.6] tracking-[-0.011em] text-center">
               As the new owner of South Bound Sips, Jaymi brings her love for great drinks and even better company to every event. Whether it's a wedding, corporate event, or backyard celebration, she's here to make your event unforgettable, one cocktail at a time.
             </p>
             <a
@@ -419,11 +420,11 @@ function MobileBarSection() {
             />
           </div>
 
-          <h3 ref={subtitleRef} className="font-sans font-normal text-orange text-lg md:text-[20px] lg:text-[22px] leading-[1.5] tracking-[-0.011em] capitalize mt-3 md:mt-4">
+          <h3 ref={subtitleRef} className="font-sans font-semibold text-orange text-lg md:text-[20px] lg:text-[22px] leading-[1.5] tracking-[0.01em] capitalize mt-3 md:mt-4">
             Bringing the experience to you
           </h3>
 
-          <p ref={paragraphRef} className="font-sans font-normal text-navy text-[18px] lg:text-[22px] leading-[1.6] tracking-[-0.011em] mt-4 md:mt-6">
+          <p ref={paragraphRef} className="font-sans font-normal text-navy text-base md:text-[18px] lg:text-[22px] leading-[1.6] tracking-[-0.011em] mt-4 md:mt-6">
             Our fully equipped mobile bar comes directly to your venue, bringing everything needed to serve up craft cocktails, beer, wine, and more. From intimate gatherings to large celebrations, we set up, serve, and clean up so you can focus on enjoying your event.
           </p>
 
@@ -631,13 +632,13 @@ function WhatIOffer() {
 
         {/* Choose Your Experience subtitle */}
         <div ref={subtitleRef} className="text-left">
-          <p className="font-sans font-normal text-orange text-lg md:text-[20px] lg:text-[22px] leading-[1.5] tracking-[-0.011em] mb-3 md:mb-4">
+          <p className="font-sans font-semibold text-orange text-lg md:text-[20px] lg:text-[22px] leading-[1.5] tracking-[0.01em] mb-3 md:mb-4">
             Choose Your Experience
           </p>
         </div>
 
         {/* Description */}
-        <p ref={descriptionRef} className="font-sans font-normal text-navy text-lg md:text-[24px] lg:text-[28px] leading-[1.5] tracking-[-0.011em] max-w-[900px] mb-16 md:mb-24">
+        <p ref={descriptionRef} className="font-sans font-normal text-navy text-base md:text-[18px] lg:text-[22px] leading-[1.6] tracking-[-0.011em] max-w-[900px] mb-16 md:mb-24">
           Whether you need the full experience or just a helping hand behind the
           bar, Jaymi got you covered.
         </p>
@@ -729,28 +730,28 @@ function WhatIOffer() {
         </div>
 
         {/* Packages grid */}
-        <div ref={packagesRef} className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10 mb-3 md:mb-4">
+        <div ref={packagesRef} className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10 mb-1 md:mb-2">
           <div className="text-center">
-            <h3 className="font-sans font-medium text-navy text-xl md:text-[24px] lg:text-[28px] leading-[1.5] tracking-[-0.011em] capitalize">
+            <h3 className="font-serif text-navy text-2xl md:text-[28px] lg:text-[32px] leading-[1.5] tracking-[-0.011em]">
               Mobile Bar Packages
             </h3>
-            <p className="font-sans font-normal text-orange text-base md:text-[18px] lg:text-[20px] leading-[1.5] tracking-[-0.011em] mt-1 md:mt-2">
-              Starting from 260/Hr
+            <p className="font-sans font-medium text-orange text-lg md:text-[20px] lg:text-[22px] leading-[1.5] tracking-[0.01em] mb-4 md:mb-6">
+              Starting from $260/Hr
             </p>
           </div>
           <div className="text-center">
-            <h3 className="font-sans font-medium text-navy text-xl md:text-[24px] lg:text-[28px] leading-[1.5] tracking-[-0.011em] capitalize">
+            <h3 className="font-serif text-navy text-2xl md:text-[28px] lg:text-[32px] leading-[1.5] tracking-[-0.011em]">
               Bartender Services
             </h3>
-            <p className="font-sans font-normal text-orange text-base md:text-[18px] lg:text-[20px] leading-[1.5] tracking-[-0.011em] mt-1 md:mt-2">
-              Starting from 180/Hr
+            <p className="font-sans font-medium text-orange text-lg md:text-[20px] lg:text-[22px] leading-[1.5] tracking-[0.01em] mb-4 md:mb-6">
+              Starting from $180/Hr
             </p>
           </div>
           <div className="text-center">
-            <h3 className="font-sans font-medium text-navy text-xl md:text-[24px] lg:text-[28px] leading-[1.5] tracking-[-0.011em] capitalize">
+            <h3 className="font-serif text-navy text-2xl md:text-[28px] lg:text-[32px] leading-[1.5] tracking-[-0.011em]">
               Add-ons & Rentals
             </h3>
-            <p className="font-sans font-normal text-orange text-base md:text-[18px] lg:text-[20px] leading-[1.5] tracking-[-0.011em] mt-1 md:mt-2">
+            <p className="font-sans font-medium text-orange text-lg md:text-[20px] lg:text-[22px] leading-[1.5] tracking-[0.01em] mb-4 md:mb-6">
               Starting at $25 Per Event
             </p>
           </div>
@@ -857,7 +858,7 @@ function KindWordsSection() {
         />
 
         {/* Subtitle */}
-        <p className="font-sans font-normal text-orange text-lg md:text-[20px] lg:text-[22px] leading-[1.5] tracking-[-0.011em] capitalize mb-8 md:mb-10">
+        <p className="font-sans font-semibold text-orange text-lg md:text-[20px] lg:text-[22px] leading-[1.5] tracking-[0.01em] capitalize mb-8 md:mb-10">
           Straight From The Sippers
         </p>
 
@@ -917,7 +918,7 @@ function KindWordsSection() {
         </div>
 
         {/* Attribution */}
-        <p className="font-sans font-normal text-orange text-base md:text-[18px] lg:text-[20px] leading-[1.5] tracking-[-0.011em] capitalize mt-3 md:mt-4 transition-opacity duration-500">
+        <p className="font-sans font-semibold text-orange text-lg md:text-[20px] lg:text-[22px] leading-[1.5] tracking-[0.01em] capitalize mt-3 md:mt-4 transition-opacity duration-500">
           - {reviews[currentIndex].name}
         </p>
 
@@ -984,9 +985,9 @@ function BookingBanner() {
       <div className="absolute inset-0 bg-[rgba(49,78,121,0.6)]" />
 
       <div className="relative z-10 max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12 py-6 md:py-10 flex flex-col items-center text-center">
-        <p className="font-sans font-normal text-white text-lg md:text-xl lg:text-2xl leading-[1.5] tracking-[-0.011em] max-w-[800px]">
+        <h2 className="font-sans font-medium text-white text-4xl md:text-5xl lg:text-[48px] leading-[1.1] tracking-[-0.011em] max-w-[800px]">
           Now booking February & March with limited dates available
-        </p>
+        </h2>
 
         <a
           href="#book"
@@ -1027,10 +1028,10 @@ function BookingForm() {
                 e.currentTarget.style.display = 'none';
               }}
             />
-            <h2 className="font-serif text-navy text-3xl md:text-4xl lg:text-5xl leading-tight mb-4 md:mb-6">
+            <h2 className="font-sans font-medium text-navy text-4xl md:text-5xl lg:text-[48px] leading-[1.1] tracking-[-0.011em] mb-4 md:mb-6">
               Book Your Event
             </h2>
-            <p className="font-sans font-normal text-navy text-base md:text-lg lg:text-xl leading-[1.6] tracking-[-0.011em] mb-6 md:mb-8">
+            <p className="font-sans font-normal text-navy text-base md:text-[18px] lg:text-[22px] leading-[1.6] tracking-[-0.011em] mb-6 md:mb-8">
               Ready to elevate your next event? Fill out the form and Jaymi will get back to you within 24-48 hours to discuss your vision and create a custom experience.
             </p>
             <div className="space-y-4">
@@ -1198,149 +1199,6 @@ function BookingForm() {
         </div>
       </div>
     </section>
-  );
-}
-
-function Footer() {
-  return (
-    <footer id="contact" className="relative w-full bg-navy pt-16 md:pt-20 pb-8">
-      <div className="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 mb-12 md:mb-16">
-          {/* Logo & Description */}
-          <div className="lg:col-span-1">
-            <Image
-              src="/images/southbound-logo.png"
-              alt="South Bound Sips Logo"
-              width={80}
-              height={77}
-              className="w-16 h-auto mb-4"
-            />
-            <p className="font-sans font-normal text-white/80 text-sm leading-[1.6] mb-6">
-              Mobile bartending services bringing craft cocktails and unforgettable experiences to your events across Georgia and beyond.
-            </p>
-            {/* Social Links */}
-            <div className="flex items-center gap-4">
-              <a
-                href="https://www.instagram.com/southboundsips/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-orange transition-colors"
-                aria-label="Instagram"
-              >
-                <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                </svg>
-              </a>
-              <a
-                href="https://www.facebook.com/southboundsips"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-orange transition-colors"
-                aria-label="Facebook"
-              >
-                <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                </svg>
-              </a>
-              <a
-                href="https://www.tiktok.com/@southboundsips"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-orange transition-colors"
-                aria-label="TikTok"
-              >
-                <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/>
-                </svg>
-              </a>
-            </div>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h4 className="font-sans font-medium text-white text-lg mb-4">Quick Links</h4>
-            <ul className="space-y-3">
-              <li>
-                <a href="/" className="font-sans text-white/80 text-sm hover:text-orange transition-colors">Home</a>
-              </li>
-              <li>
-                <a href="/about" className="font-sans text-white/80 text-sm hover:text-orange transition-colors">About Jaymi</a>
-              </li>
-              <li>
-                <a href="#services" className="font-sans text-white/80 text-sm hover:text-orange transition-colors">Services</a>
-              </li>
-              <li>
-                <a href="#faq" className="font-sans text-white/80 text-sm hover:text-orange transition-colors">FAQ</a>
-              </li>
-              <li>
-                <a href="#book" className="font-sans text-white/80 text-sm hover:text-orange transition-colors">Book Now</a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Services */}
-          <div>
-            <h4 className="font-sans font-medium text-white text-lg mb-4">Services</h4>
-            <ul className="space-y-3">
-              <li>
-                <a href="#services" className="font-sans text-white/80 text-sm hover:text-orange transition-colors">Mobile Bar Packages</a>
-              </li>
-              <li>
-                <a href="#services" className="font-sans text-white/80 text-sm hover:text-orange transition-colors">Bartender Services</a>
-              </li>
-              <li>
-                <a href="#services" className="font-sans text-white/80 text-sm hover:text-orange transition-colors">Add-ons & Rentals</a>
-              </li>
-              <li>
-                <a href="#services" className="font-sans text-white/80 text-sm hover:text-orange transition-colors">Wedding Packages</a>
-              </li>
-              <li>
-                <a href="#services" className="font-sans text-white/80 text-sm hover:text-orange transition-colors">Corporate Events</a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Contact Info */}
-          <div>
-            <h4 className="font-sans font-medium text-white text-lg mb-4">Get In Touch</h4>
-            <ul className="space-y-3">
-              <li className="flex items-start gap-3">
-                <svg className="w-5 h-5 text-orange mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-                <a href="mailto:hello@southboundsips.com" className="font-sans text-white/80 text-sm hover:text-orange transition-colors">
-                  hello@southboundsips.com
-                </a>
-              </li>
-              <li className="flex items-start gap-3">
-                <svg className="w-5 h-5 text-orange mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-                <span className="font-sans text-white/80 text-sm">
-                  Serving Georgia &<br />Surrounding Areas
-                </span>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        {/* Bottom Bar */}
-        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="font-sans text-white/60 text-sm text-center md:text-left">
-            © {new Date().getFullYear()} South Bound Sips. All rights reserved.
-          </p>
-          <div className="flex items-center gap-6">
-            <a href="#" className="font-sans text-white/60 text-sm hover:text-orange transition-colors">
-              Privacy Policy
-            </a>
-            <a href="#" className="font-sans text-white/60 text-sm hover:text-orange transition-colors">
-              Terms of Service
-            </a>
-          </div>
-        </div>
-      </div>
-    </footer>
   );
 }
 
