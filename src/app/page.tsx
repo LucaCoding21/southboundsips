@@ -462,18 +462,27 @@ function FlowerIcon() {
   );
 }
 
+function MarqueeGroup() {
+  return (
+    <div className="flex items-center shrink-0">
+      {[...Array(8)].map((_, i) => (
+        <React.Fragment key={i}>
+          <span className="flex-shrink-0 font-sans font-medium text-white text-lg md:text-xl lg:text-2xl uppercase tracking-wider mx-3 md:mx-4">
+            Explore Our Packages
+          </span>
+          <FlowerIcon />
+        </React.Fragment>
+      ))}
+    </div>
+  );
+}
+
 function ChooseExperienceStrip() {
   return (
     <div className="w-full bg-navy py-4 md:py-6 overflow-hidden">
-      <div className="flex items-center gap-6 md:gap-8 animate-scroll-left whitespace-nowrap">
-        {[...Array(10)].map((_, i) => (
-          <React.Fragment key={i}>
-            <span className="flex-shrink-0 font-sans font-medium text-white text-lg md:text-xl lg:text-2xl uppercase tracking-wider">
-              Explore Our Packages
-            </span>
-            <FlowerIcon />
-          </React.Fragment>
-        ))}
+      <div className="flex animate-scroll-left whitespace-nowrap">
+        <MarqueeGroup />
+        <MarqueeGroup />
       </div>
     </div>
   );
