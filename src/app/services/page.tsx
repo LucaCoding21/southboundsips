@@ -80,13 +80,14 @@ const rentals = [
 function ScallopTop() {
   return (
     <div
-      className="w-full relative z-20 -mt-[90px]"
+      className="w-full relative z-20"
       style={{
-        height: "90px",
-        background:
-          "radial-gradient(circle 90px at center bottom, #CFE2D6 98%, transparent 100%)",
-        backgroundSize: "120px 90px",
+        height: "clamp(60px, 6.25vw, 90px)",
+        marginTop: "calc(-1 * clamp(60px, 6.25vw, 90px))",
+        backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 90'%3E%3Ccircle cx='60' cy='90' r='90' fill='%23CFE2D6'/%3E%3C/svg%3E")`,
+        backgroundSize: "clamp(80px, 8.33vw, 120px) clamp(60px, 6.25vw, 90px)",
         backgroundRepeat: "repeat-x",
+        backgroundPosition: "center",
       }}
     />
   );
@@ -95,13 +96,14 @@ function ScallopTop() {
 function ScallopBottom() {
   return (
     <div
-      className="w-full relative z-20 -mb-[90px]"
+      className="w-full relative z-20"
       style={{
-        height: "90px",
-        background:
-          "radial-gradient(circle 90px at center top, #CFE2D6 98%, transparent 100%)",
-        backgroundSize: "120px 90px",
+        height: "clamp(60px, 6.25vw, 90px)",
+        marginBottom: "calc(-1 * clamp(60px, 6.25vw, 90px))",
+        backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 90'%3E%3Ccircle cx='60' cy='0' r='90' fill='%23CFE2D6'/%3E%3C/svg%3E")`,
+        backgroundSize: "clamp(80px, 8.33vw, 120px) clamp(60px, 6.25vw, 90px)",
         backgroundRepeat: "repeat-x",
+        backgroundPosition: "center",
       }}
     />
   );
@@ -186,7 +188,7 @@ function HeroSection() {
         </p>
 
         <a
-          href="/#book"
+          href="/contact#book"
           className="animate-enter-up-d3 inline-flex items-center justify-center font-sans font-medium text-white bg-orange text-base lg:text-lg rounded-full px-8 py-3 mt-16 md:mt-20 hover:bg-navy transition-all hover:shadow-lg hover:-translate-y-0.5"
         >
           Reserve Your Spot
@@ -229,7 +231,10 @@ function MobileBarPackagesSection() {
         </p>
 
         {/* Guest tier selector */}
-        <div className="flex flex-wrap gap-2 md:gap-3 mt-10 md:mt-12">
+        <p className="font-sans text-sm font-medium text-white/50 mt-10 md:mt-12 mb-3">
+          How many guests?
+        </p>
+        <div className="flex flex-wrap gap-2 md:gap-3">
           {guestTiers.map((t, i) => (
             <button
               key={t.label}
@@ -357,7 +362,7 @@ function MobileBarPackagesSection() {
 
             {/* CTA */}
             <a
-              href="/#book"
+              href="/contact#book"
               className="inline-flex items-center justify-center w-full font-sans font-medium text-white bg-orange text-base rounded-full px-8 py-3.5 mt-8 hover:bg-orange/90 transition-all hover:shadow-lg hover:-translate-y-0.5"
             >
               Reserve Your Spot
@@ -456,7 +461,7 @@ function BartenderServicesSection() {
             </ul>
 
             <a
-              href="/#book"
+              href="/contact#book"
               className="inline-flex items-center justify-center w-full font-sans font-medium text-white bg-orange text-base rounded-full px-8 py-3.5 mt-8 hover:bg-orange/90 transition-all hover:shadow-lg hover:-translate-y-0.5"
             >
               Reserve Your Spot
@@ -518,7 +523,7 @@ function BartenderServicesSection() {
             </ul>
 
             <a
-              href="/#book"
+              href="/contact#book"
               className="inline-flex items-center justify-center w-full font-sans font-medium text-white bg-navy text-base rounded-full px-8 py-3.5 mt-8 hover:bg-navy/90 transition-all hover:shadow-lg hover:-translate-y-0.5"
             >
               Reserve Your Spot
@@ -613,7 +618,7 @@ function AddOnsRentalsSection() {
         {/* Notes */}
         <div className="scroll-fade-up flex justify-center mt-12 md:mt-16">
           <a
-            href="/#book"
+            href="/contact#book"
             className="inline-flex items-center justify-center font-sans font-medium text-white bg-orange text-base lg:text-lg rounded-full px-10 py-3.5 hover:bg-navy transition-all hover:shadow-lg hover:-translate-y-0.5"
           >
             Customize Your Package

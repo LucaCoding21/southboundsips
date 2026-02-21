@@ -5,17 +5,30 @@ import { useState, useEffect } from "react";
 export default function LoadingScreen() {
   const [done, setDone] = useState(false);
   const [unmounted, setUnmounted] = useState(false);
+  const [show, setShow] = useState(false);
 
   useEffect(() => {
-    const exitTimer = setTimeout(() => setDone(true), 1800);
-    const unmountTimer = setTimeout(() => setUnmounted(true), 2500);
-    return () => {
-      clearTimeout(exitTimer);
-      clearTimeout(unmountTimer);
-    };
+    // Detect if this is a refresh or first visit (not an in-site navigation)
+    const navEntry = performance.getEntriesByType("navigation")[0] as PerformanceNavigationTiming | undefined;
+    const isReload = navEntry?.type === "reload";
+    const isFirstVisit = !sessionStorage.getItem("sb-loaded");
+
+    if (isReload || isFirstVisit) {
+      sessionStorage.setItem("sb-loaded", "1");
+      setShow(true);
+      const exitTimer = setTimeout(() => setDone(true), 1800);
+      const unmountTimer = setTimeout(() => setUnmounted(true), 2500);
+      return () => {
+        clearTimeout(exitTimer);
+        clearTimeout(unmountTimer);
+      };
+    } else {
+      // Skip the loading screen for in-site navigations
+      setUnmounted(true);
+    }
   }, []);
 
-  if (unmounted) return null;
+  if (unmounted || !show) return null;
 
   return (
     <>

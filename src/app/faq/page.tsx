@@ -5,78 +5,63 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ScrollAnimations from "../components/ScrollAnimations";
 
-/* ───────────────────────── FAQ Data by Category ──────────────── */
-const categories = [
+/* ───────────────────────── FAQ Data ──────────────────────────── */
+const faqs = [
   {
-    label: "General",
-    faqs: [
-      {
-        question: "What is Southbound Sips?",
-        answer:
-          "Southbound Sips is a traveling bar made from a remodeled two-horse trailer. We provide full service bartending for any occasion such as weddings, birthdays, corporate events, holiday parties, baby and bridal showers. We also participate in community events in and around Leander.",
-      },
-      {
-        question: "Where are you located and do you travel?",
-        answer:
-          "We are located in Leander, Texas. We travel within 20 miles of our home base at no charge. Travel outside our limit will incur a travel fee.",
-      },
-      {
-        question: "Are you insured and permitted?",
-        answer:
-          "Yes, we carry general and liquor liability insurance. We are permitted as a mobile food truck (beverage service only), and our staff carries Food and Alcohol, Food Managers, and TABC certifications.\n\nIf you have any questions on your venue\u2019s restrictions, we are happy to reach out to them!",
-      },
-    ],
+    question: "What is Southbound Sips?",
+    answer:
+      "Southbound Sips is a traveling bar made from a remodeled two-horse trailer. We provide full service bartending for any occasion such as weddings, birthdays, corporate events, holiday parties, baby and bridal showers. We also participate in community events in and around Leander.",
   },
   {
-    label: "Services",
-    faqs: [
-      {
-        question:
-          "If we\u2019re not interested in alcohol at our event, can we still use you?",
-        answer:
-          "Absolutely! We craft amazing mocktails, too! We are also happy to provide fresh-squeezed lemonade or limeades, tea, coffee, hot cocoa or anything else you come up with! You could even use us as a beautiful cake and dessert stand!",
-      },
-      {
-        question: "Do you supply the alcohol?",
-        answer:
-          'The state of Texas does not allow a liquor license without a "brick and mortar" establishment. Therefore, unfortunately, we cannot provide the alcohol. We do, however, work very closely with you to create the perfect drink menu and provide a shopping list that ensures you are only buying the type and amount of alcohol needed for your event.',
-      },
-      {
-        question: "What do you provide?",
-        answer:
-          'Besides a picture perfect backdrop, we provide everything needed for your bar service. Depending upon the package, our services include applicable serveware (recycled heavy-weight plastic stemless wine and champagne "glasses" and pilsner cups), paper or wheat straws, ice, garnishes, syrups, fresh squeezed juices, mixers, licensed bartender(s) and a personalized menu.',
-      },
-      {
-        question: "Can you provide a cash bar?",
-        answer:
-          "No. Unfortunately, as we do not have a liquor license, we cannot collect money in exchange for alcoholic beverages.",
-      },
-    ],
+    question: "Where are you located and do you travel?",
+    answer:
+      "We are located in Leander, Texas. We travel within 20 miles of our home base at no charge. Travel outside our limit will incur a travel fee.",
   },
   {
-    label: "Booking",
-    faqs: [
-      {
-        question: "How far in advance do we need to book?",
-        answer:
-          "As soon as possible! Weddings are typically booked about a year in advance. March thru May and September thru December are the busiest months for events, so get in touch with us as soon as possible to reserve your date!",
-      },
-      {
-        question: "What is your payment and refund policy?",
-        answer:
-          "We require a non-refundable 25% deposit and a signed contract in order to reserve your date. We collect a second 25% non-refundable deposit 30 days prior to your event, with the remainder of the balance due one week prior to service. Due to COVID 19, we do allow rescheduling (based on availability). If a package is under $400, we require 50% deposit.",
-      },
-      {
-        question: "Do you have a rain date policy?",
-        answer:
-          "Unfortunately, due to advance bookings, we cannot accommodate rain dates. In the event of rain, we are more than happy to work with your tent vendor to find the appropriate tent size for our trailer.",
-      },
-      {
-        question: "What are the technical requirements for the bar?",
-        answer:
-          "Our trailer requires a flat ground and clear access for setup, service and breakdown. We also need to be able to pull in to set up and to remove the trailer after service has ended. Our trailer dimensions are 8.5\u2019 H x 9\u2019 W x 15\u2019 L. Please allow room for guests to mingle and order. Our service window is on the driver side.\n\nWe also require one standard outlet within 40 ft of the trailer, but if electricity is not available, we can add a generator to your package.",
-      },
-    ],
+    question: "Are you insured and permitted?",
+    answer:
+      "Yes, we carry general and liquor liability insurance. We are permitted as a mobile food truck (beverage service only), and our staff carries Food and Alcohol, Food Managers, and TABC certifications.\n\nIf you have any questions on your venue\u2019s restrictions, we are happy to reach out to them!",
+  },
+  {
+    question:
+      "If we\u2019re not interested in alcohol at our event, can we still use you?",
+    answer:
+      "Absolutely! We craft amazing mocktails, too! We are also happy to provide fresh-squeezed lemonade or limeades, tea, coffee, hot cocoa or anything else you come up with! You could even use us as a beautiful cake and dessert stand!",
+  },
+  {
+    question: "Do you supply the alcohol?",
+    answer:
+      'The state of Texas does not allow a liquor license without a "brick and mortar" establishment. Therefore, unfortunately, we cannot provide the alcohol. We do, however, work very closely with you to create the perfect drink menu and provide a shopping list that ensures you are only buying the type and amount of alcohol needed for your event.',
+  },
+  {
+    question: "What do you provide?",
+    answer:
+      'Besides a picture perfect backdrop, we provide everything needed for your bar service. Depending upon the package, our services include applicable serveware (recycled heavy-weight plastic stemless wine and champagne "glasses" and pilsner cups), paper or wheat straws, ice, garnishes, syrups, fresh squeezed juices, mixers, licensed bartender(s) and a personalized menu.',
+  },
+  {
+    question: "Can you provide a cash bar?",
+    answer:
+      "No. Unfortunately, as we do not have a liquor license, we cannot collect money in exchange for alcoholic beverages.",
+  },
+  {
+    question: "How far in advance do we need to book?",
+    answer:
+      "As soon as possible! Weddings are typically booked about a year in advance. March thru May and September thru December are the busiest months for events, so get in touch with us as soon as possible to reserve your date!",
+  },
+  {
+    question: "What is your payment and refund policy?",
+    answer:
+      "We require a non-refundable 25% deposit and a signed contract in order to reserve your date. We collect a second 25% non-refundable deposit 30 days prior to your event, with the remainder of the balance due one week prior to service. Due to COVID 19, we do allow rescheduling (based on availability). If a package is under $400, we require 50% deposit.",
+  },
+  {
+    question: "Do you have a rain date policy?",
+    answer:
+      "Unfortunately, due to advance bookings, we cannot accommodate rain dates. In the event of rain, we are more than happy to work with your tent vendor to find the appropriate tent size for our trailer.",
+  },
+  {
+    question: "What are the technical requirements for the bar?",
+    answer:
+      "Our trailer requires a flat ground and clear access for setup, service and breakdown. We also need to be able to pull in to set up and to remove the trailer after service has ended. Our trailer dimensions are 8.5\u2019 H x 9\u2019 W x 15\u2019 L. Please allow room for guests to mingle and order. Our service window is on the driver side.\n\nWe also require one standard outlet within 40 ft of the trailer, but if electricity is not available, we can add a generator to your package.",
   },
 ];
 
@@ -151,13 +136,14 @@ function FAQItem({
 function ScallopTop() {
   return (
     <div
-      className="w-full relative z-10 -mt-[90px]"
+      className="w-full relative z-10"
       style={{
-        height: "90px",
-        background:
-          "radial-gradient(circle 90px at center bottom, #CFE2D6 98%, transparent 100%)",
-        backgroundSize: "120px 90px",
+        height: "clamp(60px, 6.25vw, 90px)",
+        marginTop: "calc(-1 * clamp(60px, 6.25vw, 90px))",
+        backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 90'%3E%3Ccircle cx='60' cy='90' r='90' fill='%23CFE2D6'/%3E%3C/svg%3E")`,
+        backgroundSize: "clamp(80px, 8.33vw, 120px) clamp(60px, 6.25vw, 90px)",
         backgroundRepeat: "repeat-x",
+        backgroundPosition: "center",
       }}
     />
   );
@@ -166,13 +152,14 @@ function ScallopTop() {
 function ScallopBottom() {
   return (
     <div
-      className="w-full relative z-10 -mb-[90px]"
+      className="w-full relative z-10"
       style={{
-        height: "90px",
-        background:
-          "radial-gradient(circle 90px at center top, #CFE2D6 98%, transparent 100%)",
-        backgroundSize: "120px 90px",
+        height: "clamp(60px, 6.25vw, 90px)",
+        marginBottom: "calc(-1 * clamp(60px, 6.25vw, 90px))",
+        backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 90'%3E%3Ccircle cx='60' cy='0' r='90' fill='%23CFE2D6'/%3E%3C/svg%3E")`,
+        backgroundSize: "clamp(80px, 8.33vw, 120px) clamp(60px, 6.25vw, 90px)",
         backgroundRepeat: "repeat-x",
+        backgroundPosition: "center",
       }}
     />
   );
@@ -180,13 +167,7 @@ function ScallopBottom() {
 
 /* ════════════════════════ FAQ SECTION ═════════════════════════════ */
 function FAQSection() {
-  const [activeCategory, setActiveCategory] = useState(0);
   const [openIndices, setOpenIndices] = useState<Set<number>>(new Set());
-
-  const switchCategory = (index: number) => {
-    setActiveCategory(index);
-    setOpenIndices(new Set());
-  };
 
   const toggle = (index: number) => {
     setOpenIndices((prev) => {
@@ -200,53 +181,36 @@ function FAQSection() {
     });
   };
 
-  const active = categories[activeCategory];
-
   return (
     <section className="relative w-full bg-sage py-20 lg:py-28">
       <div className="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12">
-        {/* Header */}
-        <div className="animate-enter-up text-center mb-10 lg:mb-14">
-          <span className="font-sans font-semibold text-orange text-sm md:text-base tracking-[0.15em] uppercase block mb-3">
-            Got Questions?
-          </span>
-          <h1 className="font-serif text-navy text-5xl md:text-7xl lg:text-[96px] leading-[1] tracking-tight">
-            FAQ
-          </h1>
-          <p className="font-sans font-normal text-navy/70 text-base md:text-[18px] leading-[1.7] tracking-[-0.011em] mt-5 max-w-[480px] mx-auto">
-            Everything you need to know about booking Southbound Sips for your
-            next event.
-          </p>
-        </div>
+        <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 xl:gap-24">
+          {/* Left Column — Title & Subtext */}
+          <div className="animate-enter-up lg:w-[340px] xl:w-[400px] shrink-0 text-center lg:text-left lg:sticky lg:top-28 lg:self-start">
+            <span className="font-sans font-semibold text-orange text-sm md:text-base tracking-[0.15em] uppercase block mb-3">
+              Got Questions?
+            </span>
+            <h1 className="font-serif text-navy text-5xl md:text-7xl lg:text-[96px] leading-[1] tracking-tight">
+              FAQ
+            </h1>
+            <p className="font-sans font-normal text-navy/70 text-base md:text-[18px] leading-[1.7] tracking-[-0.011em] mt-5 max-w-[480px] lg:max-w-none">
+              Everything you need to know about booking Southbound Sips for your
+              next event.
+            </p>
+          </div>
 
-        {/* Category Tabs */}
-        <div className="animate-enter-up-d2 flex items-center justify-center gap-2 md:gap-3 mb-10 lg:mb-14">
-          {categories.map((cat, i) => (
-            <button
-              key={cat.label}
-              onClick={() => switchCategory(i)}
-              className={`font-sans font-medium text-sm md:text-base px-5 md:px-7 py-2.5 rounded-full transition-all duration-200 cursor-pointer ${
-                activeCategory === i
-                  ? "bg-navy text-white shadow-md"
-                  : "bg-white/70 text-navy hover:bg-white hover:shadow-sm"
-              }`}
-            >
-              {cat.label}
-            </button>
-          ))}
-        </div>
-
-        {/* FAQ List */}
-        <div className="animate-enter-up-d3 max-w-[740px] mx-auto">
-          {active.faqs.map((faq, i) => (
-            <FAQItem
-              key={i}
-              question={faq.question}
-              answer={faq.answer}
-              isOpen={openIndices.has(i)}
-              onToggle={() => toggle(i)}
-            />
-          ))}
+          {/* Right Column — Accordion */}
+          <div className="animate-enter-up-d2 flex-1 min-w-0">
+            {faqs.map((faq, i) => (
+              <FAQItem
+                key={i}
+                question={faq.question}
+                answer={faq.answer}
+                isOpen={openIndices.has(i)}
+                onToggle={() => toggle(i)}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>

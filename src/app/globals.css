@@ -124,3 +124,75 @@ body {
   transform: translateY(-4px);
   box-shadow: 0 12px 24px -8px rgba(49,78,121,0.15);
 }
+
+/* ─── Mobile‑first touch & interaction enhancements ──────── */
+@media (hover: none) and (pointer: coarse) {
+  /* Larger tap targets on touch devices */
+  button, a, select, input, textarea {
+    min-height: 44px;
+  }
+  /* Remove hover-dependent transforms on touch */
+  .hover-lift:hover {
+    transform: none;
+  }
+}
+
+/* ─── Smooth focus ring for accessibility ──────────────────── */
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--color-orange);
+  outline-offset: 2px;
+}
+
+/* ─── Mobile-optimized scroll reveals (subtler motion) ───── */
+@media (max-width: 767px) {
+  .scroll-fade-up { transform: translateY(24px); }
+  .scroll-slide-left { transform: translateX(-30px); }
+  .scroll-slide-right { transform: translateX(30px); }
+}
+
+/* ─── Reduced motion preferences ─────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .scroll-fade-up,
+  .scroll-fade-in,
+  .scroll-slide-left,
+  .scroll-slide-right,
+  .scroll-scale-in {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Hero overlay positioning.
+   Pull the overlay up so the scallop sits right below Jaymi's photo.
+   One breakpoint matches the hero height change (60vh → 100vh at md). */
+.hero-overlay-mt {
+  margin-top: -5vh;
+}
+@media (min-width: 768px) {
+  .hero-overlay-mt {
+    margin-top: clamp(-430px, -33vh, -100px);
+  }
+}
+@media (min-width: 820px) {
+  .hero-tall {
+    height: 80vh !important;
+  }
+}
+@media (min-width: 1024px) {
+  .hero-tall {
+    height: 100vh !important;
+  }
+  .hero-overlay-mt {
+    margin-top: -21vh;
+  }
+}
+

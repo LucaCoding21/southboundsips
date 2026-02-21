@@ -47,31 +47,31 @@ function HeroSection() {
       <div className="relative z-10">
         <div className="flex flex-col lg:flex-row lg:items-stretch lg:min-h-[90vh]">
           {/* Left: text content */}
-          <div className="animate-enter-up w-full lg:w-[42%] flex flex-col justify-center px-4 md:px-8 lg:px-12 xl:pl-[calc((100vw-1440px)/2+48px)] pt-32 pb-12 lg:py-0">
+          <div className="animate-enter-up w-full lg:w-[42%] flex flex-col justify-center px-5 md:px-8 lg:px-12 xl:pl-[calc((100vw-1440px)/2+48px)] pt-28 pb-10 lg:py-0">
             <span className="font-sans font-semibold text-orange text-sm md:text-base tracking-[0.15em] uppercase block">
               About Us
             </span>
             <h1
-              className="text-navy text-3xl md:text-5xl lg:text-[64px] xl:text-[78px] leading-[0.95] tracking-tight mt-4 lg:mt-6 whitespace-nowrap"
+              className="text-navy text-3xl md:text-5xl lg:text-[64px] xl:text-[78px] leading-[0.95] tracking-tight mt-4 lg:mt-6"
               style={{ fontFamily: "'Badhorse', cursive" }}
             >
               SouthBound sips
             </h1>
-            <p className="font-sans font-normal text-navy/80 text-base md:text-[18px] lg:text-[20px] leading-[1.7] tracking-[-0.011em] mt-6 lg:mt-8 max-w-[480px]">
+            <p className="font-sans font-normal text-navy/80 text-base md:text-[18px] lg:text-[20px] leading-[1.7] tracking-[-0.011em] mt-5 lg:mt-8 max-w-[480px]">
               We bring the bar to you, crafting unforgettable mobile cocktail
               experiences for weddings, parties, and corporate events across the
               South.
             </p>
-            <div className="flex flex-wrap gap-3 mt-8 lg:mt-10">
+            <div className="flex flex-wrap gap-3 mt-6 lg:mt-10">
               <a
                 href="/#book"
-                className="inline-flex items-center justify-center font-sans font-medium text-white bg-orange text-base lg:text-lg rounded-full px-7 py-2.5 hover:bg-orange/90 transition-all hover:shadow-lg hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center font-sans font-medium text-white bg-orange text-base lg:text-lg rounded-full px-7 py-2.5 hover:bg-orange/90 active:scale-95 transition-all hover:shadow-lg hover:-translate-y-0.5"
               >
                 Book Your Event
               </a>
               <a
                 href="#team"
-                className="inline-flex items-center justify-center font-sans font-medium text-navy border-2 border-navy/20 text-base lg:text-lg rounded-full px-7 py-2.5 hover:border-navy/40 transition-all hover:shadow-lg hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center font-sans font-medium text-navy border-2 border-navy/20 text-base lg:text-lg rounded-full px-7 py-2.5 hover:border-navy/40 active:scale-95 transition-all hover:shadow-lg hover:-translate-y-0.5"
               >
                 Meet the Team
               </a>
@@ -111,12 +111,12 @@ function HiImJaymiSection() {
         <div className="absolute inset-0 bg-[rgba(26,58,92,0.75)]" />
       </div>
 
-      <div className="relative z-10 max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12 py-20 lg:py-28">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+      <div className="relative z-10 max-w-[1440px] mx-auto px-5 md:px-8 lg:px-12 py-16 lg:py-28">
+        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-20">
           {/* Left: Jaymi photo with arch shape */}
           <div className="scroll-slide-left w-full lg:w-[42%] flex justify-center">
-            <div className="relative w-full max-w-[420px]">
-              <div className="overflow-hidden rounded-t-[200px] rounded-b-[20px]">
+            <div className="relative w-full max-w-[320px] md:max-w-[420px]">
+              <div className="overflow-hidden rounded-t-[160px] md:rounded-t-[200px] rounded-b-[20px]">
                 <Image
                   src="/images/jaymi-team.png"
                   alt="Jaymi - Owner of South Bound Sips"
@@ -126,7 +126,7 @@ function HiImJaymiSection() {
                 />
               </div>
               {/* Decorative border accent */}
-              <div className="absolute -inset-3 rounded-t-[212px] rounded-b-[28px] border-2 border-white/20 -z-10" />
+              <div className="absolute -inset-3 rounded-t-[172px] md:rounded-t-[212px] rounded-b-[28px] border-2 border-white/20 -z-10" />
             </div>
           </div>
 
@@ -167,7 +167,7 @@ function HiImJaymiSection() {
             </p>
 
             {/* What you get */}
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-8 lg:mt-10">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-6 mt-8 lg:mt-10">
               <div className="flex items-start gap-3">
                 <div className="w-2 h-2 rounded-full bg-orange mt-2 shrink-0" />
                 <p className="font-sans font-medium text-white text-sm md:text-base lg:text-lg leading-[1.5]">
@@ -190,7 +190,7 @@ function HiImJaymiSection() {
 
             <a
               href="/#book"
-              className="inline-flex items-center justify-center font-sans font-medium text-navy bg-white text-base md:text-lg lg:text-[20px] leading-[1.5] tracking-[-0.011em] capitalize rounded-full px-8 lg:px-10 py-2.5 lg:py-3 mt-10 lg:mt-12 hover:bg-orange hover:text-white transition-all hover:shadow-lg hover:-translate-y-0.5"
+              className="inline-flex items-center justify-center font-sans font-medium text-navy bg-white text-base md:text-lg lg:text-[20px] leading-[1.5] tracking-[-0.011em] capitalize rounded-full px-8 lg:px-10 py-3 lg:py-3 mt-8 lg:mt-12 hover:bg-orange hover:text-white active:scale-95 transition-all hover:shadow-lg hover:-translate-y-0.5"
             >
               Let&apos;s Plan Your Event
             </a>
@@ -204,16 +204,16 @@ function HiImJaymiSection() {
 /* ═══════════════════════ OUR MISSION SECTION ═════════════════════════ */
 function OurMissionSection() {
   return (
-    <section id="mission" className="relative w-full pt-20 lg:pt-32 pb-32 lg:pb-48 bg-white overflow-hidden">
+    <section id="mission" className="relative w-full pt-16 lg:pt-32 pb-24 lg:pb-48 bg-white overflow-hidden">
 
-      <div className="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12">
+      <div className="max-w-[1440px] mx-auto px-5 md:px-8 lg:px-12">
         {/* Centered heading block */}
         <div className="scroll-fade-up text-center mb-12 lg:mb-20">
           <span className="font-sans font-semibold text-orange text-sm md:text-base tracking-[0.15em] uppercase block mb-3">
             Why We Do It
           </span>
           <h2
-            className="font-serif text-navy text-5xl md:text-6xl lg:text-[80px] leading-[1] tracking-tight"
+            className="font-serif text-navy text-4xl md:text-6xl lg:text-[80px] leading-[1] tracking-tight"
           >
             Our Mission
           </h2>
@@ -286,13 +286,14 @@ function OurMissionSection() {
 function ScallopTop() {
   return (
     <div
-      className="w-full relative z-10 -mt-[90px]"
+      className="w-full relative z-10"
       style={{
-        height: "90px",
-        background:
-          "radial-gradient(circle 90px at center bottom, #CFE2D6 98%, transparent 100%)",
-        backgroundSize: "120px 90px",
+        height: "clamp(60px, 6.25vw, 90px)",
+        marginTop: "calc(-1 * clamp(60px, 6.25vw, 90px))",
+        backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 90'%3E%3Ccircle cx='60' cy='90' r='90' fill='%23CFE2D6'/%3E%3C/svg%3E")`,
+        backgroundSize: "clamp(80px, 8.33vw, 120px) clamp(60px, 6.25vw, 90px)",
         backgroundRepeat: "repeat-x",
+        backgroundPosition: "center",
       }}
     />
   );
@@ -301,13 +302,14 @@ function ScallopTop() {
 function ScallopBottom() {
   return (
     <div
-      className="w-full relative z-10 -mb-[90px]"
+      className="w-full relative z-10"
       style={{
-        height: "90px",
-        background:
-          "radial-gradient(circle 90px at center top, #CFE2D6 98%, transparent 100%)",
-        backgroundSize: "120px 90px",
+        height: "clamp(60px, 6.25vw, 90px)",
+        marginBottom: "calc(-1 * clamp(60px, 6.25vw, 90px))",
+        backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 90'%3E%3Ccircle cx='60' cy='0' r='90' fill='%23CFE2D6'/%3E%3C/svg%3E")`,
+        backgroundSize: "clamp(80px, 8.33vw, 120px) clamp(60px, 6.25vw, 90px)",
         backgroundRepeat: "repeat-x",
+        backgroundPosition: "center",
       }}
     />
   );
@@ -340,14 +342,14 @@ function OurValuesSection() {
 
   return (
     <section className="relative w-full overflow-hidden bg-sage">
-      <div className="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12 py-20 lg:py-32">
+      <div className="max-w-[1440px] mx-auto px-5 md:px-8 lg:px-12 py-16 lg:py-32">
         {/* Header */}
         <div className="scroll-fade-up flex flex-col gap-6 mb-16 lg:mb-20">
           <div>
             <span className="font-sans font-semibold text-orange text-sm md:text-base tracking-[0.15em] uppercase block mb-3">
               What We Stand For
             </span>
-            <h2 className="font-serif text-navy text-5xl md:text-6xl lg:text-[80px] leading-[1] tracking-tight">
+            <h2 className="font-serif text-navy text-4xl md:text-6xl lg:text-[80px] leading-[1] tracking-tight">
               Our Values
             </h2>
           </div>
@@ -392,37 +394,29 @@ function OurValuesSection() {
 /* ═══════════════════════ MEET THE TEAM SECTION ══════════════════════ */
 function MeetTheTeamSection() {
   return (
-    <section id="team" className="relative w-full pt-28 lg:pt-44 overflow-hidden">
+    <section id="team" className="relative w-full pt-20 lg:pt-44 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-white" />
 
-      <div className="relative z-10 max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12">
+      <div className="relative z-10 max-w-[1440px] mx-auto px-5 md:px-8 lg:px-12">
         {/* Heading block */}
-        <div className="scroll-fade-up text-center mb-6 lg:mb-8">
+        <div className="scroll-fade-up text-center mb-5 lg:mb-8">
           <span className="font-sans font-semibold text-orange text-sm md:text-base tracking-[0.15em] uppercase block mb-3">
             The People Behind The Pour
           </span>
-          <h2 className="font-serif text-navy text-5xl md:text-7xl lg:text-[96px] leading-[0.95] tracking-tight">
+          <h2 className="font-serif text-navy text-4xl md:text-7xl lg:text-[96px] leading-[0.95] tracking-tight">
             Meet the Team
           </h2>
         </div>
 
-        <p className="scroll-fade-up stagger-1 font-sans font-normal text-navy/70 text-base md:text-[18px] lg:text-[20px] leading-[1.6] tracking-[-0.011em] text-center max-w-[600px] mx-auto mb-14 lg:mb-20">
+        <p className="scroll-fade-up stagger-1 font-sans font-normal text-navy/70 text-base md:text-[18px] lg:text-[20px] leading-[1.6] tracking-[-0.011em] text-center max-w-[600px] mx-auto mb-10 lg:mb-20">
           The crew that makes every event feel like the best night out. Good drinks, great energy, and a whole lot of heart.
         </p>
 
-        {/* Featured row: Jaymi center, flanked by two */}
-        <div className="scroll-fade-up stagger-2 grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-7 items-end mb-5 lg:mb-7">
-          <div className="md:mt-12">
-            <TeamMemberCard
-              name="Nohea M."
-              role="Marketing Maven"
-              imageSrc="/images/meettheteam/Group 55.png"
-              imageWidth={586}
-              imageHeight={520}
-            />
-          </div>
-          <div>
+        {/* Mobile: Single cohesive 2-col grid (Law of Proximity — team is one group) */}
+        <div className="scroll-fade-up stagger-2 md:hidden">
+          {/* Lead member full-width (Von Restorff — owner stands out) */}
+          <div className="max-w-[75%] mx-auto mb-6">
             <TeamMemberCard
               name="Jaymi M."
               role="Owner & Head Bartender"
@@ -431,7 +425,15 @@ function MeetTheTeamSection() {
               imageHeight={411}
             />
           </div>
-          <div className="md:mt-12">
+          {/* Rest of team in consistent 2-col grid */}
+          <div className="grid grid-cols-2 gap-4">
+            <TeamMemberCard
+              name="Nohea M."
+              role="Marketing Maven"
+              imageSrc="/images/meettheteam/Group 55.png"
+              imageWidth={586}
+              imageHeight={520}
+            />
             <TeamMemberCard
               name="Alexis R."
               role="Quiet Capital King"
@@ -439,25 +441,70 @@ function MeetTheTeamSection() {
               imageWidth={564}
               imageHeight={435}
             />
+            <TeamMemberCard
+              name="Rhodie R."
+              role="Expert Mocktail Taster"
+              imageSrc="/images/meettheteam/Group 52.png"
+              imageWidth={493}
+              imageHeight={442}
+            />
+            <TeamMemberCard
+              name="Jay M."
+              role={'Bar "Baddie Dad" Bartender'}
+              imageSrc="/images/meettheteam/Group 51.png"
+              imageWidth={740}
+              imageHeight={537}
+            />
           </div>
         </div>
 
-        {/* Bottom row: two remaining members */}
-        <div className="scroll-fade-up stagger-3 grid grid-cols-1 sm:grid-cols-[1fr_1.4fr] gap-5 lg:gap-7 max-w-[80%] mx-auto">
-          <TeamMemberCard
-            name="Rhodie R."
-            role="Expert Mocktail Taster"
-            imageSrc="/images/meettheteam/Group 52.png"
-            imageWidth={493}
-            imageHeight={442}
-          />
-          <TeamMemberCard
-            name="Jay M."
-            role={'Bar "Baddie Dad" Bartender'}
-            imageSrc="/images/meettheteam/Group 51.png"
-            imageWidth={740}
-            imageHeight={537}
-          />
+        {/* Desktop: Original staggered layout */}
+        <div className="hidden md:block">
+          <div className="scroll-fade-up stagger-2 grid grid-cols-3 gap-5 lg:gap-7 items-end mb-5 lg:mb-7">
+            <div className="mt-12">
+              <TeamMemberCard
+                name="Nohea M."
+                role="Marketing Maven"
+                imageSrc="/images/meettheteam/Group 55.png"
+                imageWidth={586}
+                imageHeight={520}
+              />
+            </div>
+            <div>
+              <TeamMemberCard
+                name="Jaymi M."
+                role="Owner & Head Bartender"
+                imageSrc="/images/meettheteam/Group 54.png"
+                imageWidth={525}
+                imageHeight={411}
+              />
+            </div>
+            <div className="mt-12">
+              <TeamMemberCard
+                name="Alexis R."
+                role="Quiet Capital King"
+                imageSrc="/images/meettheteam/Group 53.png"
+                imageWidth={564}
+                imageHeight={435}
+              />
+            </div>
+          </div>
+          <div className="scroll-fade-up stagger-3 grid grid-cols-[1fr_1.4fr] gap-5 lg:gap-7 max-w-[80%] mx-auto">
+            <TeamMemberCard
+              name="Rhodie R."
+              role="Expert Mocktail Taster"
+              imageSrc="/images/meettheteam/Group 52.png"
+              imageWidth={493}
+              imageHeight={442}
+            />
+            <TeamMemberCard
+              name="Jay M."
+              role={'Bar "Baddie Dad" Bartender'}
+              imageSrc="/images/meettheteam/Group 51.png"
+              imageWidth={740}
+              imageHeight={537}
+            />
+          </div>
         </div>
       </div>
 
@@ -478,7 +525,7 @@ function GallerySection() {
   ];
 
   return (
-    <section className="relative w-full bg-navy py-12 lg:py-16 overflow-hidden">
+    <section className="relative w-full bg-navy py-10 lg:py-16 overflow-hidden">
       {/* Subtle background texture */}
       <div className="absolute inset-0">
         <Image
@@ -491,17 +538,17 @@ function GallerySection() {
 
       <div className="relative z-10 max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12">
         {/* Heading */}
-        <div className="scroll-fade-up text-center mb-8 lg:mb-10">
+        <div className="scroll-fade-up text-center mb-6 lg:mb-10">
           <span className="font-sans font-semibold text-orange text-sm md:text-base tracking-[0.15em] uppercase block mb-2">
             Moments We&apos;ve Made
           </span>
-          <h2 className="font-serif text-white text-4xl md:text-5xl lg:text-[64px] leading-[1] tracking-tight">
+          <h2 className="font-serif text-white text-3xl md:text-5xl lg:text-[64px] leading-[1] tracking-tight">
             The Gallery
           </h2>
         </div>
 
         {/* Bento grid */}
-        <div className="scroll-fade-up stagger-2 grid grid-cols-2 md:grid-cols-4 auto-rows-[140px] sm:auto-rows-[170px] md:auto-rows-[200px] lg:auto-rows-[220px] gap-2 md:gap-3">
+        <div className="scroll-fade-up stagger-2 grid grid-cols-2 md:grid-cols-4 auto-rows-[150px] sm:auto-rows-[170px] md:auto-rows-[200px] lg:auto-rows-[220px] gap-2 md:gap-3">
           {photos.map((photo, i) => (
             <div
               key={i}
