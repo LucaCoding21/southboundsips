@@ -4,51 +4,42 @@ import Image from "next/image";
 import React, { useEffect, useState, useRef, useLayoutEffect } from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import ScrollAnimations from "./components/ScrollAnimations";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
 function HeroSection() {
-  const bgRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
   const textTopRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLDivElement>(null);
   const photoRef = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      // Background parallax
-      gsap.to(bgRef.current, {
-        yPercent: 30,
-        ease: "none",
-        scrollTrigger: {
-          trigger: bgRef.current,
-          start: "top top",
-          end: "bottom top",
-          scrub: true,
-        },
-      });
+      // Hero is sticky, so element-position-based triggers don't work.
+      // Use scroll-position-based triggers to drive parallax over the first viewport of scrolling.
+      const end = () => window.innerHeight;
 
-      // "Meet Jaymi" text — faster parallax
+      // "Meet Jaymi" text parallax - moves fastest
       gsap.to(textTopRef.current, {
-        y: 200,
+        y: 140,
         ease: "none",
         scrollTrigger: {
-          trigger: textTopRef.current,
-          start: "top 20%",
-          end: "bottom top",
+          start: 0,
+          end,
           scrub: true,
         },
       });
 
-      // "Southbound" title — medium parallax
+      // "Southbound" title parallax
       gsap.to(titleRef.current, {
         y: 140,
         ease: "none",
         scrollTrigger: {
-          trigger: titleRef.current,
-          start: "top 20%",
-          end: "bottom top",
+          start: 0,
+          end,
           scrub: true,
         },
       });
@@ -58,21 +49,20 @@ function HeroSection() {
         y: 70,
         ease: "none",
         scrollTrigger: {
-          trigger: photoRef.current,
-          start: "top 30%",
-          end: "bottom top",
+          start: 0,
+          end,
           scrub: true,
         },
       });
-    });
+    }, sectionRef);
 
     return () => ctx.revert();
   }, []);
 
   return (
-    <section className="sticky top-0 w-full overflow-hidden z-0">
+    <section ref={sectionRef} className="sticky top-0 w-full h-screen overflow-hidden z-0">
       {/* Background layer with parallax */}
-      <div ref={bgRef} className="absolute inset-0 will-change-transform">
+      <div className="absolute inset-0">
         <Image
           src="/images/texture-bg-1a3da5.png"
           alt=""
@@ -248,14 +238,14 @@ function BehindTheBarSection() {
             {/* Center content */}
             <div className="flex flex-col items-center gap-2 md:gap-4">
               <p className="font-sans font-semibold text-orange text-lg md:text-[20px] lg:text-[22px] leading-[1.5] tracking-[0.01em]">
-                Your Event&apos;s Favourite Bartender
+                Your Event&apos;s Favorite Bartender
               </p>
               <p className="font-sans font-normal text-navy text-base md:text-[18px] lg:text-[22px] leading-[1.6] tracking-[-0.011em] text-center">
                 As the new owner of South Bound Sips, Jaymi brings her love for great drinks and even better company to every event. Whether it's a wedding, corporate event, or backyard celebration, she's here to make your event unforgettable, one cocktail at a time.
               </p>
               <a
                 href="#book"
-                className="mt-4 font-sans font-medium text-orange text-[20px] leading-[1.5] tracking-[-0.011em] capitalize border-2 border-orange rounded-full px-10 py-3 hover:bg-orange hover:text-white transition-colors"
+                className="mt-4 font-sans font-medium text-orange text-[20px] leading-[1.5] tracking-[-0.011em] capitalize border-2 border-orange rounded-full px-10 py-3 hover:bg-orange hover:text-white transition-all hover:shadow-lg hover:-translate-y-0.5"
               >
                 Reserve Your Spot
               </a>
@@ -263,7 +253,7 @@ function BehindTheBarSection() {
           </div>
         </div>
 
-        {/* Images that pop in from sides */}
+        {/* Images that pop in from sides - desktop */}
         {images.map((img, i) => (
           <div
             key={i}
@@ -300,14 +290,14 @@ function BehindTheBarSection() {
           {/* Center content */}
           <div className="flex flex-col items-center gap-2 md:gap-4">
             <p className="font-sans font-semibold text-orange text-lg md:text-[20px] lg:text-[22px] leading-[1.5] tracking-[0.01em]">
-              Your Event&apos;s Favourite Bartender
+              Your Event&apos;s Favorite Bartender
             </p>
             <p className="font-sans font-normal text-navy text-base md:text-[18px] lg:text-[22px] leading-[1.6] tracking-[-0.011em] text-center">
               As the new owner of South Bound Sips, Jaymi brings her love for great drinks and even better company to every event. Whether it's a wedding, corporate event, or backyard celebration, she's here to make your event unforgettable, one cocktail at a time.
             </p>
             <a
               href="#book"
-              className="mt-2 md:mt-4 font-sans font-medium text-orange text-base md:text-[20px] leading-[1.5] tracking-[-0.011em] capitalize border-2 border-orange rounded-full px-8 md:px-10 py-2.5 md:py-3 hover:bg-orange hover:text-white transition-colors"
+              className="mt-2 md:mt-4 font-sans font-medium text-orange text-base md:text-[20px] leading-[1.5] tracking-[-0.011em] capitalize border-2 border-orange rounded-full px-8 md:px-10 py-2.5 md:py-3 hover:bg-orange hover:text-white transition-all hover:shadow-lg hover:-translate-y-0.5"
             >
               Reserve Your Spot
             </a>
@@ -402,7 +392,7 @@ function MobileBarSection() {
         <div ref={imageRef} className="relative min-h-[400px] md:min-h-0 mb-8 md:mb-12">
           <Image
             src="/images/mobile-bar-2d1ce6.png"
-            alt="The Mobile Bar"
+            alt="Maybee - The Mobile Bar"
             fill
             className="object-cover"
           />
@@ -421,17 +411,21 @@ function MobileBarSection() {
           </div>
 
           <h3 ref={subtitleRef} className="font-sans font-semibold text-orange text-lg md:text-[20px] lg:text-[22px] leading-[1.5] tracking-[0.01em] capitalize mt-3 md:mt-4">
-            Bringing the experience to you
+            Meet &lsquo;Maybee&rsquo;
           </h3>
 
           <p ref={paragraphRef} className="font-sans font-normal text-navy text-base md:text-[18px] lg:text-[22px] leading-[1.6] tracking-[-0.011em] mt-4 md:mt-6">
-            Our fully equipped mobile bar comes directly to your venue, bringing everything needed to serve up craft cocktails, beer, wine, and more. From intimate gatherings to large celebrations, we set up, serve, and clean up so you can focus on enjoying your event.
+            Born from a labor of love, thanks to the visionary Katie. She breathed life into this beauty, dubbing her &lsquo;Maybee&rsquo; with a hint of uncertainty and a whole lot of faith. &ldquo;Maybe this will soar, maybe it won&apos;t,&rdquo; she mused.
+          </p>
+
+          <p className="font-sans font-normal text-navy text-base md:text-[18px] lg:text-[22px] leading-[1.6] tracking-[-0.011em] mt-4">
+            Fast forward a few years later, and here we are, bustling with bookings and making dreams a reality. The journey&apos;s been wild, and I&apos;m beyond excited to see where the next four years will take us. Here&apos;s to &lsquo;Maybee&rsquo; and the incredible adventure she&apos;s leading us on!
           </p>
 
           <div ref={buttonRef} className="mt-8 md:mt-10">
             <a
-              href="#services"
-              className="inline-block font-sans font-medium text-white bg-orange text-base md:text-[20px] leading-[1.5] tracking-[-0.011em] capitalize rounded-full px-8 md:px-10 py-2.5 md:py-3 hover:bg-orange/90 transition-colors"
+              href="/services#packages"
+              className="inline-block font-sans font-medium text-white bg-orange text-base md:text-[20px] leading-[1.5] tracking-[-0.011em] capitalize rounded-full px-8 md:px-10 py-2.5 md:py-3 hover:bg-orange/90 transition-all hover:shadow-lg hover:-translate-y-0.5"
             >
               Explore Packages
             </a>
@@ -480,12 +474,12 @@ function MarqueeGroup() {
 
 function ChooseExperienceStrip() {
   return (
-    <div className="w-full bg-navy py-4 md:py-6 overflow-hidden">
+    <a href="/services#packages" className="block w-full bg-navy py-4 md:py-6 overflow-hidden hover:bg-navy/90 transition-colors">
       <div className="flex animate-scroll-left whitespace-nowrap">
         <MarqueeGroup />
         <MarqueeGroup />
       </div>
-    </div>
+    </a>
   );
 }
 
@@ -758,31 +752,19 @@ function WhatIOffer() {
         </div>
 
         {/* Buttons */}
-        <div ref={buttonsRef} className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-10 mb-10 md:mb-16">
-          <div className="flex justify-center">
-            <a
-              href="#"
-              className="font-sans font-medium text-orange text-base md:text-[18px] lg:text-[20px] leading-[1.5] tracking-[-0.011em] capitalize border-2 border-orange rounded-full px-8 md:px-10 py-2.5 md:py-3 hover:bg-orange hover:text-white transition-colors"
-            >
-              View Packages
-            </a>
-          </div>
-          <div className="flex justify-center">
-            <a
-              href="#"
-              className="font-sans font-medium text-orange text-base md:text-[18px] lg:text-[20px] leading-[1.5] tracking-[-0.011em] capitalize border-2 border-orange rounded-full px-8 md:px-10 py-2.5 md:py-3 hover:bg-orange hover:text-white transition-colors"
-            >
-              See Services
-            </a>
-          </div>
-          <div className="flex justify-center">
-            <a
-              href="#"
-              className="font-sans font-medium text-orange text-base md:text-[18px] lg:text-[20px] leading-[1.5] tracking-[-0.011em] capitalize border-2 border-orange rounded-full px-8 md:px-10 py-2.5 md:py-3 hover:bg-orange hover:text-white transition-colors"
-            >
-              Explore Services
-            </a>
-          </div>
+        <div ref={buttonsRef} className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10 md:mb-16">
+          <a
+            href="#book"
+            className="font-sans font-medium text-white bg-orange text-base md:text-[18px] lg:text-[20px] leading-[1.5] tracking-[-0.011em] capitalize rounded-full px-8 md:px-10 py-2.5 md:py-3 hover:bg-navy transition-all hover:shadow-lg hover:-translate-y-0.5"
+          >
+            Book Your Event
+          </a>
+          <a
+            href="/services"
+            className="font-sans font-medium text-orange text-base md:text-[18px] lg:text-[20px] leading-[1.5] tracking-[-0.011em] capitalize border-2 border-orange rounded-full px-8 md:px-10 py-2.5 md:py-3 hover:bg-orange hover:text-white transition-all hover:shadow-lg hover:-translate-y-0.5"
+          >
+            View All Services
+          </a>
         </div>
       </div>
     </section>
@@ -854,11 +836,11 @@ function KindWordsSection() {
           alt="Kind Words"
           width={230}
           height={47}
-          className="mb-3 md:mb-4 w-[170px] md:w-[200px] lg:w-[230px] h-auto"
+          className="scroll-fade-up mb-3 md:mb-4 w-[170px] md:w-[200px] lg:w-[230px] h-auto"
         />
 
         {/* Subtitle */}
-        <p className="font-sans font-semibold text-orange text-lg md:text-[20px] lg:text-[22px] leading-[1.5] tracking-[0.01em] capitalize mb-8 md:mb-10">
+        <p className="scroll-fade-up stagger-1 font-sans font-semibold text-orange text-lg md:text-[20px] lg:text-[22px] leading-[1.5] tracking-[0.01em] capitalize mb-8 md:mb-10">
           Straight From The Sippers
         </p>
 
@@ -985,13 +967,13 @@ function BookingBanner() {
       <div className="absolute inset-0 bg-[rgba(49,78,121,0.6)]" />
 
       <div className="relative z-10 max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12 py-6 md:py-10 flex flex-col items-center text-center">
-        <h2 className="font-sans font-medium text-white text-4xl md:text-5xl lg:text-[48px] leading-[1.1] tracking-[-0.011em] max-w-[800px]">
-          Now booking February & March with limited dates available
+        <h2 className="scroll-fade-up font-sans font-medium text-white text-4xl md:text-5xl lg:text-[48px] leading-[1.1] tracking-[-0.011em] max-w-[800px]">
+          Now booking for upcoming dates, limited availability
         </h2>
 
         <a
           href="#book"
-          className="mt-4 md:mt-5 font-sans font-medium text-navy bg-white text-base md:text-lg leading-[1.5] tracking-[-0.011em] capitalize rounded-full px-8 md:px-10 py-2 md:py-2.5 hover:bg-white/90 transition-colors"
+          className="scroll-fade-up stagger-2 mt-4 md:mt-5 font-sans font-medium text-navy bg-white text-base md:text-lg leading-[1.5] tracking-[-0.011em] capitalize rounded-full px-8 md:px-10 py-2 md:py-2.5 hover:bg-white/90 transition-all hover:shadow-lg hover:-translate-y-0.5"
         >
           Secure Your Date Now
         </a>
@@ -1017,7 +999,7 @@ function BookingForm() {
       <div className="relative z-10 max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
           {/* Left side - Info */}
-          <div className="flex flex-col justify-center">
+          <div className="scroll-fade-up flex flex-col justify-center">
             <Image
               src="/images/lets-chat-heading.svg"
               alt="Let's Chat"
@@ -1056,7 +1038,7 @@ function BookingForm() {
           </div>
 
           {/* Right side - Form */}
-          <div className="bg-sage rounded-3xl p-6 md:p-8 lg:p-10">
+          <div className="scroll-slide-right stagger-2 bg-sage rounded-3xl p-6 md:p-8 lg:p-10">
             <form className="space-y-5">
               <div className="grid md:grid-cols-2 gap-5">
                 <div>
@@ -1190,7 +1172,7 @@ function BookingForm() {
 
               <button
                 type="submit"
-                className="w-full font-sans font-medium text-white bg-orange text-base md:text-lg leading-[1.5] tracking-[-0.011em] capitalize rounded-full px-8 py-3 md:py-4 hover:bg-navy transition-colors"
+                className="w-full font-sans font-medium text-white bg-orange text-base md:text-lg leading-[1.5] tracking-[-0.011em] capitalize rounded-full px-8 py-3 md:py-4 hover:bg-navy transition-all hover:shadow-lg hover:-translate-y-0.5"
               >
                 Send Inquiry
               </button>
@@ -1205,10 +1187,11 @@ function BookingForm() {
 export default function Home() {
   return (
     <main className="min-h-screen">
+      <ScrollAnimations />
       <Navbar />
       <HeroSection />
       {/* Content that scrolls over the hero */}
-      <div className="relative z-10 bg-transparent">
+      <div className="relative z-10 bg-transparent -mt-[165px]">
         <ScallopTop />
         <BehindTheBarSection />
         <ScallopBottom />

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Afacad, Instrument_Serif } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
+import LoadingScreen from "./components/LoadingScreen";
 
 const afacad = Afacad({
   variable: "--font-afacad",
@@ -38,6 +39,7 @@ export default function RootLayout({
       <body
         className={`${afacad.variable} ${instrumentSerif.variable} ${badhorse.variable} antialiased`}
       >
+        <LoadingScreen />
         {children}
       </body>
     </html>

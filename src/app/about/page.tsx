@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import ScrollAnimations from "../components/ScrollAnimations";
 
 /* ───────────────────────── Team Member Card ──────────────────────────── */
 function TeamMemberCard({
@@ -46,7 +47,7 @@ function HeroSection() {
       <div className="relative z-10">
         <div className="flex flex-col lg:flex-row lg:items-stretch lg:min-h-[90vh]">
           {/* Left: text content */}
-          <div className="w-full lg:w-[42%] flex flex-col justify-center px-4 md:px-8 lg:px-12 xl:pl-[calc((100vw-1440px)/2+48px)] pt-32 pb-12 lg:py-0">
+          <div className="animate-enter-up w-full lg:w-[42%] flex flex-col justify-center px-4 md:px-8 lg:px-12 xl:pl-[calc((100vw-1440px)/2+48px)] pt-32 pb-12 lg:py-0">
             <span className="font-sans font-semibold text-orange text-sm md:text-base tracking-[0.15em] uppercase block">
               About Us
             </span>
@@ -57,20 +58,20 @@ function HeroSection() {
               SouthBound sips
             </h1>
             <p className="font-sans font-normal text-navy/80 text-base md:text-[18px] lg:text-[20px] leading-[1.7] tracking-[-0.011em] mt-6 lg:mt-8 max-w-[480px]">
-              We bring the bar to you — crafting unforgettable mobile cocktail
+              We bring the bar to you, crafting unforgettable mobile cocktail
               experiences for weddings, parties, and corporate events across the
               South.
             </p>
             <div className="flex flex-wrap gap-3 mt-8 lg:mt-10">
               <a
                 href="/#book"
-                className="inline-flex items-center justify-center font-sans font-medium text-white bg-orange text-base lg:text-lg rounded-full px-7 py-2.5 hover:bg-orange/90 transition-colors"
+                className="inline-flex items-center justify-center font-sans font-medium text-white bg-orange text-base lg:text-lg rounded-full px-7 py-2.5 hover:bg-orange/90 transition-all hover:shadow-lg hover:-translate-y-0.5"
               >
-                Get a Free Quote
+                Book Your Event
               </a>
               <a
                 href="#team"
-                className="inline-flex items-center justify-center font-sans font-medium text-navy border-2 border-navy/20 text-base lg:text-lg rounded-full px-7 py-2.5 hover:border-navy/40 transition-colors"
+                className="inline-flex items-center justify-center font-sans font-medium text-navy border-2 border-navy/20 text-base lg:text-lg rounded-full px-7 py-2.5 hover:border-navy/40 transition-all hover:shadow-lg hover:-translate-y-0.5"
               >
                 Meet the Team
               </a>
@@ -78,7 +79,7 @@ function HeroSection() {
           </div>
 
           {/* Right: hero image — bleeds to viewport edge */}
-          <div className="w-full lg:w-[58%] relative">
+          <div className="animate-enter-right w-full lg:w-[58%] relative">
             <div className="relative w-full aspect-[4/3] lg:aspect-auto lg:min-h-[90vh]">
               <Image
                 src="/images/about-hero.png"
@@ -113,7 +114,7 @@ function HiImJaymiSection() {
       <div className="relative z-10 max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12 py-20 lg:py-28">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
           {/* Left: Jaymi photo with arch shape */}
-          <div className="w-full lg:w-[42%] flex justify-center">
+          <div className="scroll-slide-left w-full lg:w-[42%] flex justify-center">
             <div className="relative w-full max-w-[420px]">
               <div className="overflow-hidden rounded-t-[200px] rounded-b-[20px]">
                 <Image
@@ -130,10 +131,10 @@ function HiImJaymiSection() {
           </div>
 
           {/* Right: text content */}
-          <div className="w-full lg:w-[53%]">
+          <div className="scroll-fade-up stagger-2 w-full lg:w-[53%]">
             {/* Small label */}
             <span className="font-sans font-medium text-orange text-lg md:text-[20px] lg:text-[22px] leading-[1.5] tracking-[0.05em] uppercase">
-              The Woman Behind The Bar
+              Your Event&apos;s Best Friend
             </span>
 
             {/* Name in script font */}
@@ -144,11 +145,25 @@ function HiImJaymiSection() {
             </h2>
 
             <p className="font-sans font-normal text-white/90 mt-6 lg:mt-8 text-base md:text-[18px] lg:text-[20px] leading-[1.7] tracking-[-0.011em] max-w-[600px]">
-              As the proud owner of South Bound Sips, I pour my heart into every event. What started as a passion for mixology and bringing people together has grown into something truly special — a mobile bar experience built on warmth, creativity, and southern hospitality.
+              Island roots, cowboy boots. That&apos;s my vibe! From Hawaii to
+              the heart of Texas, this mama traded leis for lassos and embraced
+              the wild world of entrepreneurship. Catch me with a whiskey in
+              hand, swapping lilikoi for sweet tea and toasting to this
+              thrilling rodeo called life!
             </p>
 
             <p className="font-sans font-normal text-white/75 text-base md:text-[18px] lg:text-[20px] leading-[1.7] tracking-[-0.011em] max-w-[600px] mt-4 lg:mt-5">
-              Whether it&apos;s your wedding day, a milestone birthday, or a corporate celebration, I&apos;m here to make sure the drinks are flowing and the vibes are unforgettable.
+              Life is wild and I&apos;m keeping my thoughts positive, my tribe
+              tight, and my adventures out of the box. I&apos;m a single mom
+              hustling through the same things every other millennial is
+              navigating, but I see wonderful things ahead for me, my family,
+              and this business venture.
+            </p>
+
+            <p className="font-sans font-normal text-white/75 text-base md:text-[18px] lg:text-[20px] leading-[1.7] tracking-[-0.011em] max-w-[600px] mt-4 lg:mt-5">
+              Whether it&apos;s shaking up cocktails at your next event or
+              just being a safe space to unwind, I&apos;ve got your back.
+              Let&apos;s sip, chat, and unravel this wild journey together!
             </p>
 
             {/* What you get */}
@@ -175,7 +190,7 @@ function HiImJaymiSection() {
 
             <a
               href="/#book"
-              className="inline-flex items-center justify-center font-sans font-medium text-navy bg-white text-base md:text-lg lg:text-[20px] leading-[1.5] tracking-[-0.011em] capitalize rounded-full px-8 lg:px-10 py-2.5 lg:py-3 mt-10 lg:mt-12 hover:bg-orange hover:text-white transition-colors"
+              className="inline-flex items-center justify-center font-sans font-medium text-navy bg-white text-base md:text-lg lg:text-[20px] leading-[1.5] tracking-[-0.011em] capitalize rounded-full px-8 lg:px-10 py-2.5 lg:py-3 mt-10 lg:mt-12 hover:bg-orange hover:text-white transition-all hover:shadow-lg hover:-translate-y-0.5"
             >
               Let&apos;s Plan Your Event
             </a>
@@ -189,11 +204,11 @@ function HiImJaymiSection() {
 /* ═══════════════════════ OUR MISSION SECTION ═════════════════════════ */
 function OurMissionSection() {
   return (
-    <section id="mission" className="relative w-full py-20 lg:py-32 bg-white overflow-hidden">
+    <section id="mission" className="relative w-full pt-20 lg:pt-32 pb-32 lg:pb-48 bg-white overflow-hidden">
 
       <div className="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12">
         {/* Centered heading block */}
-        <div className="text-center mb-12 lg:mb-20">
+        <div className="scroll-fade-up text-center mb-12 lg:mb-20">
           <span className="font-sans font-semibold text-orange text-sm md:text-base tracking-[0.15em] uppercase block mb-3">
             Why We Do It
           </span>
@@ -207,7 +222,7 @@ function OurMissionSection() {
         {/* Content in a two-column layout */}
         <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
           {/* Left: large quote-style mission statement */}
-          <div className="w-full lg:w-[48%]">
+          <div className="scroll-fade-up w-full lg:w-[48%]">
             <div className="relative">
               {/* Large decorative quote mark */}
               <span
@@ -231,7 +246,7 @@ function OurMissionSection() {
             <div className="pl-4 lg:pl-6 mt-8 lg:mt-10">
               <a
                 href="/#book"
-                className="inline-flex items-center justify-center font-sans font-medium text-white bg-navy text-base lg:text-lg rounded-full px-8 py-2.5 hover:bg-orange transition-colors"
+                className="inline-flex items-center justify-center font-sans font-medium text-white bg-navy text-base lg:text-lg rounded-full px-8 py-2.5 hover:bg-orange transition-all hover:shadow-lg hover:-translate-y-0.5"
               >
                 Start Planning
               </a>
@@ -239,7 +254,7 @@ function OurMissionSection() {
           </div>
 
           {/* Right: image grid collage */}
-          <div className="w-full lg:w-[48%]">
+          <div className="scroll-slide-right stagger-2 w-full lg:w-[48%]">
             <div className="grid grid-cols-2 gap-4 md:gap-5">
               <div className="relative aspect-[2/3] rounded-t-[100px] rounded-b-[20px] overflow-hidden">
                 <Image
@@ -327,7 +342,7 @@ function OurValuesSection() {
     <section className="relative w-full overflow-hidden bg-sage">
       <div className="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12 py-20 lg:py-32">
         {/* Header */}
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16 lg:mb-20">
+        <div className="scroll-fade-up flex flex-col gap-6 mb-16 lg:mb-20">
           <div>
             <span className="font-sans font-semibold text-orange text-sm md:text-base tracking-[0.15em] uppercase block mb-3">
               What We Stand For
@@ -337,23 +352,18 @@ function OurValuesSection() {
             </h2>
           </div>
           <p className="font-sans font-normal text-navy/80 text-base md:text-[18px] lg:text-[20px] leading-[1.7] tracking-[-0.011em] max-w-[420px]">
-            Four principles that spell out who we are — in every sip we serve.
+            Four principles that spell out who we are, in every sip we serve.
           </p>
         </div>
 
         {/* Values rows */}
         <div className="flex flex-col">
           {values.map((value, i) => (
-            <div key={i}>
+            <div key={i} className="scroll-fade-up" style={{ transitionDelay: `${(i + 1) * 100}ms` }}>
               {/* Divider line */}
               <div className="h-px bg-navy/10" />
 
               <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-0 py-8 lg:py-10">
-                {/* Number */}
-                <span className="font-sans font-medium text-navy/20 text-sm md:text-base tracking-[0.1em] md:w-[60px] lg:w-[80px] shrink-0">
-                  0{i + 1}
-                </span>
-
                 {/* Large letter */}
                 <span className="font-serif text-orange text-[64px] md:text-[80px] lg:text-[100px] leading-[0.8] md:w-[100px] lg:w-[130px] shrink-0">
                   {value.initial}
@@ -365,7 +375,7 @@ function OurValuesSection() {
                 </h3>
 
                 {/* Body */}
-                <p className="font-sans font-normal text-navy/80 text-base md:text-[18px] lg:text-[20px] leading-[1.7] tracking-[-0.011em] md:w-[320px] lg:w-[380px] shrink-0">
+                <p className="font-sans font-normal text-navy/80 text-base md:text-[18px] lg:text-[20px] leading-[1.7] tracking-[-0.011em] md:w-[420px] lg:w-[500px] shrink-0">
                   {value.body}
                 </p>
               </div>
@@ -382,13 +392,13 @@ function OurValuesSection() {
 /* ═══════════════════════ MEET THE TEAM SECTION ══════════════════════ */
 function MeetTheTeamSection() {
   return (
-    <section id="team" className="relative w-full py-28 lg:py-44 overflow-hidden">
+    <section id="team" className="relative w-full pt-28 lg:pt-44 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-white" />
 
       <div className="relative z-10 max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12">
         {/* Heading block */}
-        <div className="text-center mb-6 lg:mb-8">
+        <div className="scroll-fade-up text-center mb-6 lg:mb-8">
           <span className="font-sans font-semibold text-orange text-sm md:text-base tracking-[0.15em] uppercase block mb-3">
             The People Behind The Pour
           </span>
@@ -397,12 +407,12 @@ function MeetTheTeamSection() {
           </h2>
         </div>
 
-        <p className="font-sans font-normal text-navy/70 text-base md:text-[18px] lg:text-[20px] leading-[1.6] tracking-[-0.011em] text-center max-w-[600px] mx-auto mb-14 lg:mb-20">
+        <p className="scroll-fade-up stagger-1 font-sans font-normal text-navy/70 text-base md:text-[18px] lg:text-[20px] leading-[1.6] tracking-[-0.011em] text-center max-w-[600px] mx-auto mb-14 lg:mb-20">
           The crew that makes every event feel like the best night out. Good drinks, great energy, and a whole lot of heart.
         </p>
 
         {/* Featured row: Jaymi center, flanked by two */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-7 items-end mb-5 lg:mb-7">
+        <div className="scroll-fade-up stagger-2 grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-7 items-end mb-5 lg:mb-7">
           <div className="md:mt-12">
             <TeamMemberCard
               name="Nohea M."
@@ -433,7 +443,7 @@ function MeetTheTeamSection() {
         </div>
 
         {/* Bottom row: two remaining members */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 lg:gap-7 max-w-[58%] mx-auto">
+        <div className="scroll-fade-up stagger-3 grid grid-cols-1 sm:grid-cols-[1fr_1.4fr] gap-5 lg:gap-7 max-w-[80%] mx-auto">
           <TeamMemberCard
             name="Rhodie R."
             role="Expert Mocktail Taster"
@@ -445,22 +455,92 @@ function MeetTheTeamSection() {
             name="Jay M."
             role={'Bar "Baddie Dad" Bartender'}
             imageSrc="/images/meettheteam/Group 51.png"
-            imageWidth={617}
-            imageHeight={448}
+            imageWidth={740}
+            imageHeight={537}
           />
         </div>
       </div>
 
-      {/* Bottom decorative strip */}
-      <div className="relative z-10 mt-20 lg:mt-32 w-full h-[60px] lg:h-[109px] overflow-hidden">
+    </section>
+  );
+}
+
+/* ═══════════════════════════ GALLERY SECTION ═════════════════════════ */
+function GallerySection() {
+  const photos = [
+    { src: "/images/mobile-bar-2d1ce6.png", alt: "The mobile bar", label: "The Bar", span: "col-span-2 row-span-2" },
+    { src: "/images/cocktail1.png", alt: "Craft cocktail", label: "Craft Cocktails", span: "" },
+    { src: "/images/image-26.png", alt: "Event setup", label: "Event Setup", span: "md:row-span-2" },
+    { src: "/images/champagne-glasses.png", alt: "Champagne toast", label: "Celebrations", span: "" },
+    { src: "/images/pitcher.png", alt: "Pitcher service", label: "Pitcher Service", span: "" },
+    { src: "/images/jaymi-team.png", alt: "Jaymi and the team", label: "The Team", span: "col-span-2" },
+    { src: "/images/image-27.png", alt: "South Bound Sips event", label: "Good Times", span: "" },
+  ];
+
+  return (
+    <section className="relative w-full bg-navy py-12 lg:py-16 overflow-hidden">
+      {/* Subtle background texture */}
+      <div className="absolute inset-0">
         <Image
-          src="/images/texture-bg-1a3da5.png"
+          src="/images/backgroundfiller.png"
           alt=""
           fill
-          className="object-cover"
+          className="object-cover opacity-10"
         />
       </div>
+
+      <div className="relative z-10 max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12">
+        {/* Heading */}
+        <div className="scroll-fade-up text-center mb-8 lg:mb-10">
+          <span className="font-sans font-semibold text-orange text-sm md:text-base tracking-[0.15em] uppercase block mb-2">
+            Moments We&apos;ve Made
+          </span>
+          <h2 className="font-serif text-white text-4xl md:text-5xl lg:text-[64px] leading-[1] tracking-tight">
+            The Gallery
+          </h2>
+        </div>
+
+        {/* Bento grid */}
+        <div className="scroll-fade-up stagger-2 grid grid-cols-2 md:grid-cols-4 auto-rows-[140px] sm:auto-rows-[170px] md:auto-rows-[200px] lg:auto-rows-[220px] gap-2 md:gap-3">
+          {photos.map((photo, i) => (
+            <div
+              key={i}
+              className={`${photo.span} relative rounded-xl md:rounded-2xl overflow-hidden group cursor-pointer ring-1 ring-white/10 hover:ring-orange/40 transition-all duration-500 hover:shadow-[0_8px_40px_rgba(0,0,0,0.4)]`}
+            >
+              <Image
+                src={photo.src}
+                alt={photo.alt}
+                fill
+                className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                sizes="(max-width: 768px) 50vw, 25vw"
+              />
+              {/* Gradient overlay on hover */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              {/* Label on hover */}
+              <div className="absolute bottom-0 left-0 right-0 p-3 md:p-4 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-out">
+                <span className="font-sans font-semibold text-white text-sm md:text-base tracking-wide drop-shadow-lg">
+                  {photo.label}
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </section>
+  );
+}
+
+/* ═════════════════════ DECORATIVE FLOWER STRIP ══════════════════════ */
+function FlowerStrip() {
+  return (
+    <div className="relative w-full h-[109px] overflow-hidden">
+      <Image
+        src="/images/backgroundfiller.png"
+        alt=""
+        fill
+        className="object-cover"
+      />
+    </div>
   );
 }
 
@@ -468,6 +548,7 @@ function MeetTheTeamSection() {
 export default function AboutPage() {
   return (
     <main className="min-h-screen bg-white">
+      <ScrollAnimations />
       <Navbar activePage="about" />
       <HeroSection />
       <HiImJaymiSection />
@@ -476,6 +557,8 @@ export default function AboutPage() {
       <OurValuesSection />
       <ScallopBottom />
       <MeetTheTeamSection />
+      <GallerySection />
+      <FlowerStrip />
       <Footer />
     </main>
   );

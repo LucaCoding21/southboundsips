@@ -190,7 +190,7 @@ export default function CountdownPage() {
           <div className="sbs-s1 mb-3">
             <Image
               src="/southboundsips/logo.png"
-              alt="South Bound Sips — Artisan Sodas & Traveling Bar"
+              alt="South Bound Sips, Artisan Sodas & Traveling Bar"
               width={200}
               height={200}
               className="w-[150px] sm:w-[180px] h-auto"
@@ -403,7 +403,7 @@ export default function CountdownPage() {
             textTransform: "uppercase",
           }}
         >
-          South Bound Sips &mdash; Artisan Sodas &amp; Traveling Bar
+          South Bound Sips | Artisan Sodas &amp; Traveling Bar
         </p>
       </div>
     </>

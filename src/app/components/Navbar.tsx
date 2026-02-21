@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 export default function Navbar({
   activePage = "home",
@@ -11,19 +11,47 @@ export default function Navbar({
 }) {
   const isHome = activePage === "home";
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const [visible, setVisible] = useState(true);
+  const lastScrollY = useRef(0);
 
-  const closeMenu = () => setMobileMenuOpen(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentY = window.scrollY;
+      if (currentY < 80) {
+        setVisible(true);
+      } else if (currentY < lastScrollY.current) {
+        setVisible(true);
+      } else {
+        setVisible(false);
+      }
+      lastScrollY.current = currentY;
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const closeMenu = () => {
+    setMobileMenuOpen(false);
+    setServicesOpen(false);
+  };
+
+  const serviceLinks = [
+    { label: "Packages", href: "/services#packages" },
+    { label: "Bartending", href: "/services#bartending" },
+    { label: "Rentals", href: "/services#rentals" },
+  ];
 
   return (
-    <header className="w-full bg-white z-50 relative">
+    <header className={`w-full bg-white z-50 sticky top-0 shadow-sm transition-transform duration-300 ${visible ? "translate-y-0" : "-translate-y-full"}`}>
       <nav className="flex items-center justify-between max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12 py-3 md:py-4">
         <Link href="/">
           <Image
             src="/images/logo.png"
             alt="South Bound Sips Logo"
-            width={50}
-            height={48}
-            className="object-contain w-10 h-10 md:w-[50px] md:h-[48px]"
+            width={70}
+            height={67}
+            className="object-contain w-14 h-14 md:w-[70px] md:h-[67px]"
           />
         </Link>
 
@@ -37,6 +65,33 @@ export default function Navbar({
           >
             Home
           </Link>
+          {/* Services Dropdown (Desktop) */}
+          <div className="relative group">
+            <Link
+              href="/services"
+              className={`font-sans font-medium text-base lg:text-lg leading-normal tracking-[-0.011em] transition-colors hover:text-orange flex items-center gap-1 ${
+                activePage === "services" ? "text-orange" : "text-navy"
+              }`}
+            >
+              Services
+              <svg className="w-3.5 h-3.5 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </Link>
+            <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+              <div className="bg-white rounded-xl shadow-lg border border-gray-100 py-2 min-w-[180px]">
+                {serviceLinks.map((item) => (
+                  <Link
+                    key={item.label}
+                    href={item.href}
+                    className="block px-5 py-2.5 font-sans font-medium text-sm text-navy hover:text-orange hover:bg-sage/20 transition-colors"
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
           <Link
             href="/about"
             className={`font-sans font-medium text-base lg:text-lg leading-normal tracking-[-0.011em] transition-colors hover:text-orange ${
@@ -46,15 +101,7 @@ export default function Navbar({
             About
           </Link>
           <Link
-            href={isHome ? "#services" : "/#services"}
-            className={`font-sans font-medium text-base lg:text-lg leading-normal tracking-[-0.011em] transition-colors hover:text-orange ${
-              activePage === "services" ? "text-orange" : "text-navy"
-            }`}
-          >
-            Services
-          </Link>
-          <Link
-            href={isHome ? "#faq" : "/#faq"}
+            href="/faq"
             className={`font-sans font-medium text-base lg:text-lg leading-normal tracking-[-0.011em] transition-colors hover:text-orange ${
               activePage === "faq" ? "text-orange" : "text-navy"
             }`}
@@ -62,7 +109,7 @@ export default function Navbar({
             FAQ
           </Link>
           <Link
-            href={isHome ? "#contact" : "/#contact"}
+            href="/contact"
             className={`font-sans font-medium text-base lg:text-lg leading-normal tracking-[-0.011em] transition-colors hover:text-orange ${
               activePage === "contact" ? "text-orange" : "text-navy"
             }`}
@@ -119,7 +166,7 @@ export default function Navbar({
       <div
         className={`md:hidden absolute top-full left-0 right-0 bg-white overflow-hidden transition-all duration-300 ease-out z-50 ${
           mobileMenuOpen
-            ? "max-h-[500px] opacity-100 shadow-xl border-t-2 border-orange"
+            ? "max-h-[600px] opacity-100 shadow-xl border-t-2 border-orange"
             : "max-h-0 opacity-0"
         }`}
       >
@@ -136,6 +183,32 @@ export default function Navbar({
               <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
             </svg>
           </Link>
+          {/* Services Dropdown (Mobile) */}
+          <div>
+            <button
+              onClick={() => setServicesOpen(!servicesOpen)}
+              className={`w-full group font-sans font-medium text-xl leading-normal tracking-[-0.011em] py-3 px-4 rounded-lg transition-all duration-200 hover:bg-sage/30 hover:pl-6 flex items-center justify-between ${
+                activePage === "services" ? "text-orange bg-sage/20" : "text-navy"
+              }`}
+            >
+              Services
+              <svg className={`w-5 h-5 opacity-40 group-hover:opacity-100 transition-all duration-200 ${servicesOpen ? "rotate-180 opacity-100" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div className={`overflow-hidden transition-all duration-300 ${servicesOpen ? "max-h-48 opacity-100" : "max-h-0 opacity-0"}`}>
+              {serviceLinks.map((item) => (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  onClick={closeMenu}
+                  className="block font-sans font-medium text-base text-navy/70 hover:text-orange py-2.5 pl-8 pr-4 rounded-lg transition-all duration-200 hover:bg-sage/20"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+          </div>
           <Link
             href="/about"
             onClick={closeMenu}
@@ -149,19 +222,7 @@ export default function Navbar({
             </svg>
           </Link>
           <Link
-            href={isHome ? "#services" : "/#services"}
-            onClick={closeMenu}
-            className={`group font-sans font-medium text-xl leading-normal tracking-[-0.011em] py-3 px-4 rounded-lg transition-all duration-200 hover:bg-sage/30 hover:pl-6 flex items-center justify-between ${
-              activePage === "services" ? "text-orange bg-sage/20" : "text-navy"
-            }`}
-          >
-            Services
-            <svg className="w-5 h-5 opacity-40 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-            </svg>
-          </Link>
-          <Link
-            href={isHome ? "#faq" : "/#faq"}
+            href="/faq"
             onClick={closeMenu}
             className={`group font-sans font-medium text-xl leading-normal tracking-[-0.011em] py-3 px-4 rounded-lg transition-all duration-200 hover:bg-sage/30 hover:pl-6 flex items-center justify-between ${
               activePage === "faq" ? "text-orange bg-sage/20" : "text-navy"
@@ -173,7 +234,7 @@ export default function Navbar({
             </svg>
           </Link>
           <Link
-            href={isHome ? "#contact" : "/#contact"}
+            href="/contact"
             onClick={closeMenu}
             className={`group font-sans font-medium text-xl leading-normal tracking-[-0.011em] py-3 px-4 rounded-lg transition-all duration-200 hover:bg-sage/30 hover:pl-6 flex items-center justify-between ${
               activePage === "contact" ? "text-orange bg-sage/20" : "text-navy"

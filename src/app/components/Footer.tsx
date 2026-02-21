@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer id="contact" className="relative w-full bg-navy pt-16 md:pt-20 pb-8">
+    <footer id="footer" className="relative w-full bg-navy pt-16 md:pt-20 pb-8">
       <div className="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 mb-12 md:mb-16">
           {/* Logo & Description */}
@@ -66,13 +66,13 @@ export default function Footer() {
                 <a href="/about" className="font-sans text-white/80 text-sm hover:text-orange transition-colors">About Jaymi</a>
               </li>
               <li>
-                <a href="/#services" className="font-sans text-white/80 text-sm hover:text-orange transition-colors">Services</a>
+                <a href="/services" className="font-sans text-white/80 text-sm hover:text-orange transition-colors">Services</a>
               </li>
               <li>
-                <a href="/#faq" className="font-sans text-white/80 text-sm hover:text-orange transition-colors">FAQ</a>
+                <a href="/faq" className="font-sans text-white/80 text-sm hover:text-orange transition-colors">FAQ</a>
               </li>
               <li>
-                <a href="/#book" className="font-sans text-white/80 text-sm hover:text-orange transition-colors">Book Now</a>
+                <a href="/contact" className="font-sans text-white/80 text-sm hover:text-orange transition-colors">Contact</a>
               </li>
             </ul>
           </div>
@@ -82,19 +82,19 @@ export default function Footer() {
             <h4 className="font-sans font-medium text-white text-lg mb-4">Services</h4>
             <ul className="space-y-3">
               <li>
-                <a href="/#services" className="font-sans text-white/80 text-sm hover:text-orange transition-colors">Mobile Bar Packages</a>
+                <a href="/services#packages" className="font-sans text-white/80 text-sm hover:text-orange transition-colors">Mobile Bar Packages</a>
               </li>
               <li>
-                <a href="/#services" className="font-sans text-white/80 text-sm hover:text-orange transition-colors">Bartender Services</a>
+                <a href="/services#bartending" className="font-sans text-white/80 text-sm hover:text-orange transition-colors">Bartender Services</a>
               </li>
               <li>
-                <a href="/#services" className="font-sans text-white/80 text-sm hover:text-orange transition-colors">Add-ons & Rentals</a>
+                <a href="/services#rentals" className="font-sans text-white/80 text-sm hover:text-orange transition-colors">Add-ons & Rentals</a>
               </li>
               <li>
-                <a href="/#services" className="font-sans text-white/80 text-sm hover:text-orange transition-colors">Wedding Packages</a>
+                <a href="/services#packages" className="font-sans text-white/80 text-sm hover:text-orange transition-colors">Wedding Packages</a>
               </li>
               <li>
-                <a href="/#services" className="font-sans text-white/80 text-sm hover:text-orange transition-colors">Corporate Events</a>
+                <a href="/services#packages" className="font-sans text-white/80 text-sm hover:text-orange transition-colors">Corporate Events</a>
               </li>
             </ul>
           </div>
@@ -129,14 +129,6 @@ export default function Footer() {
           <p className="font-sans font-normal text-white/60 text-sm leading-[1.6] tracking-[-0.011em] text-center md:text-left">
             &copy; {new Date().getFullYear()} South Bound Sips. All rights reserved.
           </p>
-          <div className="flex items-center gap-6">
-            <a href="#" className="font-sans text-white/60 text-sm hover:text-orange transition-colors">
-              Privacy Policy
-            </a>
-            <a href="#" className="font-sans text-white/60 text-sm hover:text-orange transition-colors">
-              Terms of Service
-            </a>
-          </div>
         </div>
       </div>
     </footer>
