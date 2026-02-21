@@ -98,10 +98,10 @@ function HeroSection() {
         </div>
 
         {/* SOUTHBOUND title - moves at medium speed */}
-        <div ref={titleRef} className="w-full flex justify-center px-0 will-change-transform -mb-8 md:mb-0">
+        <div ref={titleRef} className="w-full flex justify-center px-0 will-change-transform -mb-1 md:mb-0">
           <h1
             className="text-navy leading-none tracking-tight"
-            style={{ fontFamily: "'Badhorse', cursive", fontSize: "clamp(5.9rem, 13vw, 15rem)" }}
+            style={{ fontFamily: "'Badhorse', cursive", fontSize: "clamp(5rem, 13vw, 15rem)" }}
           >
             Southbound
           </h1>
