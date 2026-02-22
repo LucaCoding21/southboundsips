@@ -78,7 +78,7 @@ function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12 h-full flex flex-col items-center justify-end pb-[35px] md:justify-start md:pt-24 lg:pt-32 md:pb-12">
+      <div className="relative z-10 max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12 h-full flex flex-col items-center justify-end pb-[35px] md:justify-start md:pb-12" style={{ paddingTop: "clamp(96px, 15vh, 160px)" }}>
         {/* MEET JAYMI + the owner of - moves slower */}
         <div ref={textTopRef} className="flex flex-col items-center will-change-transform">
           <Image
@@ -101,7 +101,7 @@ function HeroSection() {
         <div ref={titleRef} className="w-full flex justify-center px-0 will-change-transform -mb-1 md:mb-0">
           <h1
             className="text-navy leading-none tracking-tight"
-            style={{ fontFamily: "'Badhorse', cursive", fontSize: "clamp(5rem, 13vw, 15rem)" }}
+            style={{ fontFamily: "'Badhorse', cursive", fontSize: "clamp(5rem, min(13vw, 25vh), 15rem)" }}
           >
             Southbound
           </h1>
@@ -114,13 +114,14 @@ function HeroSection() {
             alt="Jaymi - Owner of Southbound Sips"
             width={670}
             height={406}
-            className="object-contain w-[85vw] md:w-[500px] lg:w-[670px] max-w-[670px] h-auto relative z-[100]"
+            className="object-contain w-[85vw] md:w-[500px] lg:w-[670px] h-auto relative z-[100]"
+            style={{ maxWidth: "min(670px, 90vh)" }}
           />
           {/* SIPS title - overlaying the image */}
           <div className="absolute bottom-0 left-1/2 -translate-x-1/2 -translate-y-[35%] z-[100]">
             <h2
               className="text-navy leading-none tracking-tight"
-              style={{ fontFamily: "'Badhorse', cursive", fontSize: "clamp(5.5rem, 10vw, 11rem)" }}
+              style={{ fontFamily: "'Badhorse', cursive", fontSize: "clamp(5.5rem, min(10vw, 19vh), 11rem)" }}
             >
               sips
             </h2>
