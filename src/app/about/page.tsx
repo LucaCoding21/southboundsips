@@ -83,7 +83,7 @@ function HeroSection() {
             <div className="relative w-full aspect-[4/3] lg:aspect-auto lg:min-h-[90vh]">
               <Image
                 src="/images/about-hero.png"
-                alt="South Bound Sips experience"
+                alt="Southbound Sips experience"
                 fill
                 className="object-cover object-center lg:rounded-bl-[60px]"
                 priority
@@ -119,7 +119,7 @@ function HiImJaymiSection() {
               <div className="overflow-hidden rounded-t-[160px] md:rounded-t-[200px] rounded-b-[20px]">
                 <Image
                   src="/images/jaymi-team.png"
-                  alt="Jaymi - Owner of South Bound Sips"
+                  alt="Jaymi - Owner of Southbound Sips"
                   width={509}
                   height={636}
                   className="object-cover w-full"
@@ -259,7 +259,7 @@ function OurMissionSection() {
               <div className="relative aspect-[2/3] rounded-t-[100px] rounded-b-[20px] overflow-hidden">
                 <Image
                   src="/images/image-26.png"
-                  alt="South Bound Sips event setup"
+                  alt="Southbound Sips event setup"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 45vw, 25vw"
@@ -268,7 +268,7 @@ function OurMissionSection() {
               <div className="relative aspect-[2/3] rounded-t-[100px] rounded-b-[20px] overflow-hidden mt-10">
                 <Image
                   src="/images/image-27.png"
-                  alt="South Bound Sips serving"
+                  alt="Southbound Sips serving"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 45vw, 25vw"
@@ -521,7 +521,7 @@ function GallerySection() {
     { src: "/images/champagne-glasses.png", alt: "Champagne toast", label: "Celebrations", span: "" },
     { src: "/images/pitcher.png", alt: "Pitcher service", label: "Pitcher Service", span: "" },
     { src: "/images/jaymi-team.png", alt: "Jaymi and the team", label: "The Team", span: "col-span-2" },
-    { src: "/images/image-27.png", alt: "South Bound Sips event", label: "Good Times", span: "" },
+    { src: "/images/image-27.png", alt: "Southbound Sips event", label: "Good Times", span: "" },
   ];
 
   return (

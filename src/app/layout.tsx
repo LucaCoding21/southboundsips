@@ -24,9 +24,9 @@ const badhorse = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "South Bound Sips | Artisan Sodas & Traveling Bar",
+  title: "Southbound Sips | Mobile Bar & Bar Services",
   description:
-    "South Bound Sips - Artisan Sodas & Traveling Bar.",
+    "Southbound Sips — Mobile Bar & Bar Services.",
 };
 
 export default function RootLayout({

@@ -111,7 +111,7 @@ function HeroSection() {
         <div ref={photoRef} className="relative -mt-20 md:-mt-20 lg:-mt-28 z-[100] will-change-transform">
           <Image
             src="/images/jaymi-composite.png"
-            alt="Jaymi - Owner of South Bound Sips"
+            alt="Jaymi - Owner of Southbound Sips"
             width={670}
             height={406}
             className="object-contain w-[85vw] md:w-[500px] lg:w-[670px] max-w-[670px] h-auto relative z-[100]"
@@ -244,16 +244,16 @@ function BehindTheBarSection() {
   }, []);
 
   const desktopImages = [
-    { src: "/images/image-26.png", alt: "South Bound Sips setup", className: "left-8 xl:left-16 top-[15%] w-[20vw] aspect-[4/3]" },
+    { src: "/images/image-26.png", alt: "Southbound Sips setup", className: "left-8 xl:left-16 top-[15%] w-[20vw] aspect-[4/3]" },
     { src: "/images/jaymi-team.png", alt: "Jaymi and team", className: "right-8 xl:right-16 top-[25%] w-[18vw] aspect-[3/4]" },
-    { src: "/images/image-27.png", alt: "South Bound Sips event", className: "left-12 xl:left-24 top-[50%] w-[18vw] aspect-[4/3]" },
-    { src: "/images/image-26.png", alt: "South Bound Sips detail", className: "right-12 xl:right-28 top-[62%] w-[20vw] aspect-[4/3]" },
+    { src: "/images/image-27.png", alt: "Southbound Sips event", className: "left-12 xl:left-24 top-[50%] w-[18vw] aspect-[4/3]" },
+    { src: "/images/image-26.png", alt: "Southbound Sips detail", className: "right-12 xl:right-28 top-[62%] w-[20vw] aspect-[4/3]" },
   ];
 
   const mobileImages = [
-    { src: "/images/image-26.png", alt: "South Bound Sips setup", className: "-left-4 top-[8%] w-[35vw] aspect-[4/3]" },
+    { src: "/images/image-26.png", alt: "Southbound Sips setup", className: "-left-4 top-[8%] w-[35vw] aspect-[4/3]" },
     { src: "/images/jaymi-team.png", alt: "Jaymi and team", className: "-right-4 top-[35%] w-[30vw] aspect-[3/4]" },
-    { src: "/images/image-27.png", alt: "South Bound Sips event", className: "-left-4 top-[62%] w-[33vw] aspect-[4/3]" },
+    { src: "/images/image-27.png", alt: "Southbound Sips event", className: "-left-4 top-[62%] w-[33vw] aspect-[4/3]" },
   ];
 
   return (

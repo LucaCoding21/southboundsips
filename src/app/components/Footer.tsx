@@ -9,7 +9,7 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <Image
               src="/images/southbound-logo.png"
-              alt="South Bound Sips Logo"
+              alt="Southbound Sips Logo"
               width={80}
               height={77}
               className="w-16 h-auto mb-4"
@@ -127,7 +127,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="font-sans font-normal text-white/60 text-sm leading-[1.6] tracking-[-0.011em] text-center md:text-left">
-            &copy; {new Date().getFullYear()} South Bound Sips. All rights reserved.
+            &copy; {new Date().getFullYear()} Southbound Sips. All rights reserved.
           </p>
         </div>
       </div>
