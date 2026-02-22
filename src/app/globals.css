@@ -171,15 +171,24 @@ a:focus-visible {
   }
 }
 
-/* Hero overlay positioning.
-   Pull the overlay up so the scallop sits right below Jaymi's photo.
-   One breakpoint matches the hero height change (60vh → 100vh at md). */
+/* Hero font sizes — mobile uses vw only, desktop uses min(vw,vh) so
+   the text scales with viewport height for fullscreen/windowed parity. */
+.hero-title-size { font-size: clamp(5rem, 13vw, 15rem); }
+.hero-sips-size  { font-size: clamp(5.5rem, 10vw, 11rem); }
+@media (min-width: 768px) {
+  .hero-title-size { font-size: min(15vw, 26vh); }
+  .hero-sips-size  { font-size: min(12vw, 20vh); }
+}
+
+/* Hero overlay positioning — vh-based so it tracks the hero height.
+   Since hero content also uses vh sizing, the overlay always lands
+   at the same proportional spot regardless of viewport height. */
 .hero-overlay-mt {
   margin-top: -5vh;
 }
 @media (min-width: 768px) {
   .hero-overlay-mt {
-    margin-top: clamp(-430px, -33vh, -100px);
+    margin-top: -33vh;
   }
 }
 @media (min-width: 820px) {
@@ -192,7 +201,7 @@ a:focus-visible {
     height: 100vh !important;
   }
   .hero-overlay-mt {
-    margin-top: -21vh;
+    margin-top: -22vh;
   }
 }
 

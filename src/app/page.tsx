@@ -12,61 +12,43 @@ gsap.registerPlugin(ScrollTrigger);
 
 function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null);
+  // Mobile refs
   const textTopRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLDivElement>(null);
   const photoRef = useRef<HTMLDivElement>(null);
+  // Desktop refs (separate because a ref can only point to one DOM node)
+  const dtTextTopRef = useRef<HTMLDivElement>(null);
+  const dtTitleRef = useRef<HTMLDivElement>(null);
+  const dtPhotoRef = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
     const isMobile = window.innerWidth < 768;
     const ctx = gsap.context(() => {
-      // Hero is sticky, so element-position-based triggers don't work.
-      // Use scroll-position-based triggers to drive parallax over the first viewport of scrolling.
       const end = () => window.innerHeight;
-
-      // Reduce parallax distances on mobile for smoother feel (Doherty Threshold)
       const textY = isMobile ? 60 : 140;
       const photoY = isMobile ? 30 : 70;
 
-      // "Meet Jaymi" text parallax - moves fastest
-      gsap.to(textTopRef.current, {
-        y: textY,
-        ease: "none",
-        scrollTrigger: {
-          start: 0,
-          end,
-          scrub: true,
-        },
-      });
-
-      // "Southbound" title parallax
-      gsap.to(titleRef.current, {
-        y: textY,
-        ease: "none",
-        scrollTrigger: {
-          start: 0,
-          end,
-          scrub: true,
-        },
-      });
-
-      // Photo composite — slowest parallax
-      gsap.to(photoRef.current, {
-        y: photoY,
-        ease: "none",
-        scrollTrigger: {
-          start: 0,
-          end,
-          scrub: true,
-        },
-      });
+      if (isMobile) {
+        gsap.to(textTopRef.current, { y: textY, ease: "none", scrollTrigger: { start: 0, end, scrub: true } });
+        gsap.to(titleRef.current,   { y: textY, ease: "none", scrollTrigger: { start: 0, end, scrub: true } });
+        gsap.to(photoRef.current,   { y: photoY, ease: "none", scrollTrigger: { start: 0, end, scrub: true } });
+      } else {
+        gsap.to(dtTextTopRef.current, { y: textY, ease: "none", scrollTrigger: { start: 0, end, scrub: true } });
+        gsap.to(dtTitleRef.current,   { y: textY, ease: "none", scrollTrigger: { start: 0, end, scrub: true } });
+        gsap.to(dtPhotoRef.current,   { y: photoY, ease: "none", scrollTrigger: { start: 0, end, scrub: true } });
+      }
     }, sectionRef);
 
     return () => ctx.revert();
   }, []);
 
+  /* All spacing & sizing below uses vh so the content always occupies
+     the same *fraction* of the hero (which is also vh-based).
+     Fullscreen vs windowed just stretches/shrinks everything proportionally. */
+
   return (
-    <section ref={sectionRef} className="sticky top-0 w-full h-[60vh] md:h-screen hero-tall overflow-hidden z-0">
-      {/* Background layer with parallax */}
+    <section ref={sectionRef} className="sticky top-0 w-full h-[60vh] md:h-screen hero-tall z-0 overflow-hidden">
+      {/* Background */}
       <div className="absolute inset-0">
         <Image
           src="/images/texture-bg-1a3da5.png"
@@ -77,54 +59,41 @@ function HeroSection() {
         <div className="absolute inset-0 bg-white/90" />
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12 h-full flex flex-col items-center justify-end pb-[35px] md:justify-start md:pb-12" style={{ paddingTop: "clamp(96px, 15vh, 160px)" }}>
-        {/* MEET JAYMI + the owner of - moves slower */}
+      {/* ── Mobile layout (< md): flex column, anchored to bottom ── */}
+      <div className="md:hidden relative z-10 h-full flex flex-col items-center justify-end pb-[35px]">
         <div ref={textTopRef} className="flex flex-col items-center will-change-transform">
-          <Image
-            src="/images/meet-jaymi-heading.svg"
-            alt="Meet Jaymi"
-            width={250}
-            height={38}
-            className="w-[190px] md:w-[180px] lg:w-[250px] h-auto"
-          />
-          <Image
-            src="/images/the-owner-of.svg"
-            alt="the owner of"
-            width={112}
-            height={16}
-            className="mt-6 md:mt-8 mb-6 md:mb-3 w-[100px] md:w-[90px] lg:w-[112px] h-auto"
-          />
+          <Image src="/images/meet-jaymi-heading.svg" alt="Meet Jaymi" width={250} height={38} className="w-[190px] h-auto" />
+          <div className="h-6" />
+          <Image src="/images/the-owner-of.svg" alt="the owner of" width={112} height={16} className="mb-6 w-[100px] h-auto" />
         </div>
-
-        {/* SOUTHBOUND title - moves at medium speed */}
-        <div ref={titleRef} className="w-full flex justify-center px-0 will-change-transform -mb-1 md:mb-0">
-          <h1
-            className="text-navy leading-none tracking-tight"
-            style={{ fontFamily: "'Badhorse', cursive", fontSize: "clamp(5rem, min(13vw, 25vh), 15rem)" }}
-          >
-            Southbound
-          </h1>
+        <div ref={titleRef} className="w-full flex justify-center will-change-transform -mb-1">
+          <h1 className="text-navy leading-none tracking-tight hero-title-size" style={{ fontFamily: "'Badhorse', cursive" }}>Southbound</h1>
         </div>
-
-        {/* Jaymi photo composite with SIPS overlay - moves slowest */}
-        <div ref={photoRef} className="relative -mt-20 md:-mt-20 lg:-mt-28 z-[100] will-change-transform">
-          <Image
-            src="/images/jaymi-composite.png"
-            alt="Jaymi - Owner of Southbound Sips"
-            width={670}
-            height={406}
-            className="object-contain w-[85vw] md:w-[500px] lg:w-[670px] h-auto relative z-[100]"
-            style={{ maxWidth: "min(670px, 90vh)" }}
-          />
-          {/* SIPS title - overlaying the image */}
+        <div ref={photoRef} className="relative -mt-20 z-[100] will-change-transform">
+          <Image src="/images/jaymi-composite.png" alt="Jaymi - Owner of Southbound Sips" width={670} height={406} className="object-contain w-[85vw] h-auto relative z-[100]" style={{ maxWidth: "670px" }} />
           <div className="absolute bottom-0 left-1/2 -translate-x-1/2 -translate-y-[35%] z-[100]">
-            <h2
-              className="text-navy leading-none tracking-tight"
-              style={{ fontFamily: "'Badhorse', cursive", fontSize: "clamp(5.5rem, min(10vw, 19vh), 11rem)" }}
-            >
-              sips
-            </h2>
+            <h2 className="text-navy leading-none tracking-tight hero-sips-size" style={{ fontFamily: "'Badhorse', cursive" }}>sips</h2>
+          </div>
+        </div>
+      </div>
+
+      {/* ── Desktop layout (≥ md): absolute positioning, each element pinned by vh ──
+           This makes layout immune to content-height overflow — nothing can push
+           SIPS out of frame because positions are set independently. */}
+      {/* ── Desktop: whole block anchored from bottom as one unit ── */}
+      <div className="hidden md:flex absolute inset-0 z-10 flex-col items-center justify-end pb-[14vh]">
+        <div ref={dtTextTopRef} className="flex flex-col items-center will-change-transform">
+          <Image src="/images/meet-jaymi-heading.svg" alt="Meet Jaymi" width={250} height={38} className="w-[180px] lg:w-[250px] h-auto" />
+          <div className="h-[1.5vh]" />
+          <Image src="/images/the-owner-of.svg" alt="the owner of" width={112} height={16} className="w-[90px] lg:w-[112px] h-auto mb-[0.5vh]" />
+        </div>
+        <div ref={dtTitleRef} className="w-full flex justify-center will-change-transform">
+          <h1 className="text-navy leading-none tracking-tight hero-title-size" style={{ fontFamily: "'Badhorse', cursive" }}>Southbound</h1>
+        </div>
+        <div ref={dtPhotoRef} className="relative -mt-[6vh] z-[100] will-change-transform">
+          <Image src="/images/jaymi-composite.png" alt="Jaymi - Owner of Southbound Sips" width={670} height={406} className="object-contain w-[500px] lg:w-[670px] h-auto relative z-[100] max-h-[52vh]" style={{ maxWidth: "670px" }} />
+          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 -translate-y-[35%] z-[100]">
+            <h2 className="text-navy leading-none tracking-tight hero-sips-size" style={{ fontFamily: "'Badhorse', cursive" }}>sips</h2>
           </div>
         </div>
       </div>
