@@ -239,7 +239,7 @@ function BehindTheBarSection() {
           ref={textRef}
           className="relative h-screen flex items-center justify-center z-10"
         >
-          <div className="text-center max-w-[600px] px-8">
+          <div className="text-center max-w-[600px] px-16 lg:px-24">
             {/* Behind The Bar heading */}
             <div className="flex justify-center mb-4 md:mb-6">
               <Image
@@ -257,7 +257,7 @@ function BehindTheBarSection() {
                 Your Event&apos;s Favorite Bartender
               </p>
               <p className="font-sans font-normal text-navy text-base md:text-[18px] lg:text-[22px] leading-[1.6] tracking-[-0.011em] text-center">
-                As the new owner of South Bound Sips, Jaymi brings her love for great drinks and even better company to every event. Whether it&apos;s a wedding, corporate event, or backyard celebration, she&apos;s here to make your event unforgettable, one cocktail at a time.
+                Jaymi brings her love for great drinks and even better company to every event. Whether it&apos;s a wedding or backyard celebration, she&apos;s here to make it unforgettable.
               </p>
               <a
                 href="#book"
@@ -300,7 +300,7 @@ function BehindTheBarSection() {
           ref={mobileTextRef}
           className="relative h-screen flex items-center justify-center z-10"
         >
-          <div className="text-center max-w-[280px] mx-auto px-4">
+          <div className="text-center max-w-[280px] mx-auto px-8">
             {/* Behind The Bar heading */}
             <div className="flex justify-center mb-4">
               <Image
@@ -318,7 +318,7 @@ function BehindTheBarSection() {
                 Your Event&apos;s Favorite Bartender
               </p>
               <p className="font-sans font-normal text-navy text-sm md:text-[18px] leading-[1.7] tracking-[-0.011em] text-center">
-                As the new owner of South Bound Sips, Jaymi brings her love for great drinks and even better company to every event. Whether it&apos;s a wedding, corporate event, or backyard celebration, she&apos;s here to make your event unforgettable, one cocktail at a time.
+                Jaymi brings her love for great drinks and even better company to every event. Whether it&apos;s a wedding or backyard celebration, she&apos;s here to make it unforgettable.
               </p>
               <a
                 href="#book"
@@ -871,7 +871,7 @@ function KindWordsSection() {
           </button>
 
           {/* Quotes area */}
-          <div className="w-full max-w-[800px] mx-auto relative flex flex-col px-10 md:px-0">
+          <div className="w-full max-w-[800px] mx-auto relative flex flex-col px-14 md:px-0">
             <div className="self-start">
               <Image
                 src="/images/quote-open.svg"
@@ -918,15 +918,15 @@ function KindWordsSection() {
         </p>
 
         {/* Page indicators */}
-        <div className="flex items-center gap-3 mt-6">
+        <div className="flex items-center justify-center gap-2.5 mt-6">
           {reviews.map((_, index) => (
             <button
               key={index}
               onClick={() => goToReview(index)}
-              className={`h-2.5 md:h-3 rounded-full transition-all duration-300 ${
+              className={`!min-h-0 h-2.5 md:h-3 p-0 border-0 rounded-full transition-all duration-300 ${
                 index === currentIndex
                   ? "bg-orange w-7 md:w-8"
-                  : "bg-navy/30 hover:bg-navy/50 w-2.5 md:w-3"
+                  : "bg-navy/20 hover:bg-navy/40 w-2.5 md:w-3"
               }`}
               aria-label={`Go to review ${index + 1}`}
             />

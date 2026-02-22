@@ -407,69 +407,8 @@ function BartenderServicesSection() {
 
         {/* Two service cards */}
         <div className="scroll-fade-up stagger-3 grid md:grid-cols-2 gap-6 md:gap-8 mt-10 md:mt-14">
-          {/* Show Up & Serve */}
-          <div className="hover-lift bg-white rounded-2xl border border-gray-100 p-7 md:p-10 flex flex-col text-left">
-            <p className="font-sans text-xs font-semibold tracking-[0.15em] uppercase text-navy/40">
-              Bartender Only
-            </p>
-            <h3
-              className="font-serif text-navy text-3xl md:text-4xl leading-tight tracking-tight mt-2"
-            >
-              Show Up & Serve
-            </h3>
-            <p className="text-navy text-4xl md:text-5xl font-bold font-sans leading-none mt-5">
-              $80<span className="text-lg font-medium text-navy/50">/hr</span>
-            </p>
-            <p className="font-sans text-xs text-navy/50 mt-1">
-              + $50/hr for additional bartender
-            </p>
-
-            <div className="w-full h-px bg-navy/10 my-6" />
-
-            <p className="font-sans text-xs font-semibold tracking-[0.15em] uppercase text-navy/40 mb-4">
-              What&apos;s Included
-            </p>
-            <ul className="space-y-3 flex-1">
-              {[
-                "TABC Certified Bartender",
-                "We serve what you've arranged",
-                "Beer, wine, cocktails, soda, tea & water",
-                "Arrive 30 min early for setup",
-                "30 min post-event cleanup",
-                "Water station refills upon request",
-                "50+ guests: additional bartender required",
-              ].map((item) => (
-                <li key={item} className="flex items-start gap-3">
-                  <svg
-                    className="w-5 h-5 text-orange mt-0.5 flex-shrink-0"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={3}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                  <span className="font-sans text-sm md:text-base text-navy/80 leading-snug">
-                    {item}
-                  </span>
-                </li>
-              ))}
-            </ul>
-
-            <a
-              href="/contact#book"
-              className="inline-flex items-center justify-center w-full font-sans font-medium text-white bg-orange text-base rounded-full px-8 py-3.5 mt-8 hover:bg-orange/90 transition-all hover:shadow-lg hover:-translate-y-0.5"
-            >
-              Reserve Your Spot
-            </a>
-          </div>
-
           {/* Full Flow (All Inclusive) */}
-          <div className="hover-lift relative bg-white rounded-2xl border-2 border-orange p-7 md:p-10 flex flex-col text-left">
+          <div className="hover-lift relative bg-white rounded-2xl border-2 border-orange p-7 md:p-10 flex flex-col text-left md:order-2">
             <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-orange text-white font-sans text-xs font-semibold tracking-[0.15em] uppercase px-4 py-1 rounded-full">
               Most Popular
             </span>
@@ -525,6 +464,67 @@ function BartenderServicesSection() {
             <a
               href="/contact#book"
               className="inline-flex items-center justify-center w-full font-sans font-medium text-white bg-navy text-base rounded-full px-8 py-3.5 mt-8 hover:bg-navy/90 transition-all hover:shadow-lg hover:-translate-y-0.5"
+            >
+              Reserve Your Spot
+            </a>
+          </div>
+
+          {/* Show Up & Serve */}
+          <div className="hover-lift bg-white rounded-2xl border border-gray-100 p-7 md:p-10 flex flex-col text-left md:order-1">
+            <p className="font-sans text-xs font-semibold tracking-[0.15em] uppercase text-navy/40">
+              Bartender Only
+            </p>
+            <h3
+              className="font-serif text-navy text-3xl md:text-4xl leading-tight tracking-tight mt-2"
+            >
+              Show Up & Serve
+            </h3>
+            <p className="text-navy text-4xl md:text-5xl font-bold font-sans leading-none mt-5">
+              $80<span className="text-lg font-medium text-navy/50">/hr</span>
+            </p>
+            <p className="font-sans text-xs text-navy/50 mt-1">
+              + $50/hr for additional bartender
+            </p>
+
+            <div className="w-full h-px bg-navy/10 my-6" />
+
+            <p className="font-sans text-xs font-semibold tracking-[0.15em] uppercase text-navy/40 mb-4">
+              What&apos;s Included
+            </p>
+            <ul className="space-y-3 flex-1">
+              {[
+                "TABC Certified Bartender",
+                "We serve what you've arranged",
+                "Beer, wine, cocktails, soda, tea & water",
+                "Arrive 30 min early for setup",
+                "30 min post-event cleanup",
+                "Water station refills upon request",
+                "50+ guests: additional bartender required",
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-3">
+                  <svg
+                    className="w-5 h-5 text-orange mt-0.5 flex-shrink-0"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={3}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <span className="font-sans text-sm md:text-base text-navy/80 leading-snug">
+                    {item}
+                  </span>
+                </li>
+              ))}
+            </ul>
+
+            <a
+              href="/contact#book"
+              className="inline-flex items-center justify-center w-full font-sans font-medium text-white bg-orange text-base rounded-full px-8 py-3.5 mt-8 hover:bg-orange/90 transition-all hover:shadow-lg hover:-translate-y-0.5"
             >
               Reserve Your Spot
             </a>
