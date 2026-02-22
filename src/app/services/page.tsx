@@ -140,7 +140,7 @@ function HeroSection() {
     <section ref={sectionRef} className="relative w-full bg-white min-h-[70vh] md:min-h-[80vh] flex items-center pt-12 md:pt-20 pb-24 md:pb-32">
       {/* Cocktail illustration — left */}
       <div
-        className="absolute left-[5%] md:left-[8%] lg:left-[10%] -bottom-24 md:-bottom-36 lg:-bottom-44 w-[280px] md:w-[420px] lg:w-[550px] pointer-events-none z-30 will-change-transform"
+        className="absolute left-[1%] md:left-[8%] lg:left-[10%] -bottom-24 md:-bottom-36 lg:-bottom-44 w-[280px] md:w-[420px] lg:w-[550px] pointer-events-none z-30 will-change-transform"
         style={{ transform: `translateY(${scrollY * 0.15}px)` }}
       >
         <Image
@@ -154,7 +154,7 @@ function HeroSection() {
 
       {/* Pitcher illustration — right */}
       <div
-        className="absolute right-[5%] md:right-[8%] lg:right-[10%] top-4 md:top-8 w-[280px] md:w-[420px] lg:w-[550px] pointer-events-none z-0 will-change-transform"
+        className="absolute right-[1%] md:right-[8%] lg:right-[10%] top-4 md:top-8 w-[280px] md:w-[420px] lg:w-[550px] pointer-events-none z-0 will-change-transform"
         style={{ transform: `translateY(${scrollY * -0.12}px)` }}
       >
         <Image
@@ -213,7 +213,7 @@ function MobileBarPackagesSection() {
 
   return (
     <section id="packages" className="relative w-full bg-navy pt-16 md:pt-24 lg:pt-32 pb-20 md:pb-28">
-      <div className="max-w-[860px] mx-auto px-4 md:px-8">
+      <div className="max-w-[860px] mx-auto px-4 md:px-8 text-center md:text-left">
         {/* Label */}
         <span className="scroll-fade-up font-sans font-semibold text-orange text-sm md:text-base tracking-[0.15em] uppercase">
           Mobile Bar Packages
@@ -225,7 +225,7 @@ function MobileBarPackagesSection() {
         </h2>
 
         {/* Description */}
-        <p className="scroll-fade-up stagger-2 font-sans font-normal text-white/60 text-base md:text-lg leading-[1.7] tracking-[-0.011em] mt-5 max-w-[560px]">
+        <p className="scroll-fade-up stagger-2 font-sans font-normal text-white/60 text-base md:text-lg leading-[1.7] tracking-[-0.011em] mt-5 max-w-[560px] mx-auto md:mx-0">
           Everything from serveware to cocktails to decorations, just tell
           Jaymi your guest count and she&apos;ll handle the rest.
         </p>
@@ -234,7 +234,7 @@ function MobileBarPackagesSection() {
         <p className="font-sans text-sm font-medium text-white/50 mt-10 md:mt-12 mb-3">
           How many guests?
         </p>
-        <div className="flex flex-wrap gap-2 md:gap-3">
+        <div className="flex flex-wrap justify-center md:justify-start gap-2 md:gap-3">
           {guestTiers.map((t, i) => (
             <button
               key={t.label}
@@ -251,7 +251,7 @@ function MobileBarPackagesSection() {
         </div>
 
         {/* Pricing card */}
-        <div className="scroll-fade-up bg-white rounded-2xl shadow-sm mt-8 md:mt-10 overflow-hidden">
+        <div className="scroll-fade-up bg-white rounded-2xl shadow-sm mt-8 md:mt-10 overflow-hidden text-left">
           {/* Top region — tier info + price (grouped by proximity) */}
           <div className="p-7 md:p-10 pb-0 md:pb-0">
             {/* Tier label + name */}
@@ -371,7 +371,7 @@ function MobileBarPackagesSection() {
         </div>
 
         {/* Footer note */}
-        <p className="font-sans text-sm text-white/45 leading-[1.7] mt-8 md:mt-10">
+        <p className="font-sans text-sm text-white/45 leading-[1.7] mt-8 md:mt-10 max-w-[560px] mx-auto md:mx-0">
           250+ guests?{" "}
           <a
             href="mailto:events@southboundsips.com"
@@ -392,7 +392,7 @@ function MobileBarPackagesSection() {
 function BartenderServicesSection() {
   return (
     <section id="bartending" className="relative w-full bg-sage pt-20 md:pt-28 lg:pt-36 pb-16 md:pb-24">
-      <div className="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12">
+      <div className="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12 text-center md:text-left">
         <span className="scroll-fade-up font-sans font-semibold text-orange text-sm md:text-base tracking-[0.15em] uppercase">
           Bartender Services
         </span>
@@ -401,14 +401,14 @@ function BartenderServicesSection() {
         >
           You Arrange, We Serve
         </h2>
-        <p className="scroll-fade-up stagger-2 font-sans font-normal text-navy/70 text-base md:text-lg leading-[1.7] tracking-[-0.011em] mt-5 max-w-[560px]">
+        <p className="scroll-fade-up stagger-2 font-sans font-normal text-navy/70 text-base md:text-lg leading-[1.7] tracking-[-0.011em] mt-5 max-w-[560px] mx-auto md:mx-0">
           Already have your bar arranged? Jaymi shows up and handles the rest.
         </p>
 
         {/* Two service cards */}
         <div className="scroll-fade-up stagger-3 grid md:grid-cols-2 gap-6 md:gap-8 mt-10 md:mt-14">
           {/* Show Up & Serve */}
-          <div className="hover-lift bg-white rounded-2xl border border-gray-100 p-7 md:p-10 flex flex-col">
+          <div className="hover-lift bg-white rounded-2xl border border-gray-100 p-7 md:p-10 flex flex-col text-left">
             <p className="font-sans text-xs font-semibold tracking-[0.15em] uppercase text-navy/40">
               Bartender Only
             </p>
@@ -469,7 +469,7 @@ function BartenderServicesSection() {
           </div>
 
           {/* Full Flow (All Inclusive) */}
-          <div className="hover-lift relative bg-white rounded-2xl border-2 border-orange p-7 md:p-10 flex flex-col">
+          <div className="hover-lift relative bg-white rounded-2xl border-2 border-orange p-7 md:p-10 flex flex-col text-left">
             <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-orange text-white font-sans text-xs font-semibold tracking-[0.15em] uppercase px-4 py-1 rounded-full">
               Most Popular
             </span>
@@ -552,7 +552,7 @@ function BartenderServicesSection() {
 
 function AddOnsRentalsSection() {
   return (
-    <section id="rentals" className="relative w-full bg-white pt-16 md:pt-24 lg:pt-32 pb-20 md:pb-28">
+    <section id="rentals" className="relative w-full bg-white pt-24 md:pt-32 lg:pt-40 pb-20 md:pb-28">
       <div className="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12">
         <div className="scroll-fade-up text-center">
           <span className="font-sans font-semibold text-orange text-sm md:text-base tracking-[0.15em] uppercase">

@@ -56,7 +56,7 @@ function ContactSection() {
             {/* Contact details — desktop only (below form on mobile) */}
             <div className="hidden lg:flex flex-col gap-5 mt-8">
               <a
-                href="mailto:hello@southboundsips.com"
+                href="mailto:events@southboundsips.com"
                 className="group flex items-center gap-4"
               >
                 <div className="w-11 h-11 rounded-full bg-navy/5 flex items-center justify-center group-hover:bg-orange/10 transition-colors">
@@ -65,7 +65,7 @@ function ContactSection() {
                   </svg>
                 </div>
                 <div>
-                  <p className="font-sans font-medium text-navy text-sm md:text-base group-hover:text-orange transition-colors">hello@southboundsips.com</p>
+                  <p className="font-sans font-medium text-navy text-sm md:text-base group-hover:text-orange transition-colors">events@southboundsips.com</p>
                   <p className="font-sans text-navy/50 text-xs">Drop us a line anytime</p>
                 </div>
               </a>
@@ -91,8 +91,6 @@ function ContactSection() {
                   <a href="https://www.instagram.com/southboundsips/" target="_blank" rel="noopener noreferrer" className="font-sans text-navy text-sm hover:text-orange transition-colors">Instagram</a>
                   <span className="text-navy/20">/</span>
                   <a href="https://www.facebook.com/southboundsips" target="_blank" rel="noopener noreferrer" className="font-sans text-navy text-sm hover:text-orange transition-colors">Facebook</a>
-                  <span className="text-navy/20">/</span>
-                  <a href="https://www.tiktok.com/@southboundsips" target="_blank" rel="noopener noreferrer" className="font-sans text-navy text-sm hover:text-orange transition-colors">TikTok</a>
                 </div>
               </div>
             </div>
@@ -246,7 +244,7 @@ function ContactSection() {
         {/* Contact details — mobile only (below form) */}
         <div className="lg:hidden flex flex-col sm:flex-row sm:flex-wrap gap-6 mt-12 pt-10 border-t border-navy/10">
           <a
-            href="mailto:hello@southboundsips.com"
+            href="mailto:events@southboundsips.com"
             className="group flex items-center gap-3"
           >
             <div className="w-10 h-10 rounded-full bg-navy/5 flex items-center justify-center group-hover:bg-orange/10 transition-colors">
@@ -254,7 +252,7 @@ function ContactSection() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
               </svg>
             </div>
-            <span className="font-sans text-navy text-sm group-hover:text-orange transition-colors">hello@southboundsips.com</span>
+            <span className="font-sans text-navy text-sm group-hover:text-orange transition-colors">events@southboundsips.com</span>
           </a>
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-full bg-navy/5 flex items-center justify-center">
@@ -269,8 +267,6 @@ function ContactSection() {
             <a href="https://www.instagram.com/southboundsips/" target="_blank" rel="noopener noreferrer" className="font-sans text-navy text-sm hover:text-orange transition-colors">Instagram</a>
             <span className="text-navy/20">/</span>
             <a href="https://www.facebook.com/southboundsips" target="_blank" rel="noopener noreferrer" className="font-sans text-navy text-sm hover:text-orange transition-colors">Facebook</a>
-            <span className="text-navy/20">/</span>
-            <a href="https://www.tiktok.com/@southboundsips" target="_blank" rel="noopener noreferrer" className="font-sans text-navy text-sm hover:text-orange transition-colors">TikTok</a>
           </div>
         </div>
       </div>

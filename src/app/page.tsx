@@ -64,12 +64,12 @@ function HeroSection() {
         <div ref={textTopRef} className="flex flex-col items-center will-change-transform">
           <Image src="/images/meet-jaymi-heading.svg" alt="Meet Jaymi" width={250} height={38} className="w-[190px] h-auto" />
           <div className="h-6" />
-          <Image src="/images/the-owner-of.svg" alt="the owner of" width={112} height={16} className="mb-6 w-[100px] h-auto" />
+          <Image src="/images/the-owner-of.svg" alt="the owner of" width={112} height={16} className="mb-10 w-[100px] h-auto" />
         </div>
         <div ref={titleRef} className="w-full flex justify-center will-change-transform -mb-1">
           <h1 className="text-navy leading-none tracking-tight hero-title-size" style={{ fontFamily: "'Badhorse', cursive" }}>Southbound</h1>
         </div>
-        <div ref={photoRef} className="relative -mt-20 z-[100] will-change-transform">
+        <div ref={photoRef} className="relative -mt-12 z-[100] will-change-transform">
           <Image src="/images/jaymi-composite.png" alt="Jaymi - Owner of Southbound Sips" width={670} height={406} className="object-contain w-[85vw] h-auto relative z-[100]" style={{ maxWidth: "670px" }} />
           <div className="absolute bottom-0 left-1/2 -translate-x-1/2 -translate-y-[35%] z-[100]">
             <h2 className="text-navy leading-none tracking-tight hero-sips-size" style={{ fontFamily: "'Badhorse', cursive" }}>sips</h2>
@@ -81,11 +81,11 @@ function HeroSection() {
            This makes layout immune to content-height overflow — nothing can push
            SIPS out of frame because positions are set independently. */}
       {/* ── Desktop: whole block anchored from bottom as one unit ── */}
-      <div className="hidden md:flex absolute inset-0 z-10 flex-col items-center justify-end pb-[14vh]">
+      <div className="hidden md:flex absolute inset-0 z-10 flex-col items-center justify-end pb-[18vh]">
         <div ref={dtTextTopRef} className="flex flex-col items-center will-change-transform">
           <Image src="/images/meet-jaymi-heading.svg" alt="Meet Jaymi" width={250} height={38} className="w-[180px] lg:w-[250px] h-auto" />
           <div className="h-[1.5vh]" />
-          <Image src="/images/the-owner-of.svg" alt="the owner of" width={112} height={16} className="w-[90px] lg:w-[112px] h-auto mb-[0.5vh]" />
+          <Image src="/images/the-owner-of.svg" alt="the owner of" width={112} height={16} className="w-[90px] lg:w-[112px] h-auto mb-[2vh]" />
         </div>
         <div ref={dtTitleRef} className="w-full flex justify-center will-change-transform">
           <h1 className="text-navy leading-none tracking-tight hero-title-size" style={{ fontFamily: "'Badhorse', cursive" }}>Southbound</h1>
@@ -253,7 +253,7 @@ function BehindTheBarSection() {
 
             {/* Center content */}
             <div className="flex flex-col items-center gap-2 md:gap-4">
-              <p className="font-sans font-semibold text-orange text-lg md:text-[20px] lg:text-[22px] leading-[1.5] tracking-[0.01em]">
+              <p className="font-sans font-semibold text-orange text-sm md:text-base leading-[1.5] tracking-[0.15em] uppercase">
                 Your Event&apos;s Favorite Bartender
               </p>
               <p className="font-sans font-normal text-navy text-base md:text-[18px] lg:text-[22px] leading-[1.6] tracking-[-0.011em] text-center">
@@ -314,7 +314,7 @@ function BehindTheBarSection() {
 
             {/* Center content */}
             <div className="flex flex-col items-center gap-3">
-              <p className="font-sans font-semibold text-orange text-base md:text-[20px] leading-[1.5] tracking-[0.01em]">
+              <p className="font-sans font-semibold text-orange text-sm md:text-base leading-[1.5] tracking-[0.15em] uppercase">
                 Your Event&apos;s Favorite Bartender
               </p>
               <p className="font-sans font-normal text-navy text-sm md:text-[18px] leading-[1.7] tracking-[-0.011em] text-center">
@@ -359,6 +359,7 @@ function MobileBarSection() {
   const headingRef = useRef<HTMLDivElement>(null);
   const subtitleRef = useRef<HTMLHeadingElement>(null);
   const paragraphRef = useRef<HTMLParagraphElement>(null);
+  const paragraph2Ref = useRef<HTMLParagraphElement>(null);
   const buttonRef = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
@@ -368,6 +369,7 @@ function MobileBarSection() {
         { ref: headingRef.current, delay: 0.1 },
         { ref: subtitleRef.current, delay: 0.2 },
         { ref: paragraphRef.current, delay: 0.3 },
+        { ref: paragraph2Ref.current, delay: 0.35 },
         { ref: buttonRef.current, delay: 0.4 },
       ];
 
@@ -417,7 +419,7 @@ function MobileBarSection() {
             height={53}
             className="w-[260px] h-auto mx-auto"
           />
-          <h3 ref={subtitleRef} className="font-sans font-semibold text-orange text-lg leading-[1.5] tracking-[0.01em] capitalize mt-3">
+          <h3 ref={subtitleRef} className="font-sans font-semibold text-orange text-sm md:text-base leading-[1.5] tracking-[0.15em] uppercase mt-3">
             Meet &lsquo;Maybee&rsquo;
           </h3>
         </div>
@@ -444,7 +446,7 @@ function MobileBarSection() {
               className="w-[300px] lg:w-[350px] h-auto"
             />
           </div>
-          <h3 className="hidden md:block font-sans font-semibold text-orange text-[20px] lg:text-[22px] leading-[1.5] tracking-[0.01em] capitalize mt-4">
+          <h3 className="hidden md:block font-sans font-semibold text-orange text-sm md:text-base leading-[1.5] tracking-[0.15em] uppercase mt-4">
             Meet &lsquo;Maybee&rsquo;
           </h3>
 
@@ -452,7 +454,7 @@ function MobileBarSection() {
             Born from a labor of love, thanks to the visionary Katie. She breathed life into this beauty, dubbing her &lsquo;Maybee&rsquo; with a hint of uncertainty and a whole lot of faith. &ldquo;Maybe this will soar, maybe it won&apos;t,&rdquo; she mused.
           </p>
 
-          <p className="font-sans font-normal text-navy text-base md:text-[18px] lg:text-[22px] leading-[1.6] tracking-[-0.011em] mt-4">
+          <p ref={paragraph2Ref} className="font-sans font-normal text-navy text-base md:text-[18px] lg:text-[22px] leading-[1.6] tracking-[-0.011em] mt-4">
             Fast forward a few years later, and here we are, bustling with bookings and making dreams a reality. The journey&apos;s been wild, and I&apos;m beyond excited to see where the next four years will take us. Here&apos;s to &lsquo;Maybee&rsquo; and the incredible adventure she&apos;s leading us on!
           </p>
 
@@ -639,7 +641,7 @@ function WhatIOffer() {
 
         {/* Choose Your Experience subtitle */}
         <div ref={subtitleRef} className="text-center md:text-left px-6 md:px-0">
-          <p className="font-sans font-semibold text-orange text-lg md:text-[20px] lg:text-[22px] leading-[1.5] tracking-[0.01em] mb-3 md:mb-4">
+          <p className="font-sans font-semibold text-orange text-sm md:text-base leading-[1.5] tracking-[0.15em] uppercase mb-3 md:mb-4">
             Choose Your Experience
           </p>
         </div>
@@ -651,7 +653,7 @@ function WhatIOffer() {
         </p>
 
         {/* Drink cards with integrated info */}
-        <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 mb-6 md:mb-10 items-start px-6 md:px-0">
+        <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 mb-6 md:mb-10 items-start md:px-0">
           {/* Mobile Bar Packages */}
           <a href="/services#packages" className="relative flex flex-col items-center group cursor-pointer">
             {/* Flower badge - desktop only */}
@@ -851,7 +853,7 @@ function KindWordsSection() {
         />
 
         {/* Subtitle */}
-        <p className="scroll-fade-up stagger-1 font-sans font-semibold text-orange text-lg md:text-[20px] lg:text-[22px] leading-[1.5] tracking-[0.01em] capitalize mb-8 md:mb-10">
+        <p className="scroll-fade-up stagger-1 font-sans font-semibold text-orange text-sm md:text-base leading-[1.5] tracking-[0.15em] uppercase mb-8 md:mb-10">
           Straight From The Sippers
         </p>
 
@@ -1011,27 +1013,27 @@ function BookingForm() {
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-20">
           {/* Left side - Info */}
           <div className="scroll-fade-up flex flex-col justify-center">
-            <span className="font-sans font-semibold text-orange text-sm md:text-base tracking-[0.15em] uppercase mb-4">
+            <span className="font-sans font-semibold text-orange text-sm md:text-base tracking-[0.15em] uppercase mb-4 text-center lg:text-left">
               Let&apos;s Work Together
             </span>
-            <h2 className="font-serif text-navy text-4xl md:text-5xl lg:text-[64px] leading-[1.05] tracking-tight mb-5 md:mb-6">
+            <h2 className="font-serif text-navy text-4xl md:text-5xl lg:text-[64px] leading-[1.05] tracking-tight mb-5 md:mb-6 text-center lg:text-left">
               Your event,{" "}
               <span className="italic text-orange">elevated.</span>
             </h2>
-            <p className="font-sans font-normal text-navy/70 text-base md:text-[18px] lg:text-[20px] leading-[1.7] tracking-[-0.011em] mb-10 md:mb-12 max-w-[480px]">
+            <p className="font-sans font-normal text-navy/70 text-base md:text-[18px] lg:text-[20px] leading-[1.7] tracking-[-0.011em] mb-10 md:mb-12 max-w-[480px] text-center lg:text-left mx-auto lg:mx-0">
               Fill out the form and Jaymi will get back to you within 24&#8211;48 hours to discuss your vision and create a custom experience.
             </p>
 
             {/* Contact details */}
             <div className="space-y-5">
-              <a href="mailto:hello@southboundsips.com" className="group flex items-center gap-4">
+              <a href="mailto:events@southboundsips.com" className="group flex items-center gap-4">
                 <div className="w-12 h-12 rounded-full bg-navy/5 flex items-center justify-center group-hover:bg-orange/10 transition-colors">
                   <svg className="w-5 h-5 text-navy group-hover:text-orange transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
                   </svg>
                 </div>
                 <div>
-                  <p className="font-sans font-medium text-navy text-base md:text-lg group-hover:text-orange transition-colors">hello@southboundsips.com</p>
+                  <p className="font-sans font-medium text-navy text-base md:text-lg group-hover:text-orange transition-colors">events@southboundsips.com</p>
                   <p className="font-sans text-navy/50 text-sm">Drop us a line anytime</p>
                 </div>
               </a>

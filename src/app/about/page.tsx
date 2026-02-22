@@ -45,14 +45,14 @@ function HeroSection() {
     <section className="relative w-full bg-white overflow-hidden">
 
       <div className="relative z-10">
-        <div className="flex flex-col lg:flex-row lg:items-stretch lg:min-h-[90vh]">
+        <div className="flex flex-col-reverse lg:flex-row lg:items-stretch lg:min-h-[90vh]">
           {/* Left: text content */}
-          <div className="animate-enter-up w-full lg:w-[42%] flex flex-col justify-center px-5 md:px-8 lg:px-12 xl:pl-[calc((100vw-1440px)/2+48px)] pt-28 pb-10 lg:py-0">
+          <div className="animate-enter-up w-full lg:w-[42%] flex flex-col justify-center items-center lg:items-start text-center lg:text-left px-5 md:px-8 lg:px-12 xl:pl-[calc((100vw-1440px)/2+48px)] pt-8 pb-10 lg:py-0">
             <span className="font-sans font-semibold text-orange text-sm md:text-base tracking-[0.15em] uppercase block">
               About Us
             </span>
             <h1
-              className="text-navy text-3xl md:text-5xl lg:text-[64px] xl:text-[78px] leading-[0.95] tracking-tight mt-4 lg:mt-6"
+              className="text-navy text-3xl md:text-5xl lg:text-[64px] xl:text-[78px] leading-[0.95] tracking-tight mt-4 lg:mt-6 whitespace-nowrap"
               style={{ fontFamily: "'Badhorse', cursive" }}
             >
               SouthBound sips
@@ -62,7 +62,7 @@ function HeroSection() {
               experiences for weddings, parties, and corporate events across the
               South.
             </p>
-            <div className="flex flex-wrap gap-3 mt-6 lg:mt-10">
+            <div className="flex flex-wrap justify-center lg:justify-start gap-3 mt-6 lg:mt-10">
               <a
                 href="/#book"
                 className="inline-flex items-center justify-center font-sans font-medium text-white bg-orange text-base lg:text-lg rounded-full px-7 py-2.5 hover:bg-orange/90 active:scale-95 transition-all hover:shadow-lg hover:-translate-y-0.5"
@@ -222,35 +222,27 @@ function OurMissionSection() {
         {/* Content in a two-column layout */}
         <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
           {/* Left: large quote-style mission statement */}
-          <div className="scroll-fade-up w-full lg:w-[48%]">
+          <div className="scroll-fade-up w-full lg:w-[48%] text-center lg:text-left">
             <div className="relative">
               {/* Large decorative quote mark */}
               <span
-                className="absolute -top-8 -left-2 lg:-top-12 lg:-left-4 text-orange/20 text-[120px] lg:text-[180px] leading-[1] select-none pointer-events-none"
+                className="hidden lg:block absolute -top-12 -left-4 text-orange/20 text-[180px] leading-[1] select-none pointer-events-none"
                 style={{ fontFamily: "Georgia, serif" }}
               >
                 &ldquo;
               </span>
-              <p className="font-sans font-semibold text-navy text-xl md:text-2xl lg:text-[28px] leading-[1.5] tracking-[-0.011em] relative z-10 pl-4 lg:pl-6">
+              <p className="font-sans font-semibold text-navy text-xl md:text-2xl lg:text-[28px] leading-[1.5] tracking-[-0.011em] relative z-10 lg:pl-6">
                 Fostering Community Through Unforgettable Moments
               </p>
             </div>
 
-            <p className="font-sans font-normal text-navy/80 mt-6 lg:mt-8 text-base md:text-[18px] lg:text-[20px] leading-[1.7] tracking-[-0.011em] pl-4 lg:pl-6 max-w-[650px]">
+            <p className="font-sans font-normal text-navy/80 mt-6 lg:mt-8 text-base md:text-[18px] lg:text-[20px] leading-[1.7] tracking-[-0.011em] lg:pl-6 max-w-[650px] mx-auto lg:mx-0">
               Southbound Sips brings people together through unforgettable
               mobile bar experiences, from block parties to corporate galas and
               everything in between. We&apos;re not just pouring drinks,
               we&apos;re crafting moments that last long after the last cocktail.
             </p>
 
-            <div className="pl-4 lg:pl-6 mt-8 lg:mt-10">
-              <a
-                href="/#book"
-                className="inline-flex items-center justify-center font-sans font-medium text-white bg-navy text-base lg:text-lg rounded-full px-8 py-2.5 hover:bg-orange transition-all hover:shadow-lg hover:-translate-y-0.5"
-              >
-                Start Planning
-              </a>
-            </div>
           </div>
 
           {/* Right: image grid collage */}
@@ -344,7 +336,7 @@ function OurValuesSection() {
     <section className="relative w-full overflow-hidden bg-sage">
       <div className="max-w-[1440px] mx-auto px-5 md:px-8 lg:px-12 py-16 lg:py-32">
         {/* Header */}
-        <div className="scroll-fade-up flex flex-col gap-6 mb-16 lg:mb-20">
+        <div className="scroll-fade-up flex flex-col items-center md:items-start gap-6 mb-16 lg:mb-20 text-center md:text-left">
           <div>
             <span className="font-sans font-semibold text-orange text-sm md:text-base tracking-[0.15em] uppercase block mb-3">
               What We Stand For
@@ -365,7 +357,7 @@ function OurValuesSection() {
               {/* Divider line */}
               <div className="h-px bg-navy/10" />
 
-              <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-0 py-8 lg:py-10">
+              <div className="flex flex-col items-center text-center md:text-left md:flex-row md:items-center gap-2 md:gap-0 py-8 lg:py-10">
                 {/* Large letter */}
                 <span className="font-serif text-orange text-[64px] md:text-[80px] lg:text-[100px] leading-[0.8] md:w-[100px] lg:w-[130px] shrink-0">
                   {value.initial}
@@ -394,7 +386,7 @@ function OurValuesSection() {
 /* ═══════════════════════ MEET THE TEAM SECTION ══════════════════════ */
 function MeetTheTeamSection() {
   return (
-    <section id="team" className="relative w-full pt-20 lg:pt-44 overflow-hidden">
+    <section id="team" className="relative w-full pt-32 lg:pt-56 pb-20 lg:pb-32 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-white" />
 
@@ -525,16 +517,7 @@ function GallerySection() {
   ];
 
   return (
-    <section className="relative w-full bg-navy py-10 lg:py-16 overflow-hidden">
-      {/* Subtle background texture */}
-      <div className="absolute inset-0">
-        <Image
-          src="/images/backgroundfiller.png"
-          alt=""
-          fill
-          className="object-cover opacity-10"
-        />
-      </div>
+    <section className="relative w-full bg-navy pt-10 lg:pt-16 pb-16 lg:pb-28 overflow-hidden">
 
       <div className="relative z-10 max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12">
         {/* Heading */}
@@ -548,7 +531,7 @@ function GallerySection() {
         </div>
 
         {/* Bento grid */}
-        <div className="scroll-fade-up stagger-2 grid grid-cols-2 md:grid-cols-4 auto-rows-[150px] sm:auto-rows-[170px] md:auto-rows-[200px] lg:auto-rows-[220px] gap-2 md:gap-3">
+        <div className="scroll-fade-up stagger-2 grid grid-cols-2 md:grid-cols-4 auto-rows-[190px] sm:auto-rows-[220px] md:auto-rows-[260px] lg:auto-rows-[300px] gap-2 md:gap-3">
           {photos.map((photo, i) => (
             <div
               key={i}
@@ -580,7 +563,7 @@ function GallerySection() {
 /* ═════════════════════ DECORATIVE FLOWER STRIP ══════════════════════ */
 function FlowerStrip() {
   return (
-    <div className="relative w-full h-[109px] overflow-hidden">
+    <div className="relative w-full h-[60px] overflow-hidden">
       <Image
         src="/images/backgroundfiller.png"
         alt=""

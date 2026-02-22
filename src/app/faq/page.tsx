@@ -240,7 +240,7 @@ function CTABanner() {
             Book Your Event
           </a>
           <a
-            href="mailto:hello@southboundsips.com"
+            href="mailto:events@southboundsips.com"
             className="inline-flex items-center justify-center font-sans font-medium text-navy border-2 border-navy/20 text-base lg:text-lg rounded-full px-8 py-2.5 lg:py-3 hover:border-navy/40 transition-all hover:shadow-lg hover:-translate-y-0.5"
           >
             Send Us an Email

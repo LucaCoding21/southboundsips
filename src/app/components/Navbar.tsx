@@ -13,10 +13,27 @@ export default function Navbar({
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [visible, setVisible] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
   const lastScrollY = useRef(0);
 
   useEffect(() => {
+    const mq = window.matchMedia("(max-width: 767px)");
+    const update = () => setIsMobile(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
+
+  useEffect(() => {
+    if (!isMobile) {
+      setVisible(true);
+      return;
+    }
     const handleScroll = () => {
+      if (mobileMenuOpen) {
+        setVisible(true);
+        return;
+      }
       const currentY = window.scrollY;
       if (currentY < 80) {
         setVisible(true);
@@ -29,7 +46,7 @@ export default function Navbar({
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [isMobile, mobileMenuOpen]);
 
   const closeMenu = () => {
     setMobileMenuOpen(false);
@@ -66,7 +83,7 @@ export default function Navbar({
             Home
           </Link>
           {/* Services Dropdown (Desktop) */}
-          <div className="relative group">
+          <div className="relative group flex items-center">
             <Link
               href="/services"
               className={`font-sans font-medium text-base lg:text-lg leading-normal tracking-[-0.011em] transition-colors hover:text-orange flex items-center gap-1 ${
@@ -117,7 +134,7 @@ export default function Navbar({
             Contact
           </Link>
           <Link
-            href={isHome ? "#book" : "/#book"}
+            href="/contact"
             className="font-sans font-medium text-white bg-orange text-base lg:text-lg leading-normal tracking-[-0.011em] px-5 md:px-6 py-1.5 md:py-2 rounded-full transition-colors hover:bg-navy"
           >
             Book Your Event
@@ -127,8 +144,8 @@ export default function Navbar({
         {/* Mobile: CTA + Hamburger */}
         <div className="flex md:hidden items-center gap-3">
           <Link
-            href={isHome ? "#book" : "/#book"}
-            className="font-sans font-medium text-white bg-orange text-sm leading-normal px-4 py-1.5 rounded-full transition-colors hover:bg-navy active:scale-95"
+            href="/contact"
+            className="font-sans font-medium text-white bg-orange text-sm leading-normal px-4 py-1.5 rounded-full transition-colors hover:bg-navy active:scale-95 inline-flex items-center justify-center"
           >
             Book Now
           </Link>
@@ -234,7 +251,7 @@ export default function Navbar({
             Contact
           </Link>
           <Link
-            href={isHome ? "#book" : "/#book"}
+            href="/contact"
             onClick={closeMenu}
             className="font-sans font-medium text-white bg-orange text-xl leading-normal tracking-[-0.011em] px-6 py-4 rounded-full transition-all duration-200 hover:bg-navy active:scale-[0.98] text-center mt-4"
           >
