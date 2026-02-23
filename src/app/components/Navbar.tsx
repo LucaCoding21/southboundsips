@@ -26,10 +26,6 @@ export default function Navbar({
   }, []);
 
   useEffect(() => {
-    if (!isMobile) {
-      setVisible(true);
-      return;
-    }
     const handleScroll = () => {
       if (mobileMenuOpen) {
         setVisible(true);
@@ -47,7 +43,7 @@ export default function Navbar({
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [isMobile, mobileMenuOpen]);
+  }, [mobileMenuOpen]);
 
   const closeMenu = () => {
     setMobileMenuOpen(false);
@@ -65,7 +61,9 @@ export default function Navbar({
 
   return (
   <>
-    <header className={`w-full bg-white sticky top-0 shadow-sm transition-transform duration-300 ${visible ? "translate-y-0" : "-translate-y-full"} z-50`}>
+    {/* Spacer to offset fixed navbar height */}
+    <div className="h-[80px] md:h-[99px]" />
+    <header className={`w-full bg-white fixed top-0 left-0 right-0 shadow-sm transition-transform duration-300 ${visible ? "translate-y-0" : "-translate-y-full"} z-50`}>
       <nav className="relative flex items-center justify-between max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12 py-3 md:py-4">
         <Link href="/">
           <Image
