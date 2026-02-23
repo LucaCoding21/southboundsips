@@ -52,7 +52,7 @@ export default function MobileMenu({ isOpen, onClose, activePage }: MobileMenuPr
     tl.fromTo(
       panel,
       { clipPath: "circle(0% at 93% 3%)", visibility: "visible" },
-      { clipPath: "circle(150% at 93% 3%)", duration: 0.8, ease: "power4.inOut" }
+      { clipPath: "circle(150% at 93% 3%)", duration: 0.8, ease: "power4.inOut", immediateRender: false }
     );
 
     // Stage 2: Nav items stagger in (overlapping circle expand at 0.4s)
@@ -108,8 +108,9 @@ export default function MobileMenu({ isOpen, onClose, activePage }: MobileMenuPr
       hasBeenOpened.current = true;
       setServicesOpen(false);
       document.body.style.overflow = "hidden";
-      // Ensure panel is visible before playing (in case a previous reverse hid it)
+      // Ensure panel is visible and interactive before playing
       panelRef.current.style.visibility = "visible";
+      panelRef.current.style.pointerEvents = "auto";
       tl.timeScale(1).play();
     } else {
       // Don't reverse on initial mount — the timeline was never played,
@@ -120,7 +121,10 @@ export default function MobileMenu({ isOpen, onClose, activePage }: MobileMenuPr
       // Use GSAP's onReverseComplete instead of a fragile timeout
       tl.eventCallback("onReverseComplete", () => {
         document.body.style.overflow = "";
-        if (panelRef.current) panelRef.current.style.visibility = "hidden";
+        if (panelRef.current) {
+          panelRef.current.style.visibility = "hidden";
+          panelRef.current.style.pointerEvents = "none";
+        }
       });
     }
   }, [isOpen]);
@@ -140,7 +144,7 @@ export default function MobileMenu({ isOpen, onClose, activePage }: MobileMenuPr
     <div
       ref={panelRef}
       className="fixed inset-0 z-[100] md:hidden"
-      style={{ visibility: "hidden", willChange: "clip-path" }}
+      style={{ visibility: "hidden", clipPath: "circle(0% at 93% 3%)", pointerEvents: isOpen ? "auto" : "none", willChange: "clip-path" }}
     >
       {/* Background: texture + white overlay (same as hero) */}
       <div className="absolute inset-0">
