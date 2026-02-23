@@ -81,17 +81,17 @@ function HeroSection() {
            This makes layout immune to content-height overflow — nothing can push
            SIPS out of frame because positions are set independently. */}
       {/* ── Desktop: whole block anchored from bottom as one unit ── */}
-      <div className="hidden md:flex absolute inset-0 z-10 flex-col items-center justify-end pb-[18vh]">
+      <div className="hidden md:flex absolute inset-0 z-10 flex-col items-center justify-end pb-[16vh]">
         <div ref={dtTextTopRef} className="flex flex-col items-center will-change-transform">
           <Image src="/images/meet-jaymi-heading.svg" alt="Meet Jaymi" width={250} height={38} className="w-[180px] lg:w-[250px] h-auto" />
-          <div className="h-[1.5vh]" />
-          <Image src="/images/the-owner-of.svg" alt="the owner of" width={112} height={16} className="w-[90px] lg:w-[112px] h-auto mb-[2vh]" />
+          <div className="h-[1vh]" />
+          <Image src="/images/the-owner-of.svg" alt="the owner of" width={112} height={16} className="w-[90px] lg:w-[112px] h-auto mb-[1vh]" />
         </div>
         <div ref={dtTitleRef} className="w-full flex justify-center will-change-transform">
           <h1 className="text-navy leading-none tracking-tight hero-title-size" style={{ fontFamily: "'Badhorse', cursive" }}>Southbound</h1>
         </div>
-        <div ref={dtPhotoRef} className="relative -mt-[6vh] z-[100] will-change-transform">
-          <Image src="/images/jaymi-composite.png" alt="Jaymi - Owner of Southbound Sips" width={670} height={406} className="object-contain w-[500px] lg:w-[670px] h-auto relative z-[100] max-h-[52vh]" style={{ maxWidth: "670px" }} />
+        <div ref={dtPhotoRef} className="relative -mt-[4vh] z-[100] will-change-transform">
+          <Image src="/images/jaymi-composite.png" alt="Jaymi - Owner of Southbound Sips" width={670} height={406} className="object-contain w-[500px] lg:w-[670px] h-auto relative z-[100] max-h-[48vh]" style={{ maxWidth: "670px" }} />
           <div className="absolute bottom-0 left-1/2 -translate-x-1/2 -translate-y-[35%] z-[100]">
             <h2 className="text-navy leading-none tracking-tight hero-sips-size" style={{ fontFamily: "'Badhorse', cursive" }}>sips</h2>
           </div>

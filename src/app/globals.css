@@ -176,8 +176,8 @@ a:focus-visible {
 .hero-title-size { font-size: clamp(5rem, 13vw, 15rem); }
 .hero-sips-size  { font-size: clamp(5.5rem, 10vw, 11rem); }
 @media (min-width: 768px) {
-  .hero-title-size { font-size: min(15vw, 26vh); }
-  .hero-sips-size  { font-size: min(12vw, 20vh); }
+  .hero-title-size { font-size: min(15vw, 22vh); }
+  .hero-sips-size  { font-size: min(12vw, 17vh); }
 }
 
 /* Hero overlay positioning — vh-based so it tracks the hero height.
