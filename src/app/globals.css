@@ -205,3 +205,23 @@ a:focus-visible {
   }
 }
 
+/* ─── Footer giant wordmark ─────────────────────────────── */
+/* "Southbound" spans ~full width, "sips" slightly smaller.
+   Uses vw so it always fills the viewport edge-to-edge. */
+.footer-wordmark-top {
+  font-size: clamp(4rem, 18vw, 22rem);
+  line-height: 0.85;
+}
+.footer-wordmark-bottom {
+  font-size: clamp(4.5rem, 16vw, 19rem);
+  line-height: 0.85;
+}
+@media (min-width: 768px) {
+  .footer-wordmark-top {
+    font-size: clamp(6rem, 16vw, 22rem);
+  }
+  .footer-wordmark-bottom {
+    font-size: clamp(6rem, 13vw, 19rem);
+  }
+}
+

@@ -60,7 +60,7 @@ function HeroSection() {
       </div>
 
       {/* ── Mobile layout (< md): flex column, anchored to bottom ── */}
-      <div className="md:hidden relative z-10 h-full flex flex-col items-center justify-end pb-[35px]">
+      <div className="md:hidden relative z-10 h-full flex flex-col items-center justify-end pt-[70px] pb-[35px]">
         <div ref={textTopRef} className="flex flex-col items-center will-change-transform">
           <Image src="/images/meet-jaymi-heading.svg" alt="Meet Jaymi" width={250} height={38} className="w-[190px] h-auto" />
           <div className="h-6" />

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
+import MobileMenu from "./MobileMenu";
 
 export default function Navbar({
   activePage = "home",
@@ -11,7 +12,6 @@ export default function Navbar({
 }) {
   const isHome = activePage === "home";
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false);
   const [visible, setVisible] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
   const lastScrollY = useRef(0);
@@ -50,7 +50,6 @@ export default function Navbar({
 
   const closeMenu = () => {
     setMobileMenuOpen(false);
-    setServicesOpen(false);
   };
 
   const serviceLinks = [
@@ -60,8 +59,9 @@ export default function Navbar({
   ];
 
   return (
-    <header className={`w-full bg-white z-50 sticky top-0 shadow-sm transition-transform duration-300 ${visible ? "translate-y-0" : "-translate-y-full"}`}>
-      <nav className="flex items-center justify-between max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12 py-3 md:py-4">
+  <>
+    <header className={`w-full bg-white sticky top-0 shadow-sm transition-transform duration-300 ${visible ? "translate-y-0" : "-translate-y-full"} z-50`}>
+      <nav className="relative flex items-center justify-between max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12 py-3 md:py-4">
         <Link href="/">
           <Image
             src="/images/logo.png"
@@ -179,116 +179,8 @@ export default function Navbar({
         </div>
       </nav>
 
-      {/* Mobile Menu Overlay */}
-      <div
-        className={`md:hidden absolute top-full left-0 right-0 bg-white overflow-hidden transition-all duration-300 ease-out z-50 ${
-          mobileMenuOpen
-            ? "max-h-[600px] opacity-100 shadow-xl border-t-2 border-orange"
-            : "max-h-0 opacity-0"
-        }`}
-      >
-        <div className="flex flex-col px-6 py-6 gap-1">
-          <Link
-            href="/"
-            onClick={closeMenu}
-            className={`group font-sans font-medium text-xl leading-normal tracking-[-0.011em] py-3 px-4 rounded-lg transition-all duration-200 hover:bg-sage/30 hover:pl-6 flex items-center justify-between ${
-              activePage === "home" ? "text-orange bg-sage/20" : "text-navy"
-            }`}
-          >
-            Home
-          </Link>
-          {/* Services Dropdown (Mobile) */}
-          <div>
-            <button
-              onClick={() => setServicesOpen(!servicesOpen)}
-              className={`w-full group font-sans font-medium text-xl leading-normal tracking-[-0.011em] py-3 px-4 rounded-lg transition-all duration-200 hover:bg-sage/30 hover:pl-6 flex items-center justify-between ${
-                activePage === "services" ? "text-orange bg-sage/20" : "text-navy"
-              }`}
-            >
-              Services
-              <svg className={`w-5 h-5 opacity-40 group-hover:opacity-100 transition-all duration-200 ${servicesOpen ? "rotate-180 opacity-100" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-            <div className={`overflow-hidden transition-all duration-300 ${servicesOpen ? "max-h-48 opacity-100" : "max-h-0 opacity-0"}`}>
-              {serviceLinks.map((item) => (
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  onClick={closeMenu}
-                  className="block font-sans font-medium text-base text-navy/70 hover:text-orange py-2.5 pl-8 pr-4 rounded-lg transition-all duration-200 hover:bg-sage/20"
-                >
-                  {item.label}
-                </Link>
-              ))}
-            </div>
-          </div>
-          <Link
-            href="/about"
-            onClick={closeMenu}
-            className={`group font-sans font-medium text-xl leading-normal tracking-[-0.011em] py-3 px-4 rounded-lg transition-all duration-200 hover:bg-sage/30 hover:pl-6 flex items-center justify-between ${
-              activePage === "about" ? "text-orange bg-sage/20" : "text-navy"
-            }`}
-          >
-            About
-          </Link>
-          <Link
-            href="/faq"
-            onClick={closeMenu}
-            className={`group font-sans font-medium text-xl leading-normal tracking-[-0.011em] py-3 px-4 rounded-lg transition-all duration-200 hover:bg-sage/30 hover:pl-6 flex items-center justify-between ${
-              activePage === "faq" ? "text-orange bg-sage/20" : "text-navy"
-            }`}
-          >
-            FAQ
-          </Link>
-          <Link
-            href="/contact"
-            onClick={closeMenu}
-            className={`group font-sans font-medium text-xl leading-normal tracking-[-0.011em] py-3 px-4 rounded-lg transition-all duration-200 hover:bg-sage/30 hover:pl-6 flex items-center justify-between ${
-              activePage === "contact" ? "text-orange bg-sage/20" : "text-navy"
-            }`}
-          >
-            Contact
-          </Link>
-          <Link
-            href="/contact"
-            onClick={closeMenu}
-            className="font-sans font-medium text-white bg-orange text-xl leading-normal tracking-[-0.011em] px-6 py-4 rounded-full transition-all duration-200 hover:bg-navy active:scale-[0.98] text-center mt-4"
-          >
-            Book Your Event
-          </Link>
-
-          {/* Social Media Links */}
-          <div className="flex items-center justify-center gap-6 mt-6 pt-6 border-t border-gray-100">
-            <a
-              href="https://www.instagram.com/southboundsips/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-sans font-medium text-navy text-base transition-all duration-200 hover:text-orange"
-            >
-              Instagram
-            </a>
-            <span className="text-gray-300">|</span>
-            <a
-              href="https://www.facebook.com/southboundsips"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-sans font-medium text-navy text-base transition-all duration-200 hover:text-orange"
-            >
-              Facebook
-            </a>
-          </div>
-        </div>
-      </div>
-
-      {/* Backdrop */}
-      {mobileMenuOpen && (
-        <div
-          className="md:hidden fixed inset-0 bg-navy/20 z-40 backdrop-blur-sm"
-          style={{ top: "100%" }}
-          onClick={closeMenu}
-        />
-      )}
     </header>
+    <MobileMenu isOpen={mobileMenuOpen} onClose={closeMenu} activePage={activePage} />
+  </>
   );
 }
