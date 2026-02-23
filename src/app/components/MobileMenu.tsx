@@ -17,6 +17,7 @@ export default function MobileMenu({ isOpen, onClose, activePage }: MobileMenuPr
   const tlRef = useRef<gsap.core.Timeline | null>(null);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const hasBeenOpened = useRef(false);
 
   const serviceLinks = [
     { label: "Packages", href: "/services#packages" },
@@ -104,12 +105,17 @@ export default function MobileMenu({ isOpen, onClose, activePage }: MobileMenuPr
     if (!tl || !panelRef.current) return;
 
     if (isOpen) {
+      hasBeenOpened.current = true;
       setServicesOpen(false);
       document.body.style.overflow = "hidden";
       // Ensure panel is visible before playing (in case a previous reverse hid it)
       panelRef.current.style.visibility = "visible";
       tl.timeScale(1).play();
     } else {
+      // Don't reverse on initial mount — the timeline was never played,
+      // so reversing it can flash the panel visible with no content.
+      if (!hasBeenOpened.current) return;
+
       tl.timeScale(1.4).reverse();
       // Use GSAP's onReverseComplete instead of a fragile timeout
       tl.eventCallback("onReverseComplete", () => {

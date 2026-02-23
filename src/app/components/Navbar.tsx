@@ -15,6 +15,7 @@ export default function Navbar({
   const [visible, setVisible] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
   const lastScrollY = useRef(0);
+  const justClosed = useRef(false);
 
   useEffect(() => {
     const mq = window.matchMedia("(max-width: 767px)");
@@ -50,6 +51,10 @@ export default function Navbar({
 
   const closeMenu = () => {
     setMobileMenuOpen(false);
+    // Prevent the touch event from "passing through" to the hamburger
+    // button underneath when the overlay disappears mid-tap.
+    justClosed.current = true;
+    setTimeout(() => { justClosed.current = false; }, 400);
   };
 
   const serviceLinks = [
@@ -150,7 +155,7 @@ export default function Navbar({
             Book Now
           </Link>
           <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            onClick={() => { if (!justClosed.current) setMobileMenuOpen(!mobileMenuOpen); }}
             className={`relative w-10 h-10 flex items-center justify-center rounded-full transition-all duration-300 ${
               mobileMenuOpen
                 ? "bg-orange text-white"
