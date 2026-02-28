@@ -71,7 +71,7 @@ function HeroSection() {
         </div>
         <div ref={photoRef} className="relative -mt-12 z-[100] will-change-transform">
           <Image src="/images/jaymi-composite.png" alt="Jaymi - Owner of Southbound Sips" width={670} height={406} className="object-contain w-[85vw] h-auto relative z-[100]" style={{ maxWidth: "670px" }} />
-          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 -translate-y-[35%] z-[100]">
+          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 -translate-y-[48%] z-[100]">
             <h2 className="text-navy leading-none tracking-tight hero-sips-size" style={{ fontFamily: "'Badhorse', cursive" }}>sips</h2>
           </div>
         </div>
@@ -91,8 +91,8 @@ function HeroSection() {
           <h1 className="text-navy leading-none tracking-tight hero-title-size" style={{ fontFamily: "'Badhorse', cursive" }}>Southbound</h1>
         </div>
         <div ref={dtPhotoRef} className="relative -mt-[4vh] z-[100] will-change-transform">
-          <Image src="/images/jaymi-composite.png" alt="Jaymi - Owner of Southbound Sips" width={670} height={406} className="object-contain w-[500px] lg:w-[670px] h-auto relative z-[100] max-h-[48vh]" style={{ maxWidth: "670px" }} />
-          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 -translate-y-[35%] z-[100]">
+          <Image src="/images/jaymi-composite.png" alt="Jaymi - Owner of Southbound Sips" width={670} height={406} className="object-contain w-[500px] lg:w-[670px] h-auto relative z-[100] max-h-[48vh] -translate-y-8" style={{ maxWidth: "670px" }} />
+          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 -translate-y-[48%] z-[100]">
             <h2 className="text-navy leading-none tracking-tight hero-sips-size" style={{ fontFamily: "'Badhorse', cursive" }}>sips</h2>
           </div>
         </div>

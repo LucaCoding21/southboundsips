@@ -140,7 +140,7 @@ function HeroSection() {
     <section ref={sectionRef} className="relative w-full bg-white min-h-[70vh] md:min-h-[80vh] flex items-center pt-12 md:pt-20 pb-24 md:pb-32">
       {/* Cocktail illustration — left */}
       <div
-        className="absolute left-[1%] md:left-[8%] lg:left-[10%] -bottom-24 md:-bottom-36 lg:-bottom-44 w-[280px] md:w-[420px] lg:w-[550px] pointer-events-none z-30 will-change-transform"
+        className="absolute -left-[8%] md:-left-[2%] lg:left-0 -bottom-24 md:-bottom-36 lg:-bottom-44 w-[280px] md:w-[420px] lg:w-[550px] pointer-events-none z-30 will-change-transform"
         style={{ transform: `translateY(${scrollY * 0.15}px)` }}
       >
         <Image
@@ -154,7 +154,7 @@ function HeroSection() {
 
       {/* Pitcher illustration — right */}
       <div
-        className="absolute right-[1%] md:right-[8%] lg:right-[10%] top-4 md:top-8 w-[280px] md:w-[420px] lg:w-[550px] pointer-events-none z-0 will-change-transform"
+        className="absolute -right-[8%] md:-right-[2%] lg:right-0 top-4 md:top-8 w-[280px] md:w-[420px] lg:w-[550px] pointer-events-none z-0 will-change-transform"
         style={{ transform: `translateY(${scrollY * -0.12}px)` }}
       >
         <Image
