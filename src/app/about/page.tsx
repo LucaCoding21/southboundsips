@@ -447,6 +447,13 @@ function MeetTheTeamSection() {
               imageWidth={400}
               imageHeight={440}
             />
+            <TeamMemberCard
+              name="Alexis"
+              role="The Chaos Coordinator"
+              imageSrc="/images/team/alexis-team.png"
+              imageWidth={400}
+              imageHeight={440}
+            />
           </div>
         </div>
 
@@ -481,7 +488,7 @@ function MeetTheTeamSection() {
               />
             </div>
           </div>
-          <div className="scroll-fade-up stagger-3 grid grid-cols-2 gap-5 lg:gap-7 max-w-[80%] mx-auto">
+          <div className="scroll-fade-up stagger-3 grid grid-cols-3 gap-5 lg:gap-7 max-w-[90%] mx-auto">
             <TeamMemberCard
               name="Rhodie R."
               role="Expert Mocktail Taster"
@@ -493,6 +500,13 @@ function MeetTheTeamSection() {
               name="Jay M."
               role={'Bar "Baddie Dad" Bartender'}
               imageSrc="/images/team/jay.png"
+              imageWidth={400}
+              imageHeight={440}
+            />
+            <TeamMemberCard
+              name="Alexis"
+              role="The Chaos Coordinator"
+              imageSrc="/images/team/alexis-team.png"
               imageWidth={400}
               imageHeight={440}
             />
