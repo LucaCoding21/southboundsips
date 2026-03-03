@@ -1,5 +1,6 @@
 "use client";
 
+import { FormEvent, useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ScrollAnimations from "../components/ScrollAnimations";
@@ -7,6 +8,58 @@ import ScrollAnimations from "../components/ScrollAnimations";
 /* ─── Contact Section (unified) ──────────────────────────────────────── */
 
 function ContactSection() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [status, setStatus] = useState<"success" | "error" | null>(null);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setStatus(null);
+    setErrorMessage(null);
+    setIsSubmitting(true);
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    const payload: Record<string, FormDataEntryValue> = {};
+    formData.forEach((value, key) => {
+      payload[key] = value;
+    });
+
+    try {
+      const response = await fetch("/api/southboundsips", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...payload,
+          source: "contact-page-form",
+        }),
+      });
+
+      if (!response.ok) {
+        const data = await response.json().catch(() => null);
+        setStatus("error");
+        setErrorMessage(
+          (data && (data.error as string)) ||
+            "Something went wrong sending your message. Please try again."
+        );
+        return;
+      }
+
+      setStatus("success");
+      form.reset();
+    } catch {
+      setStatus("error");
+      setErrorMessage(
+        "We couldn't send your message right now. Please check your connection and try again."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section id="book" className="relative w-full bg-white pt-8 md:pt-16 pb-20 md:pb-32">
       <div className="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12">
@@ -99,7 +152,7 @@ function ContactSection() {
           {/* Right — Form */}
           <div className="animate-enter-up-d1">
             <div className="bg-sage rounded-3xl p-6 md:p-8 lg:p-10">
-              <form className="space-y-5">
+              <form className="space-y-5" onSubmit={handleSubmit}>
                 <div className="grid md:grid-cols-2 gap-5">
                   <div>
                     <label htmlFor="name" className="block font-sans font-medium text-navy text-sm mb-2">
@@ -230,12 +283,25 @@ function ContactSection() {
                   />
                 </div>
 
-                <button
-                  type="submit"
-                  className="w-full font-sans font-medium text-white bg-orange text-base md:text-lg leading-[1.5] tracking-[-0.011em] capitalize rounded-full px-8 py-3 md:py-4 hover:bg-navy transition-all hover:shadow-lg hover:-translate-y-0.5"
-                >
-                  Send Inquiry
-                </button>
+                <div className="space-y-3">
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full font-sans font-medium text-white bg-orange text-base md:text-lg leading-[1.5] tracking-[-0.011em] capitalize rounded-full px-8 py-3 md:py-4 hover:bg-navy transition-all hover:shadow-lg hover:-translate-y-0.5 disabled:opacity-60 disabled:cursor-not-allowed"
+                  >
+                    {isSubmitting ? "Sending..." : "Send Inquiry"}
+                  </button>
+                  {status === "success" && (
+                    <p className="font-sans text-sm text-emerald-800">
+                      Thank you! Your message has been sent to Southbound Sips.
+                    </p>
+                  )}
+                  {status === "error" && errorMessage && (
+                    <p className="font-sans text-sm text-red-700">
+                      {errorMessage}
+                    </p>
+                  )}
+                </div>
               </form>
             </div>
           </div>

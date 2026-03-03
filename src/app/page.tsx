@@ -996,6 +996,58 @@ function BookingBanner() {
 }
 
 function BookingForm() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [status, setStatus] = useState<"success" | "error" | null>(null);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setStatus(null);
+    setErrorMessage(null);
+    setIsSubmitting(true);
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    const payload: Record<string, FormDataEntryValue> = {};
+    formData.forEach((value, key) => {
+      payload[key] = value;
+    });
+
+    try {
+      const response = await fetch("/api/southboundsips", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...payload,
+          source: "home-booking-form",
+        }),
+      });
+
+      if (!response.ok) {
+        const data = await response.json().catch(() => null);
+        setStatus("error");
+        setErrorMessage(
+          (data && (data.error as string)) ||
+            "Something went wrong sending your inquiry. Please try again."
+        );
+        return;
+      }
+
+      setStatus("success");
+      form.reset();
+    } catch {
+      setStatus("error");
+      setErrorMessage(
+        "We couldn't send your inquiry right now. Please check your connection and try again."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section id="book" className="relative w-full py-14 md:py-24 lg:py-32">
       {/* Background with overlay */}
@@ -1054,7 +1106,7 @@ function BookingForm() {
 
           {/* Right side - Form */}
           <div className="scroll-slide-right stagger-2 bg-sage rounded-3xl p-6 md:p-8 lg:p-10">
-            <form className="space-y-5">
+            <form className="space-y-5" onSubmit={handleSubmit}>
               <div className="grid md:grid-cols-2 gap-5">
                 <div>
                   <label htmlFor="name" className="block font-sans font-medium text-navy text-sm mb-2">
@@ -1185,12 +1237,25 @@ function BookingForm() {
                 />
               </div>
 
-              <button
-                type="submit"
-                className="w-full font-sans font-medium text-white bg-orange text-base md:text-lg leading-[1.5] tracking-[-0.011em] capitalize rounded-full px-8 py-3 md:py-4 hover:bg-navy transition-all hover:shadow-lg hover:-translate-y-0.5"
-              >
-                Send Inquiry
-              </button>
+              <div className="space-y-3">
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full font-sans font-medium text-white bg-orange text-base md:text-lg leading-[1.5] tracking-[-0.011em] capitalize rounded-full px-8 py-3 md:py-4 hover:bg-navy transition-all hover:shadow-lg hover:-translate-y-0.5 disabled:opacity-60 disabled:cursor-not-allowed"
+                >
+                  {isSubmitting ? "Sending..." : "Send Inquiry"}
+                </button>
+                {status === "success" && (
+                  <p className="font-sans text-sm text-emerald-800">
+                    Thank you! Your inquiry has been sent to Southbound Sips.
+                  </p>
+                )}
+                {status === "error" && errorMessage && (
+                  <p className="font-sans text-sm text-red-700">
+                    {errorMessage}
+                  </p>
+                )}
+              </div>
             </form>
           </div>
         </div>
