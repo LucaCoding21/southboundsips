@@ -1,5 +1,5 @@
-import CountdownPage from "../CountdownPage";
+import { redirect } from "next/navigation";
 
 export default function Countdown() {
-  return <CountdownPage />;
+  redirect("/");
 }
