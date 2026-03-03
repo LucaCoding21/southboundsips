@@ -54,8 +54,8 @@ export default function Navbar({
   };
 
   const serviceLinks = [
-    { label: "Packages", href: "/services#packages" },
-    { label: "Bartending", href: "/services#bartending" },
+    { label: "Mobile Bar", href: "/services#packages" },
+    { label: "Bar Services", href: "/services#bar-services" },
     { label: "Rentals", href: "/services#rentals" },
   ];
 
@@ -93,7 +93,7 @@ export default function Navbar({
                 activePage === "services" ? "text-orange" : "text-navy"
               }`}
             >
-              Services
+              Trailer Packages
               <svg className="w-3.5 h-3.5 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
               </svg>

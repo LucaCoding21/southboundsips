@@ -217,11 +217,11 @@ function BehindTheBarSection() {
     { src: "/images/image-26.png", alt: "Southbound Sips setup", className: "left-8 xl:left-16 top-[15%] w-[20vw] aspect-[4/3]" },
     { src: "/images/jaymi-team.png", alt: "Jaymi and team", className: "right-8 xl:right-16 top-[25%] w-[18vw] aspect-[3/4]" },
     { src: "/images/image-27.png", alt: "Southbound Sips event", className: "left-12 xl:left-24 top-[50%] w-[18vw] aspect-[4/3]" },
-    { src: "/images/image-26.png", alt: "Southbound Sips detail", className: "right-12 xl:right-28 top-[62%] w-[20vw] aspect-[4/3]" },
+    { src: "/images/galleryphotos/southbound-sips-front.jpg", alt: "Southbound Sips trailer front", className: "right-12 xl:right-28 top-[62%] w-[20vw] aspect-[4/3]" },
   ];
 
   const mobileImages = [
-    { src: "/images/image-26.png", alt: "Southbound Sips setup", className: "-left-4 top-[8%] w-[35vw] aspect-[4/3]" },
+    { src: "/images/galleryphotos/southbound-sips-front.jpg", alt: "Southbound Sips trailer front", className: "-left-4 top-[8%] w-[35vw] aspect-[4/3]" },
     { src: "/images/jaymi-team.png", alt: "Jaymi and team", className: "-right-4 top-[35%] w-[30vw] aspect-[3/4]" },
     { src: "/images/image-27.png", alt: "Southbound Sips event", className: "-left-4 top-[62%] w-[33vw] aspect-[4/3]" },
   ];
@@ -681,7 +681,7 @@ function WhatIOffer() {
             {/* Mobile: title left, price right */}
             <div className="flex md:hidden justify-between items-baseline pt-2.5 w-full gap-3">
               <h3 className="font-serif text-2xl text-navy leading-tight">Mobile Bar Packages</h3>
-              <p className="font-sans font-medium text-orange text-base whitespace-nowrap">Starting from $260/Hr</p>
+              <p className="font-sans font-medium text-orange text-base whitespace-nowrap">Starting from $280/Hr</p>
             </div>
             {/* Desktop: centered text */}
             <div className="hidden md:block text-center pt-5 w-full">
@@ -689,7 +689,7 @@ function WhatIOffer() {
                 Mobile Bar Packages
               </h3>
               <p className="font-sans font-medium text-orange text-[20px] lg:text-[22px] leading-[1.5] tracking-[0.01em] mb-2">
-                Starting from $260/Hr
+                Starting from $280/Hr
               </p>
               <span className="inline-flex items-center gap-1 font-sans text-sm font-medium text-navy/50 group-hover:text-orange transition-all duration-300">
                 Learn more <svg className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
@@ -698,7 +698,7 @@ function WhatIOffer() {
           </a>
 
           {/* Bartender Services */}
-          <a href="/services#bartending" className="relative flex flex-col items-center group cursor-pointer">
+          <a href="/services#bar-services" className="relative flex flex-col items-center group cursor-pointer">
             {/* 6-pointed star badge - desktop only */}
             <div className="hidden md:block absolute -top-8 right-6 z-20 w-[150px] h-[150px] text-navy group-hover:text-orange transition-colors duration-300">
               <svg viewBox="0 0 120 120" className="w-full h-full">
@@ -713,16 +713,16 @@ function WhatIOffer() {
             </div>
             {/* Mobile: title left, price right */}
             <div className="flex md:hidden justify-between items-baseline pt-2.5 w-full gap-3">
-              <h3 className="font-serif text-2xl text-navy leading-tight">Bartender Services</h3>
-              <p className="font-sans font-medium text-orange text-base whitespace-nowrap">Starting from $180/Hr</p>
+              <h3 className="font-serif text-2xl text-navy leading-tight">Bar Services</h3>
+              <p className="font-sans font-medium text-orange text-base whitespace-nowrap">Starting from $90/Hr</p>
             </div>
             {/* Desktop: centered text */}
             <div className="hidden md:block text-center pt-5 w-full">
               <h3 className="font-serif text-[28px] lg:text-[32px] leading-[1.5] tracking-[-0.011em] text-navy group-hover:text-orange transition-colors duration-300">
-                Bartender Services
+                Bar Services
               </h3>
               <p className="font-sans font-medium text-orange text-[20px] lg:text-[22px] leading-[1.5] tracking-[0.01em] mb-2">
-                Starting from $180/Hr
+                Starting from $90/Hr
               </p>
               <span className="inline-flex items-center gap-1 font-sans text-sm font-medium text-navy/50 group-hover:text-orange transition-all duration-300">
                 Learn more <svg className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
@@ -776,7 +776,7 @@ function WhatIOffer() {
             href="/services"
             className="text-center font-sans font-medium text-orange text-[18px] lg:text-[20px] leading-[1.5] tracking-[-0.011em] capitalize border-2 border-orange rounded-full px-10 py-3 hover:bg-orange hover:text-white active:scale-95 transition-all hover:shadow-lg hover:-translate-y-0.5"
           >
-            View All Services
+            View All Packages
           </a>
         </div>
       </div>
@@ -1164,7 +1164,7 @@ function BookingForm() {
                 >
                   <option value="">Select a service</option>
                   <option value="mobile-bar">Mobile Bar Package</option>
-                  <option value="bartender">Bartender Services</option>
+                  <option value="bartender">Bar Services</option>
                   <option value="addons">Add-ons & Rentals</option>
                   <option value="mobile-bar-bartender">Mobile Bar + Bartender</option>
                   <option value="full-service">Full Service (All Inclusive)</option>

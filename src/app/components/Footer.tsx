@@ -103,7 +103,7 @@ export default function Footer() {
                 {[
                   { label: "Home", href: "/" },
                   { label: "About", href: "/about" },
-                  { label: "Services", href: "/services" },
+                  { label: "Trailer Packages", href: "/services" },
                   { label: "FAQ", href: "/faq" },
                   { label: "Contact", href: "/contact" },
                 ].map((link) => (

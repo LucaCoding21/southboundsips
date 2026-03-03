@@ -20,14 +20,14 @@ export default function MobileMenu({ isOpen, onClose, activePage }: MobileMenuPr
   const hasBeenOpened = useRef(false);
 
   const serviceLinks = [
-    { label: "Packages", href: "/services#packages" },
-    { label: "Bartending", href: "/services#bartending" },
+    { label: "Mobile Bar", href: "/services#packages" },
+    { label: "Bar Services", href: "/services#bar-services" },
     { label: "Rentals", href: "/services#rentals" },
   ];
 
   const navLinks = [
     { label: "Home", href: "/", page: "home" as const },
-    { label: "Services", href: "/services", page: "services" as const, hasDropdown: true },
+    { label: "Trailer Packages", href: "/services", page: "services" as const, hasDropdown: true },
     { label: "About", href: "/about", page: "about" as const },
     { label: "FAQ", href: "/faq", page: "faq" as const },
     { label: "Contact", href: "/contact", page: "contact" as const },

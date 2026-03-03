@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="440" viewBox="0 0 400 440" fill="none">
+  <!-- Orange clover/quatrefoil background with deep curves -->
+  <path d="
+    M 170 190
+    C 170 105, 178 45, 200 45
+    C 222 45, 230 105, 230 190
+    C 305 190, 355 198, 355 220
+    C 355 242, 305 250, 230 250
+    C 230 335, 222 395, 200 395
+    C 178 395, 170 335, 170 250
+    C 95 250, 45 242, 45 220
+    C 45 198, 95 190, 170 190
+    Z
+  " fill="#E57D37"/>
+</svg>

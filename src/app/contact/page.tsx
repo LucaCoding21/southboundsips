@@ -209,7 +209,7 @@ function ContactSection() {
                   >
                     <option value="">Select a service</option>
                     <option value="mobile-bar">Mobile Bar Package</option>
-                    <option value="bartender">Bartender Services</option>
+                    <option value="bartender">Bar Services</option>
                     <option value="addons">Add-ons &amp; Rentals</option>
                     <option value="mobile-bar-bartender">Mobile Bar + Bartender</option>
                     <option value="full-service">Full Service (All Inclusive)</option>

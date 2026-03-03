@@ -26,7 +26,7 @@ const faqs = [
     question:
       "If we\u2019re not interested in alcohol at our event, can we still use you?",
     answer:
-      "Absolutely! We craft amazing mocktails, too! We are also happy to provide fresh-squeezed lemonade or limeades, tea, coffee, hot cocoa or anything else you come up with! You could even use us as a beautiful cake and dessert stand!",
+      "Absolutely! We craft amazing mocktails, too! We are also happy to provide lemonade or limeades, tea, coffee, hot cocoa or anything else you come up with! You could even use us as a beautiful cake and dessert stand!",
   },
   {
     question: "Do you supply the alcohol?",
@@ -36,7 +36,7 @@ const faqs = [
   {
     question: "What do you provide?",
     answer:
-      'Besides a picture perfect backdrop, we provide everything needed for your bar service. Depending upon the package, our services include applicable serveware (recycled heavy-weight plastic stemless wine and champagne "glasses" and pilsner cups), paper or wheat straws, ice, garnishes, syrups, fresh squeezed juices, mixers, licensed bartender(s) and a personalized menu.',
+      'Besides a picture perfect backdrop, we provide everything needed for your bar service. Depending upon the package, our services include applicable serveware (recycled heavy-weight plastic stemless wine and champagne "glasses" and pilsner cups), paper or wheat straws, ice, garnishes, syrups, fresh juice, mixers, licensed bartender(s) and a personalized menu.',
   },
   {
     question: "Can you provide a cash bar?",
@@ -118,7 +118,7 @@ function FAQItem({
             {answer.split("\n\n").map((paragraph, i) => (
               <p
                 key={i}
-                className={`font-sans font-normal text-navy/65 text-[15px] md:text-base leading-[1.75] tracking-[-0.011em] ${
+                className={`font-sans font-normal text-navy/85 text-base md:text-lg leading-[1.75] tracking-[-0.011em] ${
                   i > 0 ? "mt-3" : ""
                 }`}
               >

@@ -24,7 +24,7 @@ function TeamMemberCard({
         alt={`${name} - ${role}`}
         width={imageWidth}
         height={imageHeight}
-        className="object-contain w-full h-auto"
+        className="object-contain w-full h-auto max-w-[200px] md:max-w-[250px] lg:max-w-[280px]"
       />
       <p
         className="text-navy leading-[1.1] tracking-tight mt-4 text-xl md:text-2xl lg:text-3xl"
@@ -82,10 +82,10 @@ function HeroSection() {
           <div className="animate-enter-right w-full lg:w-[58%] relative">
             <div className="relative w-full aspect-[4/3] lg:aspect-auto lg:min-h-[90vh]">
               <Image
-                src="/images/about-hero.png"
+                src="/images/about-hero-southbound-mobiletrailer.png"
                 alt="Southbound Sips experience"
                 fill
-                className="object-cover object-center lg:rounded-bl-[60px]"
+                className="object-cover lg:rounded-bl-[60px]" style={{ objectPosition: '60% center' }}
                 priority
               />
             </div>
@@ -248,19 +248,19 @@ function OurMissionSection() {
           {/* Right: image grid collage */}
           <div className="scroll-slide-right stagger-2 w-full lg:w-[48%]">
             <div className="grid grid-cols-2 gap-4 md:gap-5">
-              <div className="relative aspect-[2/3] rounded-t-[100px] rounded-b-[20px] overflow-hidden">
+              <div className="relative aspect-[2/3] rounded-tl-[80px] rounded-br-[80px] rounded-tr-[20px] rounded-bl-[20px] overflow-hidden">
                 <Image
-                  src="/images/image-26.png"
-                  alt="Southbound Sips event setup"
+                  src="/images/galleryphotos/southbound-sips-drinks.jpg"
+                  alt="Southbound Sips drinks"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 45vw, 25vw"
                 />
               </div>
-              <div className="relative aspect-[2/3] rounded-t-[100px] rounded-b-[20px] overflow-hidden mt-10">
+              <div className="relative aspect-[2/3] rounded-tr-[80px] rounded-bl-[80px] rounded-tl-[20px] rounded-br-[20px] overflow-hidden mt-10">
                 <Image
-                  src="/images/image-27.png"
-                  alt="Southbound Sips serving"
+                  src="/images/galleryphotos/southbound-sips-guest.jpg"
+                  alt="Guest enjoying drinks"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 45vw, 25vw"
@@ -412,9 +412,9 @@ function MeetTheTeamSection() {
             <TeamMemberCard
               name="Jaymi M."
               role="Owner & Head Bartender"
-              imageSrc="/images/meettheteam/Group 54.png"
-              imageWidth={525}
-              imageHeight={411}
+              imageSrc="/images/team/Group 54.png"
+              imageWidth={400}
+              imageHeight={440}
             />
           </div>
           {/* Rest of team in consistent 2-col grid */}
@@ -422,30 +422,30 @@ function MeetTheTeamSection() {
             <TeamMemberCard
               name="Nohea M."
               role="Marketing Maven"
-              imageSrc="/images/meettheteam/Group 55.png"
-              imageWidth={586}
-              imageHeight={520}
+              imageSrc="/images/team/Group 55.png"
+              imageWidth={400}
+              imageHeight={440}
             />
             <TeamMemberCard
               name="Alexis R."
               role="Quiet Capital King"
-              imageSrc="/images/meettheteam/Group 53.png"
-              imageWidth={564}
-              imageHeight={435}
+              imageSrc="/images/team/Group 53.png"
+              imageWidth={400}
+              imageHeight={440}
             />
             <TeamMemberCard
               name="Rhodie R."
               role="Expert Mocktail Taster"
-              imageSrc="/images/meettheteam/Group 52.png"
-              imageWidth={493}
-              imageHeight={442}
+              imageSrc="/images/team/Group 52.png"
+              imageWidth={400}
+              imageHeight={440}
             />
             <TeamMemberCard
               name="Jay M."
               role={'Bar "Baddie Dad" Bartender'}
-              imageSrc="/images/meettheteam/Group 51.png"
-              imageWidth={740}
-              imageHeight={537}
+              imageSrc="/images/team/jay.png"
+              imageWidth={400}
+              imageHeight={440}
             />
           </div>
         </div>
@@ -457,44 +457,44 @@ function MeetTheTeamSection() {
               <TeamMemberCard
                 name="Nohea M."
                 role="Marketing Maven"
-                imageSrc="/images/meettheteam/Group 55.png"
-                imageWidth={586}
-                imageHeight={520}
+                imageSrc="/images/team/Group 55.png"
+                imageWidth={400}
+                imageHeight={440}
               />
             </div>
             <div>
               <TeamMemberCard
                 name="Jaymi M."
                 role="Owner & Head Bartender"
-                imageSrc="/images/meettheteam/Group 54.png"
-                imageWidth={525}
-                imageHeight={411}
+                imageSrc="/images/team/Group 54.png"
+                imageWidth={400}
+                imageHeight={440}
               />
             </div>
             <div className="mt-12">
               <TeamMemberCard
                 name="Alexis R."
                 role="Quiet Capital King"
-                imageSrc="/images/meettheteam/Group 53.png"
-                imageWidth={564}
-                imageHeight={435}
+                imageSrc="/images/team/Group 53.png"
+                imageWidth={400}
+                imageHeight={440}
               />
             </div>
           </div>
-          <div className="scroll-fade-up stagger-3 grid grid-cols-[1fr_1.4fr] gap-5 lg:gap-7 max-w-[80%] mx-auto">
+          <div className="scroll-fade-up stagger-3 grid grid-cols-2 gap-5 lg:gap-7 max-w-[80%] mx-auto">
             <TeamMemberCard
               name="Rhodie R."
               role="Expert Mocktail Taster"
-              imageSrc="/images/meettheteam/Group 52.png"
-              imageWidth={493}
-              imageHeight={442}
+              imageSrc="/images/team/Group 52.png"
+              imageWidth={400}
+              imageHeight={440}
             />
             <TeamMemberCard
               name="Jay M."
               role={'Bar "Baddie Dad" Bartender'}
-              imageSrc="/images/meettheteam/Group 51.png"
-              imageWidth={740}
-              imageHeight={537}
+              imageSrc="/images/team/jay.png"
+              imageWidth={400}
+              imageHeight={440}
             />
           </div>
         </div>
@@ -507,13 +507,16 @@ function MeetTheTeamSection() {
 /* ═══════════════════════════ GALLERY SECTION ═════════════════════════ */
 function GallerySection() {
   const photos = [
-    { src: "/images/mobile-bar-2d1ce6.png", alt: "The mobile bar", label: "The Bar", span: "col-span-2 row-span-2" },
-    { src: "/images/cocktail1.png", alt: "Craft cocktail", label: "Craft Cocktails", span: "" },
-    { src: "/images/image-26.png", alt: "Event setup", label: "Event Setup", span: "md:row-span-2" },
-    { src: "/images/champagne-glasses.png", alt: "Champagne toast", label: "Celebrations", span: "" },
-    { src: "/images/pitcher.png", alt: "Pitcher service", label: "Pitcher Service", span: "" },
-    { src: "/images/jaymi-team.png", alt: "Jaymi and the team", label: "The Team", span: "col-span-2" },
-    { src: "/images/image-27.png", alt: "Southbound Sips event", label: "Good Times", span: "" },
+    { src: "/images/galleryphotos/southbound-sips-front.jpg", alt: "Southbound Sips trailer front", label: "The Trailer", span: "col-span-2 row-span-2" },
+    { src: "/images/galleryphotos/southbound-sips-drink.jpg", alt: "Craft cocktail", label: "Craft Cocktails", span: "" },
+    { src: "/images/galleryphotos/southbound-sips-event.jpg", alt: "Event setup", label: "Event Setup", span: "md:row-span-2" },
+    { src: "/images/galleryphotos/drinks-southbound-sips.jpg", alt: "Signature drinks", label: "Signature Drinks", span: "" },
+    { src: "/images/galleryphotos/southbound-sips-interior.jpg", alt: "Bar interior", label: "The Bar Interior", span: "" },
+    { src: "/images/galleryphotos/southbound-sips-drinks.jpg", alt: "Drink menu selection", label: "The Menu", span: "col-span-2" },
+    { src: "/images/galleryphotos/southbound-sips-guest.jpg", alt: "Guest enjoying drinks", label: "Good Times", span: "" },
+    { src: "/images/galleryphotos/southbound-sips-mobile-trailer.jpg", alt: "Mobile bar trailer", label: "Mobile Bar", span: "col-span-2" },
+    { src: "/images/galleryphotos/southbobund-sips-setup.jpg", alt: "Bar setup", label: "The Setup", span: "" },
+    { src: "/images/galleryphotos/southbound-sips.jpg", alt: "Southbound Sips", label: "Southbound Sips", span: "" },
   ];
 
   return (

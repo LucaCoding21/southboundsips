@@ -18,60 +18,60 @@ const guestTiers = [
 ];
 
 const standardPackages = [
-  { tier: "Cozy Crowd", guests: "0–50", price: 260 },
-  { tier: "Sweet & Small", guests: "51–75", price: 320 },
-  { tier: "Merry Medium", guests: "76–100", price: 420 },
-  { tier: "Bountiful Bash", guests: "101–150", price: 520 },
-  { tier: "Grand Gather", guests: "151–200", price: 660 },
-  { tier: "Jolly Jumbo", guests: "201–250", price: 780 },
+  { tier: "Cozy Crowd", guests: "0–50", price: 280 },
+  { tier: "Sweet & Small", guests: "51–75", price: 340 },
+  { tier: "Merry Medium", guests: "76–100", price: 440 },
+  { tier: "Bountiful Bash", guests: "101–150", price: 540 },
+  { tier: "Grand Gather", guests: "151–200", price: 680 },
+  { tier: "Jolly Jumbo", guests: "201–250", price: 800 },
 ];
 
 const premiumPackages = [
-  { tier: "Cozy Crowd", guests: "0–50", price: 310 },
-  { tier: "Sweet & Small", guests: "51–75", price: 370 },
-  { tier: "Merry Medium", guests: "76–100", price: 470 },
-  { tier: "Bountiful Bash", guests: "101–150", price: 570 },
-  { tier: "Grand Gather", guests: "151–200", price: 710 },
-  { tier: "Jolly Jumbo", guests: "201–250", price: 830 },
+  { tier: "Cozy Crowd", guests: "0–50", price: 320 },
+  { tier: "Sweet & Small", guests: "51–75", price: 390 },
+  { tier: "Merry Medium", guests: "76–100", price: 490 },
+  { tier: "Bountiful Bash", guests: "101–150", price: 590 },
+  { tier: "Grand Gather", guests: "151–200", price: 730 },
+  { tier: "Jolly Jumbo", guests: "201–250", price: 850 },
 ];
 
 const standardFeatures = [
   "Pour Service: Beer, Wine & Liquor",
   "3 Mock/Cocktail Options",
   "Serveware, Ice & Garnishes",
-  "TABC Certified Bartender",
-  "Decorations to match your event",
+  "TABC Bartender",
+  "Decorations to match",
 ];
 
 const premiumExtras = [
-  "Upgraded Serveware, Ice & Garnishes",
-  "Tasting session 30 days before event",
+  "Upgraded Serveware",
+  "Tasting 30 days before event",
 ];
 
 const tierExtras: Record<string, string[]> = {
   "76–100": ["Additional Bartender"],
   "101–150": ["Additional Bartender", "Satellite Bar Set Up"],
   "151–200": ["Additional Bartender", "Satellite Bar Set Up"],
-  "201–250": ["3rd Bartender/Barback", "Satellite Bar Set Up"],
+  "201–250": ["Additional Bartender", "Satellite Bar Set Up", "Barback"],
 };
 
 const addOns = [
   { name: "Satellite Bar", price: "$100/event" },
   { name: "Champagne Wall", price: "$75/event" },
-  { name: "Flavor Station", price: "$75/flavor" },
-  { name: "Additional Bartender", price: "$50/hr" },
-  { name: "Coffee / Latte Bar", price: "$100/event" },
-  { name: "Tea Station", price: "$75/event" },
-  { name: "Lemonade Station", price: "$75/event" },
-  { name: "Hot Chocolate Bar", price: "$100/event" },
-  { name: "Water Station", price: "$50/event" },
+  { name: "Additional Flavor", price: "$75/flavor" },
+  { name: "Additional Bartender", price: "$60/hr" },
+  { name: "Coffee/Latte Bar", price: "$100/event" },
+  { name: "Tea", price: "$100/event" },
+  { name: "Lemonade", price: "$100/event" },
+  { name: "Hot Chocolate Bar", price: "$120/event" },
+  { name: "Water Station", price: "$100/event" },
 ];
 
 const rentals = [
   { name: "Satellite Bar", price: "$200/event" },
   { name: "Champagne Wall", price: "$100/event" },
-  { name: "Large Igloo Cooler", price: "$40/event" },
-  { name: "Medium Cooler", price: "$25/event" },
+  { name: "Large Igloo Cooler", price: "$50/event" },
+  { name: "Medium Cooler", price: "$30/event" },
   { name: "Trailer (No Service)", price: "$1,000/day" },
 ];
 
@@ -168,7 +168,7 @@ function HeroSection() {
 
       <div className="relative z-10 max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12 text-center">
         <span className="animate-enter-up font-sans font-semibold text-orange text-sm md:text-base tracking-[0.15em] uppercase">
-          Services
+          Trailer Packages
         </span>
 
         <h1 className="animate-enter-up-d1 mt-4 md:mt-6">
@@ -391,10 +391,10 @@ function MobileBarPackagesSection() {
 
 function BartenderServicesSection() {
   return (
-    <section id="bartending" className="relative w-full bg-sage pt-20 md:pt-28 lg:pt-36 pb-16 md:pb-24">
+    <section id="bar-services" className="relative w-full bg-sage pt-20 md:pt-28 lg:pt-36 pb-16 md:pb-24">
       <div className="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12 text-center md:text-left">
         <span className="scroll-fade-up font-sans font-semibold text-orange text-sm md:text-base tracking-[0.15em] uppercase">
-          Bartender Services
+          Bar Services
         </span>
         <h2
           className="scroll-fade-up stagger-1 font-serif text-navy text-3xl md:text-4xl lg:text-5xl xl:text-[56px] leading-[1] tracking-tight mt-4"
@@ -415,13 +415,13 @@ function BartenderServicesSection() {
             <h3
               className="font-serif text-navy text-3xl md:text-4xl leading-tight tracking-tight mt-2"
             >
-              Full Flow
+              The Main Show
             </h3>
             <p className="text-navy text-4xl md:text-5xl font-bold font-sans leading-none mt-5">
-              $180<span className="text-lg font-medium text-navy/50">/hr</span>
+              $200<span className="text-lg font-medium text-navy/50">/hr</span>
             </p>
             <p className="font-sans text-xs text-navy/50 mt-1">
-              + $50/hr for additional bartender
+              + $60/hr for additional bartender
             </p>
 
             <div className="w-full h-px bg-navy/10 my-6" />
@@ -432,13 +432,13 @@ function BartenderServicesSection() {
             <ul className="space-y-3 flex-1">
               {[
                 "TABC Certified Bartender",
-                "Southbound featured soda for mixers & mocktails",
+                "Southbound featured soda for mixers",
                 "Cups, straws, napkins, ice & garnishes included",
                 "Curate up to 3 mock/cocktail options",
                 "Pour service for soda, tea, water, beer, wine & champagne",
-                "Personalized shopping list for alcohol",
-                "Arrive 60 min early for full setup",
-                "50+ guests: additional bartender required",
+                "Personalized alcohol shopping list provided",
+                "Arrive 60 min early for setup",
+                "Additional bartender mandatory for 50+ guests",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3">
                   <svg
@@ -480,10 +480,10 @@ function BartenderServicesSection() {
               Show Up & Serve
             </h3>
             <p className="text-navy text-4xl md:text-5xl font-bold font-sans leading-none mt-5">
-              $80<span className="text-lg font-medium text-navy/50">/hr</span>
+              $90<span className="text-lg font-medium text-navy/50">/hr</span>
             </p>
             <p className="font-sans text-xs text-navy/50 mt-1">
-              + $50/hr for additional bartender
+              + $60/hr for additional bartender
             </p>
 
             <div className="w-full h-px bg-navy/10 my-6" />
@@ -495,11 +495,11 @@ function BartenderServicesSection() {
               {[
                 "TABC Certified Bartender",
                 "We serve what you've arranged",
-                "Beer, wine, cocktails, soda, tea & water",
+                "Soda, tea, water, cocktails, wine & beer",
                 "Arrive 30 min early for setup",
                 "30 min post-event cleanup",
                 "Water station refills upon request",
-                "50+ guests: additional bartender required",
+                "Additional bartender mandatory for 50+ guests",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3">
                   <svg
@@ -533,7 +533,7 @@ function BartenderServicesSection() {
 
         {/* Notes */}
         <p className="font-sans text-sm text-navy/50 leading-[1.7] mt-8 max-w-[700px] text-center mx-auto">
-          50+ guests require an additional bartender. Satellite Bar available for
+          Additional bartender mandatory for 50+ guests. Satellite Bar available for
           $100 flat rental. Licensed to serve, not sell. Organizer provides
           spirits. Travel fee may apply outside 30 mi.{" "}
           <a
