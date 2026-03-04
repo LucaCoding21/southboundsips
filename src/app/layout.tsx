@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     url: "https://www.southboundsips.com",
     images: [
       {
-        url: "https://www.southboundsips.com/images/galleryphotos/southbound-sips-front.jpg",
+        url: "https://www.southboundsips.com/images/southbouth-sips-thumbnail.png",
         width: 1200,
         height: 630,
         alt: "Southbound Sips Mobile Bar",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Southbound Sips | Mobile Bar & Bar Services",
     description: "Southbound Sips — Mobile Bar & Bar Services.",
-    images: ["https://www.southboundsips.com/images/galleryphotos/southbound-sips-front.jpg"],
+    images: ["https://www.southboundsips.com/images/southbouth-sips-thumbnail.png"],
   },
 };
 
