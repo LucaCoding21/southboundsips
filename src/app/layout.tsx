@@ -28,6 +28,26 @@ export const metadata: Metadata = {
   title: "Southbound Sips | Mobile Bar & Bar Services",
   description:
     "Southbound Sips — Mobile Bar & Bar Services.",
+  metadataBase: new URL("https://www.southboundsips.com"),
+  openGraph: {
+    title: "Southbound Sips | Mobile Bar & Bar Services",
+    description: "Southbound Sips — Mobile Bar & Bar Services.",
+    url: "https://www.southboundsips.com",
+    images: [
+      {
+        url: "https://www.southboundsips.com/images/galleryphotos/southbound-sips-front.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Southbound Sips Mobile Bar",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Southbound Sips | Mobile Bar & Bar Services",
+    description: "Southbound Sips — Mobile Bar & Bar Services.",
+    images: ["https://www.southboundsips.com/images/galleryphotos/southbound-sips-front.jpg"],
+  },
 };
 
 export default function RootLayout({
