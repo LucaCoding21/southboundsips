@@ -13,9 +13,14 @@ const faqs = [
       "Southbound Sips is a traveling bar made from a remodeled two-horse trailer. We provide full service bartending for any occasion such as weddings, birthdays, corporate events, holiday parties, baby and bridal showers. We also participate in community events in and around Leander.",
   },
   {
+    question: "Do you serve alcohol at school events?",
+    answer:
+      "For school events such as Teacher Appreciation Week, our services are mocktail-only to keep celebrations fun and school-friendly.",
+  },
+  {
     question: "Where are you located and do you travel?",
     answer:
-      "We are located in Leander, Texas. We travel within 20 miles of our home base at no charge. Travel outside our limit will incur a travel fee.",
+      "We are located in Leander, Texas. We travel within 30 miles of our home base at no charge. Travel outside our limit will incur a travel fee.",
   },
   {
     question: "Are you insured and permitted?",
@@ -51,7 +56,7 @@ const faqs = [
   {
     question: "What is your payment and refund policy?",
     answer:
-      "We require a non-refundable 25% deposit and a signed contract in order to reserve your date. We collect a second 25% non-refundable deposit 30 days prior to your event, with the remainder of the balance due one week prior to service. Due to COVID 19, we do allow rescheduling (based on availability). If a package is under $400, we require 50% deposit.",
+      "We require a non-refundable 25% deposit and a signed contract in order to reserve your date. We collect a second 25% non-refundable deposit 30 days prior to your event, with the remainder of the balance due one week prior to service. If a package is under $400, we require 50% deposit.",
   },
   {
     question: "Do you have a rain date policy?",

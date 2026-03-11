@@ -64,7 +64,7 @@ function HeroSection() {
         <div ref={textTopRef} className="flex flex-col items-center will-change-transform">
           <Image src="/images/meet-jaymi-heading.svg" alt="Meet Jaymi" width={250} height={38} className="w-[190px] h-auto" />
           <div className="h-6" />
-          <Image src="/images/the-owner-of.svg" alt="the owner of" width={112} height={16} className="mb-10 w-[100px] h-auto" />
+          <Image src="/images/the-owner-of.svg" alt="the owner of" width={112} height={16} className="mb-14 w-[100px] h-auto" />
         </div>
         <div ref={titleRef} className="w-full flex justify-center will-change-transform -mb-1">
           <h1 className="text-navy leading-none tracking-tight hero-title-size" style={{ fontFamily: "'Badhorse', cursive" }}>Southbound</h1>
@@ -85,7 +85,7 @@ function HeroSection() {
         <div ref={dtTextTopRef} className="flex flex-col items-center will-change-transform">
           <Image src="/images/meet-jaymi-heading.svg" alt="Meet Jaymi" width={250} height={38} className="w-[180px] lg:w-[250px] h-auto" />
           <div className="h-[1vh]" />
-          <Image src="/images/the-owner-of.svg" alt="the owner of" width={112} height={16} className="w-[90px] lg:w-[112px] h-auto mb-[1vh]" />
+          <Image src="/images/the-owner-of.svg" alt="the owner of" width={112} height={16} className="w-[90px] lg:w-[112px] h-auto mb-[3vh]" />
         </div>
         <div ref={dtTitleRef} className="w-full flex justify-center will-change-transform">
           <h1 className="text-navy leading-none tracking-tight hero-title-size" style={{ fontFamily: "'Badhorse', cursive" }}>Southbound</h1>
@@ -986,7 +986,7 @@ function BookingBanner() {
 
         <a
           href="#book"
-          className="scroll-fade-up stagger-2 mt-5 md:mt-5 font-sans font-medium text-navy bg-white text-base md:text-lg leading-[1.5] tracking-[-0.011em] capitalize rounded-full px-8 md:px-10 py-2.5 md:py-2.5 hover:bg-white/90 active:scale-95 transition-all hover:shadow-lg hover:-translate-y-0.5"
+          className="scroll-fade-up stagger-2 mt-5 md:mt-5 font-sans font-medium text-white bg-[#E8792B] text-base md:text-lg leading-[1.5] tracking-[-0.011em] capitalize rounded-full px-8 md:px-10 py-2.5 md:py-2.5 hover:bg-[#d46a1f] active:scale-95 transition-all hover:shadow-lg hover:-translate-y-0.5"
         >
           Secure Your Date Now
         </a>

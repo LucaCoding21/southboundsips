@@ -405,19 +405,8 @@ function MeetTheTeamSection() {
           The crew that makes every event feel like the best night out. Good drinks, great energy, and a whole lot of heart.
         </p>
 
-        {/* Mobile: Single cohesive 2-col grid (Law of Proximity — team is one group) */}
+        {/* Mobile: 2-col grid, 3 rows */}
         <div className="scroll-fade-up stagger-2 md:hidden">
-          {/* Lead member full-width (Von Restorff — owner stands out) */}
-          <div className="max-w-[75%] mx-auto mb-6">
-            <TeamMemberCard
-              name="Jaymi M."
-              role="Owner & Head Bartender"
-              imageSrc="/images/team/Group 54.png"
-              imageWidth={400}
-              imageHeight={440}
-            />
-          </div>
-          {/* Rest of team in consistent 2-col grid */}
           <div className="grid grid-cols-2 gap-4">
             <TeamMemberCard
               name="Nohea M."
@@ -427,30 +416,37 @@ function MeetTheTeamSection() {
               imageHeight={440}
             />
             <TeamMemberCard
-              name="Alexis R."
-              role="Quiet Capital King"
-              imageSrc="/images/team/Group 53.png"
+              name="Jaymi M."
+              role="The Sip Siren"
+              imageSrc="/images/team/Group 54.png"
               imageWidth={400}
               imageHeight={440}
             />
             <TeamMemberCard
               name="Rhodie R."
               role="Expert Mocktail Taster"
-              imageSrc="/images/team/Group 52.png"
+              imageSrc="/images/team/rhodie.png"
               imageWidth={400}
               imageHeight={440}
             />
             <TeamMemberCard
               name="Jay M."
-              role={'Bar "Baddie Dad" Bartender'}
+              role="Baddie Daddie"
+              imageSrc="/images/team/jaym.png"
+              imageWidth={400}
+              imageHeight={440}
+            />
+            <TeamMemberCard
+              name="Alexis R."
+              role="Quiet Capital King"
               imageSrc="/images/team/jay.png"
               imageWidth={400}
               imageHeight={440}
             />
             <TeamMemberCard
-              name="Alexis"
+              name="Alexis J."
               role="The Chaos Coordinator"
-              imageSrc="/images/team/alexis-team.png"
+              imageSrc="/images/team/alexisj.png"
               imageWidth={400}
               imageHeight={440}
             />
@@ -472,7 +468,7 @@ function MeetTheTeamSection() {
             <div>
               <TeamMemberCard
                 name="Jaymi M."
-                role="Owner & Head Bartender"
+                role="The Sip Siren"
                 imageSrc="/images/team/Group 54.png"
                 imageWidth={400}
                 imageHeight={440}
@@ -480,9 +476,9 @@ function MeetTheTeamSection() {
             </div>
             <div className="mt-12">
               <TeamMemberCard
-                name="Alexis R."
-                role="Quiet Capital King"
-                imageSrc="/images/team/Group 53.png"
+                name="Jay M."
+                role="Baddie Daddie"
+                imageSrc="/images/team/jaym.png"
                 imageWidth={400}
                 imageHeight={440}
               />
@@ -492,21 +488,21 @@ function MeetTheTeamSection() {
             <TeamMemberCard
               name="Rhodie R."
               role="Expert Mocktail Taster"
-              imageSrc="/images/team/Group 52.png"
+              imageSrc="/images/team/rhodie.png"
               imageWidth={400}
               imageHeight={440}
             />
             <TeamMemberCard
-              name="Jay M."
-              role={'Bar "Baddie Dad" Bartender'}
+              name="Alexis R."
+              role="Quiet Capital King"
               imageSrc="/images/team/jay.png"
               imageWidth={400}
               imageHeight={440}
             />
             <TeamMemberCard
-              name="Alexis"
+              name="Alexis J."
               role="The Chaos Coordinator"
-              imageSrc="/images/team/alexis-team.png"
+              imageSrc="/images/team/alexisj.png"
               imageWidth={400}
               imageHeight={440}
             />
@@ -521,20 +517,20 @@ function MeetTheTeamSection() {
 /* ═══════════════════════════ GALLERY SECTION ═════════════════════════ */
 function GallerySection() {
   const photos = [
-    { src: "/images/galleryphotos/southbound-sips-front.jpg", alt: "Southbound Sips trailer front", label: "The Trailer", span: "col-span-2 row-span-2" },
-    { src: "/images/galleryphotos/southbound-sips-drink.jpg", alt: "Craft cocktail", label: "Craft Cocktails", span: "" },
-    { src: "/images/galleryphotos/southbound-sips-event.jpg", alt: "Event setup", label: "Event Setup", span: "md:row-span-2" },
-    { src: "/images/galleryphotos/drinks-southbound-sips.jpg", alt: "Signature drinks", label: "Signature Drinks", span: "" },
-    { src: "/images/galleryphotos/southbound-sips-interior.jpg", alt: "Bar interior", label: "The Bar Interior", span: "" },
-    { src: "/images/galleryphotos/southbound-sips-drinks.jpg", alt: "Drink menu selection", label: "The Menu", span: "col-span-2" },
-    { src: "/images/galleryphotos/southbound-sips-guest.jpg", alt: "Guest enjoying drinks", label: "Good Times", span: "" },
-    { src: "/images/galleryphotos/southbound-sips-mobile-trailer.jpg", alt: "Mobile bar trailer", label: "Mobile Bar", span: "col-span-2" },
-    { src: "/images/galleryphotos/southbobund-sips-setup.jpg", alt: "Bar setup", label: "The Setup", span: "" },
-    { src: "/images/galleryphotos/southbound-sips.jpg", alt: "Southbound Sips", label: "Southbound Sips", span: "" },
+    { src: "/images/galleryphotos/southbound-sips-bartender-mobile-bar-night.jpg", alt: "Southbound Sips mobile bar bartender serving at night event with string lights", label: "The Trailer", span: "col-span-2 row-span-2" },
+    { src: "/images/galleryphotos/southbound-sips-holiday-cocktail-lineup.jpg", alt: "Southbound Sips holiday cocktail menu lineup", label: "Holiday Cocktails", span: "" },
+    { src: "/images/galleryphotos/southbound-sips-wedding-guests-bar.jpg", alt: "Wedding guests enjoying drinks at Southbound Sips bar", label: "Good Times", span: "md:row-span-2" },
+    { src: "/images/galleryphotos/drinks-southbound-sips.jpg", alt: "Signature drinks by Southbound Sips mobile bartending", label: "Signature Drinks", span: "" },
+    { src: "/images/galleryphotos/southbound-sips-interior.jpg", alt: "Southbound Sips mobile bar interior", label: "The Bar Interior", span: "" },
+    { src: "/images/galleryphotos/southbound-sips-corporate-event-bar.jpg", alt: "Southbound Sips corporate event bar setup with custom drink menu", label: "Corporate Events", span: "col-span-2" },
+    { src: "/images/galleryphotos/southbound-sips-holiday-community-event.jpg", alt: "Southbound Sips mobile bar at holiday community event with Santa", label: "Community Events", span: "" },
+    { src: "/images/galleryphotos/southbound-sips-mobile-trailer.jpg", alt: "Southbound Sips mobile bar trailer", label: "Mobile Bar", span: "col-span-2" },
+    { src: "/images/galleryphotos/southbound-sips-owners-at-trailer.jpg", alt: "Southbound Sips owners at the mobile bar trailer", label: "Meet the Owners", span: "" },
+    { src: "/images/galleryphotos/southbound-sips-drink.jpg", alt: "Craft cocktail by Southbound Sips mobile bartending Leander Texas", label: "Craft Cocktails", span: "" },
   ];
 
   return (
-    <section className="relative w-full bg-navy pt-10 lg:pt-16 pb-16 lg:pb-28 overflow-hidden">
+    <section className="relative w-full bg-navy pt-10 lg:pt-16 pb-28 lg:pb-44 overflow-hidden">
 
       <div className="relative z-10 max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12">
         {/* Heading */}
