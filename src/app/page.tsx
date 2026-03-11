@@ -428,7 +428,7 @@ function MobileBarSection() {
         <div ref={imageRef} className="order-2 md:order-none mx-6 md:mx-0 aspect-square md:aspect-auto relative rounded-2xl md:rounded-none overflow-hidden mb-6 md:mb-12 md:min-h-0">
           <Image
             src="/images/mobile-bar-2d1ce6.png"
-            alt="Southbound Sips mobile bar trailer set up at an outdoor event"
+            alt="Maybee - The Mobile Bar"
             fill
             className="object-cover"
           />

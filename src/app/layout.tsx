@@ -46,10 +46,10 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://www.southboundsips.com/images/mobile-bar-2d1ce6.png",
-        width: 1543,
-        height: 1474,
-        alt: "Southbound Sips mobile bar trailer set up at an outdoor event",
+        url: "https://www.southboundsips.com/images/southbouth-sips-thumbnail.png",
+        width: 1200,
+        height: 630,
+        alt: "Southbound Sips — Meet Jaymi, the owner of Southbound Sips mobile bar",
       },
     ],
   },
@@ -59,8 +59,8 @@ export const metadata: Metadata = {
     description: "Southbound Sips — Mobile Bar & Bar Services.",
     images: [
       {
-        url: "https://www.southboundsips.com/images/mobile-bar-2d1ce6.png",
-        alt: "Southbound Sips mobile bar trailer set up at an outdoor event",
+        url: "https://www.southboundsips.com/images/southbouth-sips-thumbnail.png",
+        alt: "Southbound Sips — Meet Jaymi, the owner of Southbound Sips mobile bar",
       },
     ],
   },
@@ -86,7 +86,7 @@ export default function RootLayout({
               url: "https://www.southboundsips.com",
               logo: "https://www.southboundsips.com/images/southbound-logo.png",
               image:
-                "https://www.southboundsips.com/images/mobile-bar-2d1ce6.png",
+                "https://www.southboundsips.com/images/southbouth-sips-thumbnail.png",
             }),
           }}
         />
