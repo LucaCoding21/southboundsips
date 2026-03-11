@@ -29,16 +29,27 @@ export const metadata: Metadata = {
   description:
     "Southbound Sips — Mobile Bar & Bar Services.",
   metadataBase: new URL("https://www.southboundsips.com"),
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+    },
+  },
   openGraph: {
     title: "Southbound Sips | Mobile Bar & Bar Services",
     description: "Southbound Sips — Mobile Bar & Bar Services.",
     url: "https://www.southboundsips.com",
+    siteName: "Southbound Sips",
+    type: "website",
     images: [
       {
-        url: "https://www.southboundsips.com/images/southbouth-sips-thumbnail.png",
-        width: 1200,
-        height: 630,
-        alt: "Southbound Sips Mobile Bar",
+        url: "https://www.southboundsips.com/images/mobile-bar-2d1ce6.png",
+        width: 1543,
+        height: 1474,
+        alt: "Southbound Sips mobile bar trailer set up at an outdoor event",
       },
     ],
   },
@@ -46,7 +57,12 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Southbound Sips | Mobile Bar & Bar Services",
     description: "Southbound Sips — Mobile Bar & Bar Services.",
-    images: ["https://www.southboundsips.com/images/southbouth-sips-thumbnail.png"],
+    images: [
+      {
+        url: "https://www.southboundsips.com/images/mobile-bar-2d1ce6.png",
+        alt: "Southbound Sips mobile bar trailer set up at an outdoor event",
+      },
+    ],
   },
 };
 
@@ -58,6 +74,22 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              name: "Southbound Sips",
+              description:
+                "Southbound Sips — Mobile Bar & Bar Services. Artisan sodas & traveling bar for weddings, corporate events, and private parties.",
+              url: "https://www.southboundsips.com",
+              logo: "https://www.southboundsips.com/images/southbound-logo.png",
+              image:
+                "https://www.southboundsips.com/images/mobile-bar-2d1ce6.png",
+            }),
+          }}
+        />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-R0R7Z4K15B"
           strategy="afterInteractive"
