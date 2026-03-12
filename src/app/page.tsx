@@ -54,6 +54,8 @@ function HeroSection() {
           src="/images/texture-bg-1a3da5.png"
           alt=""
           fill
+          priority
+          sizes="100vw"
           className="object-cover"
         />
         <div className="absolute inset-0 bg-white/90" />
@@ -62,15 +64,15 @@ function HeroSection() {
       {/* ── Mobile layout (< md): flex column, anchored to bottom ── */}
       <div className="md:hidden relative z-10 h-full flex flex-col items-center justify-end pt-[70px] pb-[35px]">
         <div ref={textTopRef} className="flex flex-col items-center will-change-transform">
-          <Image src="/images/meet-jaymi-heading.svg" alt="Meet Jaymi" width={250} height={38} className="w-[190px] h-auto" />
+          <Image src="/images/meet-jaymi-heading.svg" alt="Meet Jaymi" width={250} height={38} priority className="w-[190px] h-auto" />
           <div className="h-6" />
-          <Image src="/images/the-owner-of.svg" alt="the owner of" width={112} height={16} className="mb-14 w-[100px] h-auto" />
+          <Image src="/images/the-owner-of.svg" alt="the owner of" width={112} height={16} priority className="mb-14 w-[100px] h-auto" />
         </div>
         <div ref={titleRef} className="w-full flex justify-center will-change-transform -mb-1">
           <h1 className="text-navy leading-none tracking-tight hero-title-size" style={{ fontFamily: "'Badhorse', cursive" }}>Southbound</h1>
         </div>
         <div ref={photoRef} className="relative -mt-12 z-[100] will-change-transform">
-          <Image src="/images/jaymi-composite.png" alt="Jaymi - Owner of Southbound Sips" width={670} height={406} className="object-contain w-[85vw] h-auto relative z-[100]" style={{ maxWidth: "670px" }} />
+          <Image src="/images/jaymi-composite.png" alt="Jaymi - Owner of Southbound Sips" width={670} height={406} priority sizes="85vw" className="object-contain w-[85vw] h-auto relative z-[100]" style={{ maxWidth: "670px" }} />
           <div className="absolute bottom-0 left-1/2 -translate-x-1/2 -translate-y-[48%] z-[100]">
             <h2 className="text-navy leading-none tracking-tight hero-sips-size" style={{ fontFamily: "'Badhorse', cursive" }}>sips</h2>
           </div>
@@ -83,15 +85,15 @@ function HeroSection() {
       {/* ── Desktop: whole block anchored from bottom as one unit ── */}
       <div className="hidden md:flex absolute inset-0 z-10 flex-col items-center justify-end pb-[16vh]">
         <div ref={dtTextTopRef} className="flex flex-col items-center will-change-transform">
-          <Image src="/images/meet-jaymi-heading.svg" alt="Meet Jaymi" width={250} height={38} className="w-[180px] lg:w-[250px] h-auto" />
+          <Image src="/images/meet-jaymi-heading.svg" alt="Meet Jaymi" width={250} height={38} priority className="w-[180px] lg:w-[250px] h-auto" />
           <div className="h-[1vh]" />
-          <Image src="/images/the-owner-of.svg" alt="the owner of" width={112} height={16} className="w-[90px] lg:w-[112px] h-auto mb-[3vh]" />
+          <Image src="/images/the-owner-of.svg" alt="the owner of" width={112} height={16} priority className="w-[90px] lg:w-[112px] h-auto mb-[3vh]" />
         </div>
         <div ref={dtTitleRef} className="w-full flex justify-center will-change-transform">
           <h1 className="text-navy leading-none tracking-tight hero-title-size" style={{ fontFamily: "'Badhorse', cursive" }}>Southbound</h1>
         </div>
         <div ref={dtPhotoRef} className="relative -mt-[4vh] z-[100] will-change-transform">
-          <Image src="/images/jaymi-composite.png" alt="Jaymi - Owner of Southbound Sips" width={670} height={406} className="object-contain w-[500px] lg:w-[670px] h-auto relative z-[100] max-h-[48vh] -translate-y-8" style={{ maxWidth: "670px" }} />
+          <Image src="/images/jaymi-composite.png" alt="Jaymi - Owner of Southbound Sips" width={670} height={406} priority sizes="(max-width: 1024px) 500px, 670px" className="object-contain w-[500px] lg:w-[670px] h-auto relative z-[100] max-h-[48vh] -translate-y-8" style={{ maxWidth: "670px" }} />
           <div className="absolute bottom-0 left-1/2 -translate-x-1/2 -translate-y-[48%] z-[100]">
             <h2 className="text-navy leading-none tracking-tight hero-sips-size" style={{ fontFamily: "'Badhorse', cursive" }}>sips</h2>
           </div>
@@ -404,6 +406,7 @@ function MobileBarSection() {
           src="/images/backgroundfiller.png"
           alt=""
           fill
+          sizes="100vw"
           className="object-cover opacity-60"
         />
         <div className="absolute inset-x-0 -top-[60px] md:-top-[90px] bottom-[50px] bg-white/93" />
@@ -430,6 +433,7 @@ function MobileBarSection() {
             src="/images/mobile-bar-2d1ce6.png"
             alt="Maybee - The Mobile Bar"
             fill
+            sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover"
           />
         </div>
@@ -676,7 +680,7 @@ function WhatIOffer() {
               </span>
             </div>
             <div className="relative w-full overflow-hidden rounded-2xl md:rounded-t-[214px] md:rounded-b-[20px] aspect-square md:aspect-[3/4] group-hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1">
-              <Image src="/images/drink-fan-fave.png" alt="Fan Fave drink" width={449} height={607} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+              <Image src="/images/drink-fan-fave.png" alt="Fan Fave drink" width={449} height={607} sizes="(max-width: 768px) 100vw, 33vw" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
             </div>
             {/* Mobile: title left, price right */}
             <div className="flex md:hidden justify-between items-baseline pt-2.5 w-full gap-3">
@@ -709,7 +713,7 @@ function WhatIOffer() {
               </span>
             </div>
             <div className="relative w-full overflow-hidden rounded-2xl md:rounded-t-[214px] md:rounded-b-[20px] aspect-square md:aspect-[3/4] group-hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1">
-              <Image src="/images/drink-easy-breezy-310de1.png" alt="Easy Breezy drink" width={450} height={607} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+              <Image src="/images/drink-easy-breezy-310de1.png" alt="Easy Breezy drink" width={450} height={607} sizes="(max-width: 768px) 100vw, 33vw" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
             </div>
             {/* Mobile: title left, price right */}
             <div className="flex md:hidden justify-between items-baseline pt-2.5 w-full gap-3">
@@ -742,7 +746,7 @@ function WhatIOffer() {
               </span>
             </div>
             <div className="relative w-full overflow-hidden rounded-2xl md:rounded-t-[214px] md:rounded-b-[20px] aspect-square md:aspect-[3/4] group-hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1">
-              <Image src="/images/drink-more-please.png" alt="More Please drink" width={449} height={608} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+              <Image src="/images/drink-more-please.png" alt="More Please drink" width={449} height={608} sizes="(max-width: 768px) 100vw, 33vw" className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
             </div>
             {/* Mobile: title left, price right */}
             <div className="flex md:hidden justify-between items-baseline pt-2.5 w-full gap-3">
@@ -973,6 +977,7 @@ function BookingBanner() {
           src="/images/backgroundfiller.png"
           alt=""
           fill
+          sizes="100vw"
           className="object-cover opacity-70"
         />
       </div>
@@ -1056,6 +1061,7 @@ function BookingForm() {
           src="/images/backgroundfiller.png"
           alt=""
           fill
+          sizes="100vw"
           className="object-cover"
         />
         <div className="absolute inset-0 bg-white/90" />

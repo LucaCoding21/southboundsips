@@ -85,8 +85,9 @@ function HeroSection() {
                 src="/images/about-hero-southbound-mobiletrailer.png"
                 alt="Southbound Sips experience"
                 fill
-                className="object-cover lg:rounded-bl-[60px]" style={{ objectPosition: '60% center' }}
                 priority
+                sizes="(max-width: 1024px) 100vw, 58vw"
+                className="object-cover lg:rounded-bl-[60px]" style={{ objectPosition: '60% center' }}
               />
             </div>
           </div>
@@ -106,6 +107,7 @@ function HiImJaymiSection() {
           src="/images/backgroundfiller.png"
           alt=""
           fill
+          sizes="100vw"
           className="object-cover opacity-25"
         />
         <div className="absolute inset-0 bg-[rgba(26,58,92,0.75)]" />
@@ -581,6 +583,7 @@ function FlowerStrip() {
         src="/images/backgroundfiller.png"
         alt=""
         fill
+        sizes="100vw"
         className="object-cover"
       />
     </div>

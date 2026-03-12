@@ -16,8 +16,8 @@ export default function LoadingScreen() {
     if (isReload || isFirstVisit) {
       sessionStorage.setItem("sb-loaded", "1");
       setShow(true);
-      const exitTimer = setTimeout(() => setDone(true), 1800);
-      const unmountTimer = setTimeout(() => setUnmounted(true), 2500);
+      const exitTimer = setTimeout(() => setDone(true), 1200);
+      const unmountTimer = setTimeout(() => setUnmounted(true), 1900);
       return () => {
         clearTimeout(exitTimer);
         clearTimeout(unmountTimer);
