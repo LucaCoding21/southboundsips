@@ -50,7 +50,7 @@ export async function POST(request: Request) {
   ].join("\n");
 
   const { data, error } = await resend.emails.send({
-    from: "Cloverfield Studio <hello@cloverfield.studio>",
+    from: "South Bound Sips <southboundsips@cloverfield.studio>",
     to: ["events@southboundsips.com", "nguyen.william0121@gmail.com"],
     subject: `South Bound Sips — New Inquiry from ${email}`,
     replyTo: email,
